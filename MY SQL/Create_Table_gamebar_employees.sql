@@ -11,5 +11,12 @@ CREATE TABLE `emplyees`(
  CREATE TABLE `products`(
  `id` INT PRIMARY KEY AUTO_INCREMENT,
  `name` VARCHAR(45) NOT NULL,
- `category_id` INT NOT NULL
- );
+ `category_id` INT NOT NULL,
+ 
+ CONSTRAINT `fk_category_id`
+ FOREIGN KEY (`category_id`)
+ REFERENCES `gamebar`.`categories` (`id`)
+ ON DELETE NO ACTION
+ ON UPDATE CASCADE,
+ 
+ INDEX `fk_category_Ind` (`category_id` ASC) INVISIBLE );
