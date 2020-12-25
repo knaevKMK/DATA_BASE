@@ -39,6 +39,53 @@ TRUNCATE TABLE minions;
 /*EX_6*/
 DROP TABLES towns, minions;
 
-/*EX_*/
+/*EX_7*/
+CREATE TABLE people (
+id INT AUTO_INCREMENT PRIMARY KEY,
+`name` VARCHAR(200)  NOT NULL,
+picture BLOB NULL,
+height DOUBLE (4,2) NULL,
+weight DOUBLE (4,2) NULL,
+gender VARCHAR(1) NOT NULL,
+birthday DATE NOT NULL,
+biography TEXT NULL
+);
 
-/*EX_*/
+INSERT INTO people (`name`,gender,birthday) VALUES
+('Pesho','m','1984-11-11'),
+('Tosho','m','1985-03-21'),
+('Kina','f','1986-12-31'),
+('Mina','f','1987-10-01'),
+('Gosho','m','1988-01-30');
+
+/*EX_8*/
+DROP TABLE users;
+CREATE TABLE users(
+id INT NOt NULL PRIMARY KEY,
+username VARCHAR(30) UNICODE UNIQUE NOT NULL,
+password VARCHAR(26) NOT NULL,
+profile_picture BLOB NULL,
+last_login_time DATETIME,
+is_deleted BOOLEAN NOT NULL
+);
+
+INSERT INTO users (username,password,is_deleted) VALUES
+('pesh2368','dgd_1_naMamaT@',false),
+('toh2368','dbd_1_naMamaT@',false),
+('kinS368','dvd_1_naMamaT@',false),
+('miKn238','cd_1_naMamaT@',false),
+('gosh2118','mp3_1_naMamaT@',false);
+
+/*EX_9*/
+ALTER TABLE `users` 
+ADD COLUMN `pk_users` VARCHAR(45)  AS (id+' '+ username);
+
+
+
+/*EX_9*/
+/*EX_9*/
+/*EX_9*/
+/*EX_9*/
+/*EX_9*/
+/*EX_9*/
+/*EX_9*/
