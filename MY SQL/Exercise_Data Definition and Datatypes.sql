@@ -61,7 +61,7 @@ INSERT INTO people (`name`,gender,birthday) VALUES
 /*EX_8*/
 DROP TABLE users;
 CREATE TABLE users(
-id INT NOt NULL PRIMARY KEY,
+id INT AUTO_INCREMENT PRIMARY KEY,
 username VARCHAR(30) UNICODE UNIQUE NOT NULL,
 password VARCHAR(26) NOT NULL,
 profile_picture BLOB NULL,
@@ -69,21 +69,36 @@ last_login_time DATETIME,
 is_deleted BOOLEAN NOT NULL
 );
 
-INSERT INTO users (username,password,is_deleted) VALUES
+INSERT INTO users ( username, `password`, is_deleted) VALUES
 ('pesh2368','dgd_1_naMamaT@',false),
 ('toh2368','dbd_1_naMamaT@',false),
 ('kinS368','dvd_1_naMamaT@',false),
 ('miKn238','cd_1_naMamaT@',false),
 ('gosh2118','mp3_1_naMamaT@',false);
 
-/*EX_9*/
+/*EX_9 NOT WORK*/
 ALTER TABLE `users` 
-ADD COLUMN `pk_users` VARCHAR(45)  AS (id+' '+ username);
+ADD COLUMN pk_users VARCHAR(45) AS (concat(id,'_',username));
+ALTER TABLE `users` 
+DROP PRIMARY KEY,
+ADD PRIMARY KEY (pk_user) ;
+
+ALTER TABLE `users` 
+DROP PRIMARY KEY,
+ADD PRIMARY KEY (`id`, `username`);
 
 
 
-/*EX_9*/
-/*EX_9*/
+/*EX_10*/
+ALTER TABLE users
+CHANGE COLUMN last_login_time last_login_time  TIME;
+
+/*EX_11*/
+ALTER TABLE users
+DROP PRIMARY KEY,
+ADD PRIMARY KEY (id);
+
+
 /*EX_9*/
 /*EX_9*/
 /*EX_9*/
