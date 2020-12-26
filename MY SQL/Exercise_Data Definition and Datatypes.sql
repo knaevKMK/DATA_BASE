@@ -181,7 +181,129 @@ SELECT m.id, title, d.director_name AS Director, copyright_year AS `Year`,g.genr
 JOIN directors d , genres g, categories c 
 WHERE director_id = d.id AND genre_id=g.id AND category_id=c.id;
 
-/*EX_9*/
+/*EX_13*/
+drop schema car_rental;
+CREATE DATABASE car_rental;
+USE car_rental;
+
+CREATE TABLE categories (
+id INT AUTO_INCREMENT PRIMARY KEY, 
+category VARCHAR (45) NOT NULL, 
+daily_rate DECIMAL(5,2)UNSIGNED NULL, 
+weekly_rate DECIMAL(5,2)UNSIGNED NULL, 
+monthly_rate DECIMAL(5,2)UNSIGNED NULL,
+weekend_rate DECIMAL(5,2)UNSIGNED NULL
+);
+
+CREATE TABLE cars (
+id INT AUTO_INCREMENT PRIMARY KEY, 
+plate_number VARCHAR(8) , 
+make VARCHAR(20), 
+model VARCHAR(10), 
+car_year YEAR, 
+category_id INT,
+CONSTRAINT fk_categories_id
+FOREIGN KEY (category_id) 
+REFERENCES categories(id),
+doors INT NOT NULL, 
+picture BLOB NULL, 
+`condition` VARCHAR(5) NULL, 
+available BOOLEAN
+); 
+
+CREATE TABLE 	employees (
+id INT AUTO_INCREMENT PRIMARY KEY, 
+first_name VARCHAR(15) NOT NULL, 
+last_name VARCHAR(15) NOT NULL, 
+title VARCHAR(20) NULL, 
+notes TEXT NULL
+);
+
+CREATE TABLE 	customers (
+id INT AUTO_INCREMENT PRIMARY KEY, 
+driver_licence_number VARCHAR (20) UNIQUE NOT NULL, 
+full_name VARCHAR(30) NOT NULL, 
+address VARCHAR(55) NULL, 
+city VARCHAR(20) NOT NULL, 
+`zip-code` VARCHAR (10) NOT NULL, 
+notes TEXT NULL
+);
+
+DROP TABLE rental_orders;
+CREATE TABLE rental_orders (
+id INT AUTO_INCREMENT PRIMARY KEY, 
+employee_id INT NOT NULL, 
+CONSTRAINT fk_employees_id
+FOREIGN KEY (employee_id)
+REFERENCES employees (id),
+customer_id INT NOT NULL, 
+ CONSTRAINT fk_customer_id
+FOREIGN KEY (customer_id)
+REFERENCES customers(id),
+car_id INT NOT NULL, 
+CONSTRAINT fk_cars_id
+FOREIGN KEY (car_id)
+REFERENCES cars (id),
+car_condition VARCHAR(10) NULL , 
+tank_level INT , 
+kilometrage_start INT(6) NOT NULL, 
+kilometrage_end INT(6)  NULL, 
+total_kilometrage INT(6) AS (kilometrage_end-kilometrage_start) NULL, 
+start_date DATE  not null, 
+end_date DATE  null, 
+total_days INT AS (end_date-start_date), 
+rate_applied INT  null, 
+tax_rate DECIMAL null, 
+order_status VARCHAR(10) NOT NULL, 
+notes TEXT NULL
+);
+
+INSERT INTO categories (category, daily_rate, weekly_rate, monthly_rate, weekend_rate) VALUES
+('VAN',30,120.5,500.11,50.25),
+('SUW',35,130.5,550.11,60.25),
+('LIMOSINE',40,140.5,600.11,70.25);
+
+INSERT INTO	cars ( plate_number, make, model, car_year, category_id, doors, `condition`, available) VALUES
+('CT2211PA', 'Mercedes-Benz', 'E280', '2007', 3, 4, 'good', true),
+('CT4562BA', 'Mercedes-Benz', 'ML280', '2008', 2, 4, 'poor', true),
+('CT3546CA', 'VW', 'SHARAN', '2003', 3, 5, 'poor', true);
+
+INSERT INTO 	employees (first_name, last_name) VALUES
+('Krasimir', 'Mitev'),
+('Zhenya', 'Ivanova'),
+('Pencho', 'Zlatev');
+
+INSERT INTO 	customers ( driver_licence_number, full_name, city, `zip-code`) VALUES
+('234892314','Pesho Peshev', 'Radnevo', '6020'),
+('234322314','Techo Techev', 'London', 'N8 9DJ'),
+('234492314','Gosho Goshev', 'NUREMBERG', '90442');
+
+
+INSERT INTO rental_orders (employee_id, customer_id, car_id, tank_level, kilometrage_start, kilometrage_end,
+  start_date, end_date, order_status) VALUES
+ (2,1,3,80, 250345,null, '2020-12-20',NULL, 'PROCESS'),
+ (1,2,1,100, 150345,150775,'2020-12-19','2020-12-24', 'COMPLETED'),
+ (3,3,2,60, 70345,NULL,'2020-12-22',NULL, 'PROCESS');
+
+SELECT 
+customers.full_name, 
+customers.city, 
+cars.plate_number, 
+cars.make, 
+rental_orders.total_kilometrage, 
+rental_orders.total_days, 
+rental_orders.order_status
+ FROM rental_orders
+JOIN 
+customers, employees, cars
+ WHERE 
+ customer_id=customers.id 
+AND  car_id=cars.id
+AND employee_id=employees.id;
+
+
+
+
 /*EX_9*/
 /*EX_9*/
 /*EX_9*/
