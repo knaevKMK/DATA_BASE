@@ -13,12 +13,10 @@ town_id INT PRIMARY KEY AUTO_INCREMENT,
 );
 
 /*EX_3*/
-ALTER TABLE towns
-CHANGE town_id id INT AUTO_INCREMENT;
 
 ALTER TABLE minions
-ADD COLUMN town_id INT NOT NULL,
-ADD CONSTRAINT fk_towns_id
+ADD COLUMN town_id INT,
+ADD CONSTRAINT fk_minions_towns
 FOREIGN KEY (town_id)
 REFERENCES towns (id);
 
@@ -44,8 +42,8 @@ CREATE TABLE people (
 id INT AUTO_INCREMENT PRIMARY KEY,
 `name` VARCHAR(200)  NOT NULL,
 picture BLOB NULL,
-height DOUBLE (4,2) NULL,
-weight DOUBLE (4,2) NULL,
+height DECIMAL (4,2) NULL,
+weight DECIMAL (4,2) NULL,
 gender VARCHAR(1) NOT NULL,
 birthday DATE NOT NULL,
 biography TEXT NULL
@@ -59,10 +57,11 @@ INSERT INTO people (`name`,gender,birthday) VALUES
 ('Gosho','m','1988-01-30');
 
 /*EX_8*/
-DROP TABLE users;
+#DROP TABLE users;
+
 CREATE TABLE users(
 id INT AUTO_INCREMENT PRIMARY KEY,
-username VARCHAR(30) UNICODE UNIQUE NOT NULL,
+username VARCHAR(30) UNICODE  NOT NULL,
 password VARCHAR(26) NOT NULL,
 profile_picture BLOB NULL,
 last_login_time DATETIME,
@@ -77,12 +76,6 @@ INSERT INTO users ( username, `password`, is_deleted) VALUES
 ('gosh2118','mp3_1_naMamaT@',false);
 
 /*EX_9 NOT WORK*/
-ALTER TABLE `users` 
-ADD COLUMN pk_users VARCHAR(45) AS (concat(id,'_',username));
-ALTER TABLE `users` 
-DROP PRIMARY KEY,
-ADD PRIMARY KEY (pk_user) ;
-
 ALTER TABLE `users` 
 DROP PRIMARY KEY,
 ADD PRIMARY KEY (`id`, `username`);
@@ -100,7 +93,7 @@ ADD PRIMARY KEY (id);
 
 
 /*EX_12*/
-DROP SCHEMA movies;
+
 CREATE DATABASE movies;
 USE movies;
 
@@ -128,12 +121,12 @@ PRIMARY KEY (id)
 CREATE TABLE movies(
 id INT AUTO_INCREMENT PRIMARY KEY,
 title VARCHAR (50) NOT NULL,
-director_id  INT NOT NULL,
+director_id  INT, #FOREIGN KEY REFERENCES directors(id),
 copyright_year YEAR,
 lenght TIME,
-genre_id INT NOT NULL,
-category_id INT NOT NULL,
-rating INT NULL,
+genre_id INT NOT NULL, # FOREIGN KEY REFERENCES genres(id),
+category_id INT NOT NULL, # FOREIGN KEY REFERENCES category(id),
+rating DECIMAL NULL,
 notes TEXT NULL
 );
 
@@ -253,7 +246,7 @@ start_date DATE  not null,
 end_date DATE  null, 
 total_days INT AS (end_date-start_date), 
 rate_applied INT  null, 
-tax_rate DECIMAL null, 
+tax_rate DECIMAL AS(rate_applied*0.2), 
 order_status VARCHAR(10) NOT NULL, 
 notes TEXT NULL
 );
@@ -304,6 +297,230 @@ AND employee_id=employees.id;
 
 
 
-/*EX_9*/
-/*EX_9*/
-/*EX_9*/
+/*EX_14*/
+CREATE DATABASE hotel;
+USE hotel;
+
+CREATE TABLE 	employees (
+id INT AUTO_INCREMENT PRIMARY KEY, 
+first_name VARCHAR(20) NOT NULL, 
+last_name VARCHAR(20) NOT NULL, 
+title VARCHAR(30) NULL, 
+notes TEXT NULL
+);
+
+CREATE TABLE 	customers (
+account_number INT AUTO_INCREMENT PRIMARY KEY, 
+first_name VARCHAR (20) NOT NULL, 
+last_name VARCHAR(20) NOT NULL, 
+phone_number VARCHAR (20), 
+emergency_name VARCHAR(30) NULL, 
+emergency_number VARCHAR(20) NULL, 
+notes TEXT NULL
+);
+
+CREATE TABLE room_status (
+room_status VARCHAR(7) PRIMARY KEY NOT NULL, 
+notes TEXT NULL
+);
+
+CREATE TABLE room_types (
+room_type VARCHAR(10) PRIMARY KEY NOT NULL, 
+notes TEXT NULL
+);
+
+CREATE TABLE bed_types (
+bed_type VARCHAR(20) PRIMARY KEY NOT NULL, 
+notes TEXT NULL
+);
+
+CREATE TABLE rooms (
+room_number INT PRIMARY KEY NOT NULL, 
+room_type INT,
+ CONSTRAINT fk_rooms_type
+ FOREIGN KEY (room_type)
+ REFERENCES room_types (room_type),
+bed_type INT, 
+CONSTRAINT fk_bed_types
+FOREIGN KEY (bed_type)
+REFERENCES bed_types(bed_type),
+rate DECIMAL (6,2) NOT NULL, 
+room_status INT, 
+CONSTRAINT fk_roomS_status
+FOREIGN KEY (fk_room_status)
+REFERENCES room_status(room_status),
+notes TEXT NULL
+);
+
+CREATE TABLE 	payments (
+id INT AUTO_INCREMENT PRIMARY KEY, 
+employee_id INT NOT NULL, 
+CONSTRAINT fk_employeeS_id
+FOREIGN KEY (employee_id)
+REFERENCES employees(id),
+payment_date DATE, 
+account_number INT NOT NULL,
+CONSTRAINT fk_customers_id
+FOREIGN KEY  (account_number)
+REFERENCES customers(id),
+first_date_occupied DATE NOT NULL, 
+last_date_occupied DATE NOT NULL, 
+total_days INT AS (first_date_occupied-last_date_occupied), 
+amount_charged DECIMAL(7,2) NOT NULL, 
+tax_rate DECIMAL(7,2) NOT NULL, 
+tax_amount DECIMAL (7,2) AS (amount_charged*tax_rate), 
+payment_total DECIMAL(10,2) AS (amount_charged+tax_amount), 
+notes TEXT NULL
+);
+
+CREATE TABLE occupancies (
+id INT AUTO_INCREMENT PRIMARY KEY, 
+employee_id INT NOT NULL, 
+CONSTRAINT fk_employeeS_id
+FOREIGN KEY (employee_id)
+REFERENCES employees(id),
+date_occupied DATE NOT NULL, 
+account_number INT NOT NULL, 
+CONSTRAINT fk_customers_id
+FOREIGN KEY  (account_number)
+REFERENCES customers(id),
+room_number INT NOT NULL, 
+CONSTRAINT fk_rooms_number
+FOREIGN KEY  (room_number)
+REFERENCES rooms(room_number),
+rate_applied DECIMAL(2,2) NOT NULL, 
+phone_charge DECIMAL (5,2) NOT NULL, 
+notes TEXT NULL
+);
+
+INSERT INTO Employees(FirstName, LastNAme) VALUES
+('Galin', 'Zhelev'),
+('Stoyan', 'Ivanov'),
+('Petar', 'Ikonomov')
+
+INSERT INTO Customers(FirstName, LastName, PhoneNumber) VALUES
+('Monio', 'Ushev', '+359888666555'),
+('Gancho', 'Stoykov', '+359866444222'),
+('Genadi', 'Dimchov', '+35977555333')
+
+INSERT INTO RoomStatus(RoomStatus) VALUES
+('occupied'),
+('non occupied'),
+('repairs')
+
+INSERT INTO RoomTypes(RoomType) VALUES
+('single'),
+('double'),
+('appartment')
+
+INSERT INTO BedTypes(BedType) VALUES
+('single'),
+('double'),
+('couch')
+
+INSERT INTO Rooms(RoomNumber, RoomType, BedType, Rate, RoomStatus) VALUES
+(201, 'single', 'single', 40.0, 1),
+(205, 'double', 'double', 70.0, 0),
+(208, 'appartment', 'double', 110.0, 1)
+
+INSERT INTO Payments(EmployeeId, PaymentDate, AccountNumber, FirstDateOccupied, LastDateOccupied, AmountCharged, TaxRate) VALUES
+(1, '2011-11-25', 2, '2017-11-30', '2017-12-04', 250.0, 0.2),
+(3, '2014-06-03', 3, '2014-06-06', '2014-06-09', 340.0, 0.2),
+(3, '2016-02-25', 2, '2016-02-27', '2016-03-04', 500.0, 0.2)
+
+INSERT INTO Occupancies(EmployeeId, DateOccupied, AccountNumber, RoomNumber, RateApplied, PhoneCharge) VALUES
+(2, '2011-02-04', 3, 205, 70.0, 12.54),
+(2, '2015-04-09', 1, 201, 40.0, 11.22),
+(3, '2012-06-08', 2, 208, 110.0, 10.05)
+
+/*EX_15*/
+CREATE DATABASE softuni;
+USE softuni;
+
+CREATE TABLE towns (
+id INT AUTO_INCREMENT PRIMARY KEY, 
+`name` VARCHAR (30) NOT NULL
+);
+
+CREATE TABLE addresses (
+id INT AUTO_INCREMENT PRIMARY KEY, 
+address_text VARCHAR(50) NOT NULL, 
+town_id INT NOT NULL,
+CONSTRAINT fk_town_id
+FOREIGN KEY (town_id)
+REFERENCES towns(ID)
+);
+
+CREATE TABLE departments (
+id INT AUTO_INCREMENT PRIMARY KEY, 
+`name` VARCHAR(30) NOT NULL
+);
+
+CREATE TABLE employees (
+id INT AUTO_INCREMENT PRIMARY KEY, 
+first_name VARCHAR (30) NOT NULL, 
+middle_name VARCHAR(30)NOT NULL, 
+last_name VARCHAR(30) NOT NULL, 
+job_title VARCHAR(50) NOT NULL, 
+department_id INT NOT NULL, 
+hire_date DATE, 
+salary DECIMAL (6,2) NOT NULL, 
+address_id INT  NULL
+);
+
+ALTER TABLE employees 
+ADD FOREIGN KEY (department_id) REFERENCES departments(id),
+ADD FOREIGN KEY (address_id) REFERENCES addresses(id);
+
+
+/*EX_16*/
+INSERT INTO towns (`name`) VALUES 
+('Sofia'),
+('Plovdiv'),
+('Varna'),
+('Burgas');
+
+INSERT INTO departments (`name`) VALUES 
+('Engineering'),
+('Sales'),
+('Marketing'),
+('Software Development'),
+('Quality Assurance');
+
+INSERT INTO 	employees ( first_name, middle_name,
+ last_name, job_title, department_id, hire_date, salary) VALUES
+('Ivan', 'Ivanov', 'Ivanov',	'.NET Developer',	4,	'01/02/2013',	3500.00),
+('Petar', 'Petrov', 'Petrov',	'Senior', 1,	'02/03/2004',	4000.00),
+('Maria', 'Petrova', 'Ivanova',	'Intern',	5,	'28/08/2016',	525.25),
+('Georgi', 'Teziev', 'Ivanov',	'CEO',	2,	'09/12/2007',	3000.00),
+('Peter', 'Pan', 'Pan',	'Intern',3,	'28/08/2016',	599.88);
+
+
+/*EX_17*/
+SELECT * FROM employees;
+SELECT * FROM towns;
+SELECT * FROM departments;
+
+/*EX_18*/
+SELECT * FROM employees
+ORDER BY `salary` DESC;
+SELECT * FROM towns
+ORDER BY `name`;
+SELECT * FROM departments
+ORDER BY `name`;
+
+/*EX_19*/
+SELECT first_name, last_name, job_title, salary FROM employees e ORDER BY salary DESC;
+SELECT t.`name` FROM towns t ORDER BY `name`;
+SELECT d.`name` FROM departments d ORDER BY `name`;
+/*EX_20*/
+UPDATE employees
+SET salary = salary *1.1;
+SELECT salary FROM employees ORDER BY salary DESC;
+
+/*EX_21*/
+#UPDATE employees
+#SET 
+
+/*EX_22*/
+TRUNCATE TABLE hotel.occupancies;
