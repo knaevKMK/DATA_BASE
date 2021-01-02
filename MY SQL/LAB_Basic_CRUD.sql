@@ -1,5 +1,6 @@
 # EX_1 
-SELECT id,first_name,last_name, job_title FROM employees;
+SELECT id,first_name,last_name, job_title 
+FROM employees;
 
 # EX_2
 SELECT 
@@ -27,5 +28,7 @@ SELECT *
  ORDER BY id;
  
  # EX_6
-DELETE FROM employees WHERE department_id=1 AND department_id=2;
+DELETE FROM employees 
+WHERE department_id=1 
+AND department_id=2;
 
