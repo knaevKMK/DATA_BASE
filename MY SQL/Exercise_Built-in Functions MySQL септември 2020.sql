@@ -38,3 +38,15 @@ ORDER BY `name` ASC;
 SELECT town_id, `name` FROM towns
 WHERE LEFT(`name`,1) NOT IN ('R', 'B', 'D')
 ORDER BY `name` ASC;
+
+#EX_8
+CREATE VIEW `v_employees_hired_after_2000` AS
+SELECT first_name, last_name FROM employees
+WHERE YEAR(hire_year) > 2000;
+
+SELECT  * FROM v_employees_hired_after_2000;
+
+#EX_9
+SELECT first_name, last_name FROM employees
+WHERE CHAR_LENGTH(last_name, 5);
+
