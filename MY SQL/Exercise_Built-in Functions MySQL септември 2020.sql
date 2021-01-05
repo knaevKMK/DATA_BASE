@@ -9,4 +9,11 @@ SELECT first_name, last_name FROM employees
 WHERE last_name LIKE '%ei%'
 ORDER BY employee_id;
 
+# EX_3
+
+SELECT fist_name FROM employees
+WHERE deprtment_id IN (3,10) 
+	AND YEAR (hire_year) BETWEEN 1995 AND 2005
+ORDER BY employee_id;
+
 
