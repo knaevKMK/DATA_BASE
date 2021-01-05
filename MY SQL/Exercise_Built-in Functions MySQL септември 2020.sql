@@ -20,3 +20,9 @@ ORDER BY employee_id;
 SELECT first_name, last_name FROM employees
 WHERE job_title NOT LIKE '%engineer%'
 ORDER BY employee_id;
+
+#EX_5
+SELECT `name` FROM towns
+# WHERE CHAR_LENGTH(`name`) =5 OR CHAR_LENGTH(`name`)=6 
+WHERE CHAR_LENGTH(`name`) IN (5,6)
+ORDER BY `name` ASC;
