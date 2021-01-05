@@ -24,5 +24,17 @@ ORDER BY employee_id;
 #EX_5
 SELECT `name` FROM towns
 # WHERE CHAR_LENGTH(`name`) =5 OR CHAR_LENGTH(`name`)=6 
+#WHERE CHAR_LENGTH(`name`) BETWEEN 5 AND 6 
 WHERE CHAR_LENGTH(`name`) IN (5,6)
+ORDER BY `name` ASC;
+
+#EX_6
+SELECT town_id, `name` FROM towns
+#WHERE LEFT(`name`,1) IN ('M%','K%', 'B%','R%')
+WHERE SUBSTRING(`name`,1,1) IN ('M%','K%', 'B%','R%')
+ORDER BY `name` ASC;
+
+#EX_7
+SELECT town_id, `name` FROM towns
+WHERE LEFT(`name`,1) NOT IN ('R', 'B', 'D')
 ORDER BY `name` ASC;
