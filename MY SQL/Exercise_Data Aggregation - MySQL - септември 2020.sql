@@ -122,8 +122,18 @@ LIMIT 2,1 ) AS third_avg_salary
 FROM employees e
 WHERE third_avg_salary IS NOT NULL
 GROUP BY e.department_id
+HAVING third_avg_salary IS NOT NULL
 ORDER BY e.department_id;
 
+#EX_18
+SELECT first_name, last_name, department_id
+FROM employee AS e
+WHERE salary > (SELECT e2.department_id, AVG(e2.salary) AS `avg`
+FROM employees AS e2
+WHERE e2.department_id= e.department_id
+GROUP BY e2.department_id)
+ORDER BY department_id, employee_id
+LIMIT 10;
 
 #EX_19
 SELECT department_id, ROUND(SUM(salary),2) AS total_salary
