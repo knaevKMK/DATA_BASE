@@ -64,3 +64,69 @@ FROM wizzard_deposit
 ORDER BY age_group;
 
 #EX_10
+SELECT LEFT (first_name, 1) AS first_letter
+FROM wizzard_deposit
+WHERE  deposit_type = 'Troll Chest'
+GROUP BY first_letter
+ORDER BY first_letter;
+
+#EX_11
+SELECT deposit_group, is_deposit_expired,
+ AVG (deposit_interes) AS average_interest
+FROM wizzard_deposit
+WHERE deposit_start_date > '1985-01-01'
+GROUP BY deposit_group, is_deposit_expired
+ORDER BY deposit_group DESC, is_deposit_expired;
+
+#EX_13
+SELECT e.department_id, ROUND(MIN(e.salary),2) AS minimum_salary
+FROM soft_uni.employees AS e
+WHERE e.department_id IN (2,5,7) AND hire_date > '2000-01-01'
+GROUP BY department_id
+ORDER BY department_id;
+
+#EX_14
+CREATE VIEW `check` AS
+SELECT department_id, AVG( salary) AS avg_salary
+FROM employees
+WHERE salary >30000
+GROUP BY department_id;
+ 
+DELETE FROM `check`
+WHERE manager_id=42;
+
+UPDATE `check`
+SET salary = salary +5000
+WHERE department_id=1;
+
+#EX15
+ SELECT department_id,
+ MAX(salary) AS max_salary
+ FROM employess
+ GROUP BY department_id
+HAVING max_salary NOT BETWEEN 30000 AND 70000
+ORDER BY department_id;
+
+#EX_16
+SELECT COUNT(manager_id) AS ``
+FROM employees
+WHERE manager_id IS NULL; 
+
+
+#EX_17
+SELECT  e.department_id, 
+(SELECT DISTINCT e2.salary FROM  employees AS e2 
+WHERE e2.department=e.department_id
+ORDER  BY salary DESC
+LIMIT 2,1 ) AS third_avg_salary
+FROM employees e
+WHERE third_avg_salary IS NOT NULL
+GROUP BY e.department_id
+ORDER BY e.department_id;
+
+
+#EX_19
+SELECT department_id, ROUND(SUM(salary),2) AS total_salary
+FROM employees
+GROUP BY department_id
+ORDER BY department_id;
