@@ -86,16 +86,16 @@ GROUP BY department_id
 ORDER BY department_id;
 
 #EX_14
-CREATE VIEW `check` AS
+CREATE TABLE `temp`
 SELECT department_id, AVG( salary) AS avg_salary
 FROM employees
 WHERE salary >30000
 GROUP BY department_id;
  
-DELETE FROM `check`
+DELETE FROM `temp`
 WHERE manager_id=42;
 
-UPDATE `check`
+UPDATE `temp`
 SET salary = salary +5000
 WHERE department_id=1;
 
