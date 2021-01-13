@@ -137,11 +137,10 @@ ORDER BY country_name ASC
 LIMIT 5;
 
 #EX_16
-SELECT (
-SELECT c2.country_id FROM countries AS c2
-WHERE mauntained_id IS NULL
-) AS country_count
-FROm countries;
+SELECT COUNT(*) AS country_count
+ FROM countries AS c
+ LEFT JOIN mountains_countries AS mc ON c.country-code=mc.country-code
+WHERE mauntained_id IS NULL;
 
 #EX_17
 SELECT country_name,
