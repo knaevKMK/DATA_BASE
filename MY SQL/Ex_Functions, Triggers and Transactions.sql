@@ -183,3 +183,65 @@ DELIMITER ;
 CALL usp_get_holders_with_balance_higher_than(7000);
 DROP PROCEDURE usp_get_holders_with_balance_higher_than;
 
+#EX_10
+DELIMITER $$
+CREATE FUNCTION ufn_calculate_future_value(
+initial_sum DECIMAL (19,4) , interest_rate DECIMAL (19,4), years INT)
+RETURNS DECIMAL (19,4)
+DETERMINISTIC
+BEGIN
+   RETURN initial_sum * POW((1 +interest_rate),years);
+END $$
+DELIMITER ;
+    
+SELECT ufn_calculate_future_value ( 1000, 0.1, 5);
+DROP FUNCTION ufn_calculate_future_value;
+
+#EX_11 use function from EX_10
+
+DELIMITER $$
+CREATE PROCEDURE usp_calculate_future_value_for_account (account_id INT, interest_rate DECIMAL(19,4))
+ BEGIN
+	SELECT 
+		a.id AS account_id, first_name, last_name, 
+        a.balance AS current_balance, 
+        (SELECT ufn_calculate_future_value(current_balance, interest_rate ,5))
+		AS balance_in_5_years
+	FROM accounts AS a
+    JOIN account_holders AS ah ON a.account_holder_id=ah.id
+    WHERE a.id=1;
+ END $$
+DELIMITER ;
+
+CALL usp_calculate_future_value_for_account (1, 0.1);
+DROP PROCEDURE usp_calculate_future_value_for_account;
+
+#EX_12
+
+DELIMITER $$
+CREATE PROCEDURE usp_deposit_money(account_id INT, money_amount DECIMAL (19,4))
+BEGIN
+	IF money_amount >0 THEN START TRANSACTION;
+    
+		UPDATE accounts AS a
+		SET a.balance= a.balance + money_amount
+		WHERE a.id=account_id;
+		
+		IF (SELECT a.balance FROM accounts AS a
+			WHERE a.id=account_id) <0 
+			THEN ROLLBACK;
+		ELSE COMMIT;
+		END IF;
+      END IF;
+END $$
+DELIMITER ;
+
+
+
+CALL usp_deposit_money(1,10);
+
+SELECT A.ID AS account_id, a.account_holder_id, a.balance
+FROM accounts AS a
+WHERE a.id=1;
+
+DROP PROCEDURE usp_deposit_money;
