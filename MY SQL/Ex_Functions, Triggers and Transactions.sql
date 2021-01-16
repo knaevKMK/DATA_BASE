@@ -153,3 +153,33 @@ CALL ufn_is_word_comprised('bobr', 'Rob');
 CALL ufn_is_word_comprised('pppp', 'Guy');
 DROP PROCEDURE ufn_is_word_comprised;
 
+#EX_8
+USE bank;
+
+DELIMITER $$
+CREATE PROCEDURE usp_get_holders_full_name ()
+BEGIN
+	SELECT CONCAT( first_name, ' ', last_name) AS full_name
+    FROM  account_holders AS ah
+    ORDER BY full_name, id;
+END $$
+DELIMITER ;
+
+CALL usp_get_holders_full_name ();
+DROP PROCEDURE usp_get_holders_full_name ;
+
+#EX_9
+DELIMITER $$
+CREATE PROCEDURE usp_get_holders_with_balance_higher_than(line DOUBLE)
+BEGIN
+	SELECT first_name, last_name
+    FROM account_holders AS ah
+    JOIN accounts AS a ON ah.id=a.account_holder_id
+    WHERE a.balance > line
+    ORDER BY first_name, last_name, ah.id;
+END $$
+DELIMITER ;
+
+CALL usp_get_holders_with_balance_higher_than(7000);
+DROP PROCEDURE usp_get_holders_with_balance_higher_than;
+
