@@ -96,3 +96,35 @@ DELIMITER $$
     OLD.job_title, OLD.department_id, OLD.salary);
  END $$
 DELIMITER ;
+
+
+# from Presentation
+ # create procedure
+	DELIMITER $$
+	CREATE PROCEDURE usp_select_employees_by_seniority(age INT)
+		BEGIN
+			SELECT * FROM employees AS e
+			WHERE ROUND (DATEDIFF (NOW(),hire_date)/365.25)<age;
+		END$$
+	DELIMITER ;
+
+	#call procedure
+    CALL usp_select_employees_by_seniority(15);
+    
+    # drop procedure
+    DROP PROCEDURE usp_select_employees_by_seniority;
+    
+# return value using OUTPUT param
+DELIMITER $$
+CREATE PROCEDURE pr_add_nums (elementOne  INT, elementTwo INT, OUT result INT)
+BEGIN
+	SET result= elementOne+elementTwo;
+END;
+DELIMITER ;
+
+	# call procedure
+    SELECT @result=0;
+    CALL pr_add_nums (3,7, @result);
+    SELECT @result;
+ 
+ DROP PROCEDURE pr_add_nums;
