@@ -125,11 +125,31 @@ CREATE PROCEDURE usp_get_employees_by_salary_level (`level` VARCHAR (10))
 DELIMITER ;
 
 #EX_7
-DELIMITER $$
+#function
 CREATE FUNCTION ufn_is_word_comprised(set_of_letters VARCHAR(50), word VARCHAR(50))  
 RETURNS BOOLEAN
 DETERMINISTIC
-BEGIN
+RETURN word REGEXP (concat('^[', set_of_letters, ']+$'));
 
+SELECT ufn_is_word_comprised('a','ba');
+SELECT ufn_is_word_comprised('oistmiahf', 'Sofia') AS result;
+SELECT ufn_is_word_comprised('oistmiahf', 'halves');
+SELECT ufn_is_word_comprised('bobr', 'Rob');
+SELECT ufn_is_word_comprised('pppp', 'Guy');
+DROP FUNCTION ufn_is_word_comprised;
+
+# procedure
+DELIMITER $$
+CREATE PROCEDURE ufn_is_word_comprised(set_of_letters VARCHAR(50), word VARCHAR(50))  
+BEGIN
+   SELECT set_of_letters,word, (word REGEXP  concat('^[', set_of_letters, ']+$')) AS reslt;
 END $$
 DELIMITER ;
+
+CALL ufn_is_word_comprised('a','ba');
+CALL ufn_is_word_comprised('oistmiahf', 'Sofia');
+CALL ufn_is_word_comprised('oistmiahf', 'halves');
+CALL ufn_is_word_comprised('bobr', 'Rob');
+CALL ufn_is_word_comprised('pppp', 'Guy');
+DROP PROCEDURE ufn_is_word_comprised;
+
