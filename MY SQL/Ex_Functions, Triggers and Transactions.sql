@@ -238,10 +238,120 @@ DELIMITER ;
 
 
 
-CALL usp_deposit_money(1,10);
+CALL usp_deposit_money(1,110);
 
 SELECT A.ID AS account_id, a.account_holder_id, a.balance
 FROM accounts AS a
 WHERE a.id=1;
 
 DROP PROCEDURE usp_deposit_money;
+
+#EX_13
+DELIMITER $$
+CREATE PROCEDURE usp_withdraw_money(account_id INT, money_amount DECIMAL (19,4))
+BEGIN
+	IF money_amount <= (SELECT a.balance FROM accounts AS a WHERE  a.id=account_id)
+    AND money_amount >0
+		THEN START TRANSACTION;
+        UPDATE accounts AS a2
+        SET a2.balance= a2.balance - money_amount
+        WHERE a2.id=account_id;
+        
+        IF money_amount > (SELECT a3.balance FROM accounts AS a3 WHERE  a3.id=account_id 
+    AND money_amount <0)
+        THEN ROLLBACK;
+        ELSE COMMIT;
+        END IF;
+	END IF;
+END $$
+DELIMITER ;
+
+CALL usp_withdraw_money(1,100);
+DROP PROCEDURE usp_withdraw_money;
+SELECT * FROM accounts WHERE id=1;
+
+#EX_14
+DELIMITER $$
+CREATE PROCEDURE usp_transfer_money(from_account_id INT, to_account_id INT , money_amount DECIMAL(19,4))
+BEGIN
+	IF money_amount>0  
+		AND from_account_id <> to_account_id
+        AND (SELECT a.id FROM accounts AS a WHERE id= from_account_id) IS NOT NULL 
+        AND (SELECT a.id FROM accounts AS a WHERE id= to_account_id) IS NOT NULL 
+		AND (SELECT balance FROM accounts WHERE id= from_account_id) >= money_amount
+    THEN   START TRANSACTION;
+		UPDATE accounts AS a
+        SET a.balance= a.balance + money_amount
+        WHERE a.id= to_account_id;
+        
+		UPDATE accounts AS a
+        SET a.balance= a.balance - money_amount
+        WHERE a.id= from_account_id;
+		IF (SELECT a.balance FROM accounts AS a WHERE id= from_account_id) < money_amount
+			THEN ROLLBACK;
+		ELSE COMMIT;
+		END IF; 
+	END IF;
+END $$ 
+DELIMITER ;
+
+CALL usp_transfer_money (1, 2, 20);
+CALL usp_transfer_money (2, 1, 20);
+
+SELECT * FROM accounts WHERE id=1 OR id=2;
+DROP PROCEDURE usp_transfer_money;
+
+#EX_15
+CREATE TABLE `balance_logs` (
+log_id INT PRIMARY KEY AUTO_INCREMENT, 
+account_id INT NOT NULL, 
+old_sum DECIMAL (19,4) NOT NULL , 
+new_sum DECIMAL (19,4) NOT NULL
+);
+
+DELIMITER $$
+CREATE TRIGGER tr_balance_logs
+AFTER UPDATE ON accounts
+FOR EACH ROW
+BEGIN
+	IF OLD.balance <> NEW.balance THEN INSERT INTO `balance_logs` 
+		(account_id, old_sum, new_sum)
+		VALUES (OLD.id, OLD.balance, NEW.balance);
+	END IF;
+END $$
+DELIMITER ;
+
+SELECT * FROM balance_logs;
+DROP TRIGGER tr_balance_logs;
+DROP TABLE balance_logs;
+CALL usp_deposit_money(1,110);
+
+#EX_16
+
+CREATE TABLE notification_emails(
+id INT PRIMARY KEY AUTO_INCREMENT, 
+recipient INT, 
+`subject` TEXT, 
+body TEXT 
+);
+
+DELIMITER $$
+CREATE TRIGGER tr_notification_email
+AFTER UPDATE ON accounts
+FOR EACH ROW
+BEGIN
+		INSERT INTO notification_emails (recipient, `subject`, body) VALUES
+        (NEW.id,  
+        CONCAT('Balance change for account: ', NEW.id), 
+			CONCAT('On ', DATE_FORMAT(NOW(), '%b %d %Y at %r') , ' your balance was changed from ',
+             ROUND(NEW.balance),' to ', ROUND(NEW.balance),'.'));
+END $$
+DELIMITER ;
+
+
+DROP TRIGGER tr_notification_email;
+
+SELECT * FROM notification_emails;
+
+CALL usp_transfer_money (1, 2, 20);
+CALL usp_transfer_money (2, 1, 20);
