@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/intellij database.iml" filepath="$PROJECT_DIR$/.idea/intellij database.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dbAccessWithJDBC.iml" filepath="$PROJECT_DIR$/dbAccessWithJDBC.iml" />
     </modules>
   </component>
 </project>
