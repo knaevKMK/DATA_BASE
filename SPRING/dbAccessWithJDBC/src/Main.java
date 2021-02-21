@@ -8,19 +8,17 @@ public class Main {
 
     public static void main(String[] args) throws SQLException {
         //MysqlxDatatypes.Scalar;
-        System.out.println("Please insert log-in MYSQL server!");
-        System.out.println("user:");
-        String user = scan.nextLine();
-        System.out.println("password: ");
-        String password = scan.nextLine();
-
+//        System.out.println("Please insert log-in MYSQL server!");
+//        System.out.println("user:");
+//        String user = scan.nextLine();
+//        System.out.println("password: ");
+//        String password = scan.nextLine();
+//
 
         Homework homework = new Homework();
-        homework.setConnection(user, password);
-        System.out.print("Connecting.");
-        System.out.print(".");
-        System.out.print("..");
-
+  //      homework.setConnection(user, password);
+        System.out.println("Connecting...");
+        System.out.println();
         System.out.println("Please, choose number of Exercise: between 2 to 9"
                 + System.lineSeparator()
                 + " OR 'end' to Stop");
@@ -39,16 +37,27 @@ public class Main {
                     break;
                 case "4":
                     System.out.println("Enter minions info: name, age, town_name:");
-                    String []minionsInfo = scan.nextLine().split("\\s+");
+                    String []minionsInfo = scan.nextLine().replace("Minion: ","").split("\\s+");
                     System.out.println("Enter Villain name: ");
-                    String villainName= scan.nextLine();
+                    String villainName= scan.nextLine().replace("Villain: ","");
                     homework.EX_4(minionsInfo,villainName);
+                    break;
+                case "5":
+                    System.out.println("Enter country: ");
+                    String country= scan.nextLine();
+                    homework.EX_5(country);
+                    break;
+                case "6":
+                    System.out.println("Enter villain ID: ");
+                    int id = Integer.parseInt(scan.nextLine());
+                    homework.EX_6(id);
                     break;
                 default:
                     System.out.println("Wrong choose!");
                     break;
             }
-            System.out.println("Please, choose number of Exercise: between 2 to 9"
+
+            System.out.println("\nPlease, choose number of Exercise: between 2 to 9"
                     + System.lineSeparator()
                     + " OR 'end' to Stop");
 
