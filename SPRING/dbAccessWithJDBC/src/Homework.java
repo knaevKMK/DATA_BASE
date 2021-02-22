@@ -223,7 +223,7 @@ public class Homework {
         while (rs.next()) {
             minions.offer(rs.getString(1));
         }
-        while (!minions.isEmpty()){
+        while (!minions.isEmpty()) {
             System.out.println(minions.pollFirst());
             System.out.println(minions.pollLast());
         }
@@ -231,20 +231,34 @@ public class Homework {
 
     public void EX_8(int[] idS) throws SQLException {
         for (int id : idS) {
-            String query="UPDATE minions SET name=LOWER(name), age=age+1 WHERE id=?";
+            String query = "UPDATE minions SET name=LOWER(name), age=age+1 WHERE id=?";
             PreparedStatement stm = connection.prepareStatement(query);
-            stm.setInt(1,id);
+            stm.setInt(1, id);
             stm.execute();
 
 
         }
-       String query="SELECT name,age FROM minions";
+        String query = "SELECT name,age FROM minions";
         PreparedStatement stm1 = connection.prepareStatement(query);
-        ResultSet res= stm1.executeQuery();
-        while (res.next()){
-            String temp = res.getString(1)+" "+res.getInt(2);
+        ResultSet res = stm1.executeQuery();
+        while (res.next()) {
+            String temp = res.getString(1) + " " + res.getInt(2);
             System.out.println(temp);
         }
 
+    }
+
+    public void EX_9(int id) throws SQLException {
+        String query = "CALL usp_get_older(?)";
+        PreparedStatement stm = connection.prepareStatement(query);
+        stm.setInt(1, id);
+
+        query = "SELECT name, age FROM minions WHERE id=?";
+        PreparedStatement stm1 = connection.prepareStatement(query);
+        stm1.setInt(1, id);
+        ResultSet res = stm1.executeQuery();
+        if (res.next()) {
+            System.out.println(res.getString(1)+" "+ res.getInt(2));
+        }
     }
 }

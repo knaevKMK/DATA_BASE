@@ -63,6 +63,11 @@ public class Main {
                             .toArray();
                     homework.EX_8(idS);
                     break;
+                case "9":
+                    System.out.println("Enter minion ID: ");
+                     id = Integer.parseInt(scan.nextLine());
+                    homework.EX_9(id);
+                    break;
                 default:
                     System.out.println("Wrong choose!");
                     break;
