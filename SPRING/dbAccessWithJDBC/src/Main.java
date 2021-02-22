@@ -52,6 +52,9 @@ public class Main {
                     int id = Integer.parseInt(scan.nextLine());
                     homework.EX_6(id);
                     break;
+                case "7":
+                    homework.EX_7();
+                    break;
                 default:
                     System.out.println("Wrong choose!");
                     break;

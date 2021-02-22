@@ -1,4 +1,5 @@
 import java.sql.*;
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -212,5 +213,19 @@ public class Homework {
         System.out.println(name + " was deleted\n" +
                 result.getInt(1) + " minions released");
 
+    }
+
+    public void EX_7() throws SQLException {
+        String query = "SELECT name FROM minions";
+        PreparedStatement stm = connection.prepareStatement(query);
+        ResultSet rs = stm.executeQuery();
+        ArrayDeque<String> minions = new ArrayDeque<>();
+        while (rs.next()) {
+            minions.offer(rs.getString(1));
+        }
+        while (!minions.isEmpty()){
+            System.out.println(minions.pollFirst());
+            System.out.println(minions.pollLast());
+        }
     }
 }
