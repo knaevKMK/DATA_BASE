@@ -1,6 +1,8 @@
 import com.mysql.cj.x.protobuf.MysqlxDatatypes;
 
+import java.sql.Array;
 import java.sql.SQLException;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -54,6 +56,12 @@ public class Main {
                     break;
                 case "7":
                     homework.EX_7();
+                    break;
+                case "8":
+                    System.out.println("Enter minions IDs");
+                    int []idS= Arrays.stream(scan.nextLine().split("\\s+")).mapToInt(Integer::parseInt)
+                            .toArray();
+                    homework.EX_8(idS);
                     break;
                 default:
                     System.out.println("Wrong choose!");

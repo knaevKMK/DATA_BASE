@@ -228,4 +228,23 @@ public class Homework {
             System.out.println(minions.pollLast());
         }
     }
+
+    public void EX_8(int[] idS) throws SQLException {
+        for (int id : idS) {
+            String query="UPDATE minions SET name=LOWER(name), age=age+1 WHERE id=?";
+            PreparedStatement stm = connection.prepareStatement(query);
+            stm.setInt(1,id);
+            stm.execute();
+
+
+        }
+       String query="SELECT name,age FROM minions";
+        PreparedStatement stm1 = connection.prepareStatement(query);
+        ResultSet res= stm1.executeQuery();
+        while (res.next()){
+            String temp = res.getString(1)+" "+res.getInt(2);
+            System.out.println(temp);
+        }
+
+    }
 }
