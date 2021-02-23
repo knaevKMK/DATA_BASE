@@ -3,8 +3,8 @@ import java.util.Properties;
 
 public class HomeWork {
     public static final String CONNECTION_STRING = "jdbc:mysql://localhost:3306/";
-    public static final String TABLE_NAME_SOFTUNI = "soft_uni_database";
-    public static final String TABLE_NAME_DIABLO = "diablo_database";
+    public static final String TABLE_NAME_SOFTUNI = "soft_uni";
+    public static final String TABLE_NAME_DIABLO = "diablo";
     public static final String TABLE_NAME_MINIONS = "minions_db";
 
     Connection connection;
@@ -13,7 +13,7 @@ public class HomeWork {
         Properties properties = new Properties();
         properties.setProperty("user", "root");
         properties.setProperty("password", "c!!2211paKev");
-        connection = DriverManager.getConnection(CONNECTION_STRING + TABLE_NAME_MINIONS, properties);
+        connection = DriverManager.getConnection(CONNECTION_STRING + TABLE_NAME_DIABLO, properties);
 
     }
 
