@@ -1,0 +1,16 @@
+Put in:
+\scr
+
+
+
+Download or copy clipBoard from
+https://mvnrepository.com/
+
+
+mysql-connector-java
+
+
+hibernate-core
+
+
+javax.persistence
