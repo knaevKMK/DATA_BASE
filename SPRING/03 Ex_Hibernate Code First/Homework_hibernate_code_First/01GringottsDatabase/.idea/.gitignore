@@ -1,0 +1,8 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Datasource local storage ignored files
+/../../../../../../../../../../../:\Users\master\Desktop\GitHub\DATA_BASE\SPRING\03 Ex_Hibernate Code First\Homework_hibernate_code_First\01GringottsDatabase\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
