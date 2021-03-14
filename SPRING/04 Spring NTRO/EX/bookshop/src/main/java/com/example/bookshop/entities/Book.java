@@ -1,6 +1,7 @@
 package com.example.bookshop.entities;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Set;
 
@@ -11,6 +12,7 @@ public class Book extends BaseEntity {
     private String description;
     private EditionType editionType;
     private int copies;
+    private BigDecimal price;
     private LocalDate releaseDate;
     private AgeRestriction ageRestriction;
     private Set<Category> categories;
@@ -20,26 +22,31 @@ public class Book extends BaseEntity {
     public Book() {
     }
 
-    @ManyToOne
-    @JoinColumn(name = "author_id", referencedColumnName = "id")
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     public Author getAuthor() {
-        return author;
+        return this.author;
     }
 
     public void setAuthor(Author author) {
         this.author = author;
     }
 
-    @ManyToMany
-    @JoinTable(name = "books_categories",
-            joinColumns = @JoinColumn(name = "book_id", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "course_id", referencedColumnName = "id"))
+    @ManyToMany(cascade = CascadeType.ALL)
     public Set<Category> getCategories() {
-        return categories;
+        return this.categories;
     }
 
     public void setCategories(Set<Category> categories) {
         this.categories = categories;
+    }
+
+    @Column(name = "price")
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
     }
 
     @Column(name = "title", length = 50, nullable = false)

@@ -7,6 +7,7 @@ import com.example.bookshop.services.CategoryService;
 import com.example.bookshop.utils.FileUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -14,6 +15,7 @@ import java.util.Arrays;
 import static com.example.bookshop.constants.GlobalConstants.*;
 
 @Service
+@Transactional
 public class CategoryServiceImpl implements CategoryService {
     private final CategoryRepository categoryRepository;
     private final FileUtil fileUtil;
@@ -31,9 +33,19 @@ public class CategoryServiceImpl implements CategoryService {
             return;
         }
         String[] fileContent = this.fileUtil.readFileContent(CATEGORIES_FILE_PATH);
-        Arrays.stream(fileContent).forEach(r->{
-            Category category= new Category(r);
+        Arrays.stream(fileContent).forEach(r -> {
+            Category category = new Category(r);
             this.categoryRepository.saveAndFlush(category);
         });
+    }
+
+    @Override
+    public Category findCategoryById(Long id) {
+        return this.categoryRepository.getOne(id);
+    }
+
+    @Override
+    public long getAllCategoriesCount() {
+        return this.categoryRepository.count();
     }
 }

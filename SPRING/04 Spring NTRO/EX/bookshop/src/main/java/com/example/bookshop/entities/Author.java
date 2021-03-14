@@ -14,7 +14,16 @@ public class Author extends BaseEntity {
     public Author() {
     }
 
-    @OneToMany(mappedBy = "author", targetEntity = Book.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    public Author(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public Author(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    @OneToMany(mappedBy = "author")
     public Set<Book> getBooks() {
         return books;
     }

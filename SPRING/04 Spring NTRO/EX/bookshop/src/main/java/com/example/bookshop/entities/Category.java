@@ -7,7 +7,7 @@ import java.util.Set;
 @Table(name = "categories")
 public class Category extends BaseEntity {
     private String name;
-    private Set<Book> books;
+   private Set<Book> books;
 
     public Category() {
     }
@@ -16,9 +16,9 @@ public class Category extends BaseEntity {
         this.name = name;
     }
 
-    @ManyToMany(mappedBy = "categories", targetEntity = Book.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "categories")
     public Set<Book> getBooks() {
-        return books;
+        return this.books;
     }
 
     public void setBooks(Set<Book> books) {

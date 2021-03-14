@@ -1,10 +1,7 @@
 package com.example.bookshop.entities;
 
 import javax.annotation.processing.Generated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
 
 @MappedSuperclass
 public abstract class BaseEntity {
@@ -12,8 +9,10 @@ public abstract class BaseEntity {
 
     public BaseEntity() {
     }
-@Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     public long getId() {
         return id;
     }
