@@ -1,25 +1,25 @@
 =================================================================================
 One-To-One - Unidirectional
 
+
 @Entity
-@Table(name="shampoos")
-public class BasicShampoo {
-	...
-	@OneToOne
-	@JoinColumn(name = "label_id", referencedColumnName = "id")
-	private BasicLabel label; 
-	...
+public class CourseMaterial {
+   ...
+
+	@OneToOne(optional = false)
+	@JoinColumn(name = "COURSE_ID", referencedColumnName = "ID")
+	private Course course;
 }
+
 
 One-To-One - Bidirectional
 
 @Entity
-@Table(name = "labels")
-public class BasicLabel imploments Label{
-	...
-	@OneToOne(mappedBy = "label", targetEntity = BasicShampoo.class)
-	private BasicShampoo basicShampoo;
-	...
+@Table(name = "classes")
+public class Course{
+	
+	@OneToOne(mappedBy = "course", targetEntity = CourseMaterial.class)
+	private CourseMaterial material;
 }
 =================================================================================
 
@@ -50,14 +50,16 @@ public class Teacher {
 
 Many-To-Many Unidirectional
 
-@Table(name = "shampoos")
-public class BasicShampoo {
+@Table(name = "courses")
+public class Course {
 	...
 	@ManyToMany
-	@JoinTable(name = "shampoos_ingredients", 
-		joinColumns = @JoinColumn(name="shampoo_id", referencedColumnName = "id"), 
-	inverseJoinColumns = @JoinColumn(name="ingredient_id", referencedColumName="id"))
-	private Set<BasicIngredient> ingredients;
+	@JoinTable(
+	  name = "STUDENTS_COURSES",
+	  joinColumns = @JoinColumn(name = "COURSE_ID", referencedColumnName = "ID"),
+	  inverseJoinColumns = @JoinColumn(name = "STUDENT_ID", referencedColumnName = "ID")
+	)
+	private List<Student> students;
 	...
 }
 
@@ -65,11 +67,11 @@ public class BasicShampoo {
 Many-To-Many Bidirectional
 
 @Entity
-@Table(name = "ingredients")
-public class BasicIngredient {
+@Table(name = "students")
+public class Student {
 	...
-	@ManyToMany(mappedBy = "ingredients", targetEntity = BasicShampoo.class)
-	private Set<BasicShampoo> shampoos;
+	@ManyToMany(mappedBy = "students", targetEntity = Course.class)
+	private Set<Course> courses;
 	...
 }
 
