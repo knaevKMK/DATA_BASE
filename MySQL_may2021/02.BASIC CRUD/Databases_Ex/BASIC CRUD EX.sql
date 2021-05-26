@@ -40,3 +40,82 @@ WHERE salary>50000 ORDER BY salary DESC;
 -- 12. Find 5 Best Paid Employees 
 SELECT first_name, last_name FROM employees
 ORDER BY salary DESC LIMIT 5;
+
+-- 13. Find All Employees Except Marketing 
+SELECT first_name, last_name FROM employees 
+WHERE department_id != 4;
+
+-- 14. Sort Employees Table
+SELECT * FROM employees
+ORDER BY salary DESC, first_name ASC,last_name DESC, middle_name ASC;
+
+-- 15. Create View Employees with Salaries
+CREATE VIEW v 
+AS SELECT first_name, last_name,salary FROM employees;
+
+SELECT * FROM v;
+
+-- 16. Create View Employees with Job Titles 
+CREATE VIEW v_employees_job_title AS
+    SELECT 
+        CONCAT(first_name,
+                ' ',
+				IFNULL(middle_name, '' ),
+                ' ',
+                last_name) AS full_name,
+        job_title
+    FROM
+        employees;
+
+SELECT * FROM v_employees_job_title ;
+
+-- 17.  Distinct Job Titles 
+SELECT DISTINCT job_title FROM employees ORDER BY job_title ASC;
+
+-- 18. Find First 10 Started Projects 
+SELECT * FROM projects
+ORDER BY start_date, `name`
+LIMIT 10;
+
+-- 19. Last 7 Hired Employees
+SELECT first_name, last_name, hire_date FROM employees
+ORDER BY hire_date DESC
+LIMIT 7;
+
+-- 20. Increase Salaries
+SELECT * FROm employees;
+UPDATE employees
+SET salary = salary*1.12
+WHERE department_id	IN(1,2,3,4);
+--  ('Engineering', 'Tool Design', 'Marketing ', 'Information ');
+
+SELECT salary FROM employees;
+
+-- 21. All Mountain Peaks
+SELECT peak_name FROM peaks ORDER BY peak_name ASC;
+
+-- 22. Biggest Countries by Population
+SELECT 
+    country_name, population
+FROM
+    countries
+WHERE
+    continent_code = 'EU'
+ORDER BY population DESC
+LIMIT 30;
+
+-- 23.  Countries and Currency (Euro / Not Euro) 
+SELECT 
+    country_name,
+    country_code,
+    CASE
+        WHEN currency_code = 'EUR' THEN 'Euro'
+        ELSE 'Not Euro'
+    END AS currency
+FROM
+    countries
+ORDER BY country_name;
+
+-- 24.  All Diablo Characters 
+SELECT `name`	FROM characters
+ORDER BY `name`;

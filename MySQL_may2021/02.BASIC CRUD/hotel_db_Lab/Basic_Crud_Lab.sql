@@ -16,6 +16,15 @@ UPDATE employees
 SET 
     salary = salary + 100
 WHERE job_title='Manager';
+
+USE hotel;
+
+SELECT 
+    salary
+FROM
+    employees;
+    
+    
 SET SQL_SAFE_UPDATES = 0;
 
 #EX_4
