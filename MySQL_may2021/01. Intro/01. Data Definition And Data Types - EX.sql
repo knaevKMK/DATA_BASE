@@ -117,19 +117,16 @@ category_name VARCHAR (50) NOT NULL,
 notes TEXT
 );
 
-CREATE TABLE movies(
-id INT AUTO_INCREMENT PRIMARY KEY,
-title VARCHAR(100) NOT NULL,
-director_id INT  NULL,
-copyright_year INT, 
-length TIME, 
-genre_id INT  NULL , 
-category_id INT  NULL, 
-rating INT, 
-notes TEXT,
-CONSTRAINT fk_director_id FOREIGN KEY (director_id) REFERENCES directors(id),
-CONSTRAINT fk_genre_id FOREIGN KEY (genre_id) REFERENCES genres(id),
-CONSTRAINT fk_category_id FOREIGN KEY (category_id) REFERENCES categories(id)
+CREATE TABLE movies (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(50) NOT NULL,
+    director_id INT,
+    copyright_year INT,
+    length INT,
+    genre_id INT,
+    category_id INT,
+    rating INT,
+    notes TEXT
 );
 
 INSERT INTO directors (director_name) VALUES
@@ -153,9 +150,15 @@ INSERT INTO categories (category_name) VALUES
 ("war"),
 ("history");
 
-INSERT INTO movies (title, director_id,copyright_year ,genre_id ,category_id ,rating ) VALUES
-("It" , 4,1999,3,5,8),
-("Goodfellas", 5,1990,1,5,10),
+INSERT INTO movies (
+title, 
+director_id,
+copyright_year ,
+genre_id ,
+category_id ,
+rating ) VALUES
+("It" , 4, 1999,3, 5, 8),
+("Goodfellas", 5, 1990,1,5,10),
 ("Psycho", 2,1960,5,3,6),
 ("Killer’s Kiss", 1,1955,2,4,5),
 ("Baby Boss", 3,2015,2,2,7);
