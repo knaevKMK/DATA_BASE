@@ -207,9 +207,37 @@ HAVING currency_usage>1
     )
 ORDER BY c.continent_code , c.currency_code;
 
-SELECT * FROM countries;
-SELECT * FROM continents;
-SELECT * FROM rivers;
-SELECT * FROM countries_rivers;
-SELECT * FROM mountains;
-SELECT * FROM mountains_countries;
+
+#EX_16
+SELECT 
+    COUNT(*) AS country_count
+FROM
+    (SELECT 
+        mc.country_code AS mc_country_code
+    FROM
+        mountains_countries AS mc
+    GROUP BY mc.country_code) AS d
+        RIGHT JOIN
+    `countries` AS c ON c.country_code = d.mc_country_code
+WHERE
+    d.mc_country_code IS NULL;
+
+#EX_17
+SELECT 
+    c.country_name,
+    MAX(p.elevation) AS 'highest_peak_elevation',
+    MAX(r.length) AS 'longest_river_length'
+FROM
+    `countries` AS c
+        JOIN
+    mountains_countries AS mc ON c.country_code = mc.country_code
+        JOIN
+    peaks AS p ON mc.mountain_id = p.mountain_id
+        JOIN
+    countries_rivers AS cr ON c.country_code = cr.country_code
+        JOIN
+    rivers AS r ON cr.river_id= r.id
+GROUP BY c.country_name
+ORDER BY highest_peak_elevation DESC , longest_river_length DESC
+LIMIT 5;
+
