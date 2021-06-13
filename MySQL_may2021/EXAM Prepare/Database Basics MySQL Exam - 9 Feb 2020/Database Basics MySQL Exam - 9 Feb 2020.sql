@@ -115,21 +115,10 @@ WHERE
             WHERE c.id=pc.coach_id AND c.first_name LIKE 'A%');
             
 #EX_4
-UPDATE coaches AS c 
-SET 
-    c.coach_level = c.coach_level + 1
-WHERE
-    1 <= (SELECT 
-            COUNT(player_id)
-        FROM
-            players_coaches AS pc
-                JOIN
-            players AS p ON p.id = pc.player_id
-        WHERE
-            c.id = pc.coach_id
-                AND c.first_name LIKE 'A%');
+DELETE p FROM players AS p
+WHERE p.id= (SELECT c.id FROM coaches AS c WHERE c.id=p.id);
 
-
+SET SQL_SAFE_UPDATES = 0;
 #EX_5
 SELECT first_name,age , salary FROM players ORDER BY salary DESC;
 
@@ -175,7 +164,7 @@ LEFT JOIN stadiums AS s
 ON s.id=te.stadium_id
 RIGHT JOIN towns AS t
 ON s.town_id=t.id
--- WHERE te.`name` NOT IN  ('Devify')
+WHERE te.`name` NOT IN  ('Devify')
 -- GROUP BY t.id
 ORDER BY max_speed DESC , town_name ASC;
 
