@@ -1,7 +1,9 @@
-# ex-4 - 8 -10 -11  NOT COMLATED at 100 points
+# ex-4 - 8   NOT COMLATED at 100 points
 
 CREATE SCHEMA exam_prep2;
 USE exam_prep2;
+SET SQL_SAFE_UPDATES = 0;
+SET FOREIGN_KEY_CHECKS = 0;
 
 CREATE TABLE countries (
     id INT(11) AUTO_INCREMENT PRIMARY KEY,
@@ -116,7 +118,9 @@ WHERE
             
 #EX_4
 DELETE p FROM players AS p
-WHERE p.id= (SELECT c.id FROM coaches AS c WHERE c.id=p.id);
+WHERE p.age>=45;
+
+SELECT COUNT(*) FROM players;
 
 SET SQL_SAFE_UPDATES = 0;
 #EX_5
@@ -153,19 +157,20 @@ ORDER BY players_count DESC, t.fan_base DESC;
 
 #EX_8
 SELECT 
-(sd.speed)AS max_speed,
-(t.`name`) AS town_name
-FROM skills_data AS sd
-JOIN players AS p
-ON p.skills_data_id=sd.id
-LEFT JOIN teams AS te
-ON te.id=p.team_id
-LEFT JOIN stadiums AS s
-ON s.id=te.stadium_id
-RIGHT JOIN towns AS t
-ON s.town_id=t.id
-WHERE te.`name` NOT IN  ('Devify')
--- GROUP BY t.id
+    MAX(sd.speed) AS max_speed, (t.`name`) AS town_name
+FROM
+    towns AS t
+        LEFT JOIN
+    stadiums AS s ON t.id = s.town_id
+        LEFT JOIN
+    teams AS `te` ON s.id = te.stadium_id
+        LEFT JOIN
+    players AS p ON te.id = p.team_id
+        LEFT JOIN
+    skills_data AS `sd` ON p.skills_data_id = `sd`.id
+WHERE
+    te.name != 'Devify'
+GROUP BY t.id
 ORDER BY max_speed DESC , town_name ASC;
 
 #EX_9
@@ -187,16 +192,12 @@ GROUP BY c.`name`
 ORDER BY total_count_of_players DESC, c.`name`;
 
 #EX_10
-DELIMITER $$
+
 CREATE FUNCTION udf_stadium_players_count (
 	stadium_name VARCHAR(30)
 	)
-RETURNS INT (3)
-DETERMINISTIC
-	BEGIN
-		DECLARE stadium_players_count INT;
-        
-		SET stadium_players_count = (
+RETURNS INT 
+RETURN (
 			SELECT 
 				COUNT(p.id) AS players_count
 			FROM stadiums AS s
@@ -205,9 +206,7 @@ DETERMINISTIC
 			JOIN players AS p
 				ON p.team_id=t.id
             WHERE s.`name`=stadium_name);
-            RETURN stadium_players_count;
-	END $$
-    DELIMITER ;
+           
     
 SELECT udf_stadium_players_count ('Jaxworks') as `count`; 
 SELECT udf_stadium_players_count ('Linklinks') as `count`; 
@@ -231,7 +230,7 @@ BEGIN
     JOIN teams AS te
     ON p.team_id= te.id
     WHERE te.`name`=team_name
-    AND sd.dribbling >= min_dribble_points
+    AND sd.dribbling > min_dribble_points
     ORDER BY sd.speed DESC 
     LIMIT 1;
 END $$
