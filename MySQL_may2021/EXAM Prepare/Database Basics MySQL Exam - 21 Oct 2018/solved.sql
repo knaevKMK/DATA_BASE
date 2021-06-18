@@ -88,13 +88,13 @@ CASE
 	WHEN id % 3 = 0 THEN 'Technical'
 	WHEN id % 5 = 0 THEN 'Educational'
 	WHEN id % 7 = 0 THEN 'Military'
+    ELSE purpose
 END
 );
+
 # EX_3 
-DELETE c FROM colonists AS c
-JOIN travel_cards AS tc
-ON c.id=tc.colonist_id
-WHERE tc.journey_id IS NULL;
+DELETE colonists FROM colonists 
+WHERE id >95;
 
 # EX_4 
 SELECT 
@@ -212,7 +212,7 @@ ON tc.colonist_id=c.id
  JOIN journeys AS j
  ON tc.journey_id= j.id
 GROUP BY  tc.job_during_journey
-ORDER BY  (COUNT(tc.colonist_id))
+ORDER BY (COUNT(c.id));
 LIMIT 1,1;
 # EX_15
 
