@@ -56,6 +56,9 @@ public class Main {
                         homework.ex5(countryName);
                         break;
                     case "6":
+                        System.out.println("Enter villain ID: ");
+                        int id = Integer.parseInt(reader.readLine());
+                        homework.ex6(id);
                         break;
                     case "7":
                         break;

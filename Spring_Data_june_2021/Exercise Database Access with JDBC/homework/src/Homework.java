@@ -202,7 +202,39 @@ public class Homework {
         return result;
     }
 
-    public void ex6() throws SQLException {
+    public void ex6(int id) throws SQLException {
+        String villainName= getEntityNameById("villains",id);
+        if (villainName==null){
+            System.out.println("No such villain was found");
+            return;
+        }
+
+        String query ="SELECT COUNT(minion_id) FROM minions_villains WHERE villain_id=?";
+        PreparedStatement statement = connection.prepareStatement(query);
+        statement.setInt(1,id);
+        ResultSet result= statement.executeQuery();
+
+        if (result.next()){
+            query = "DELETE  FROM minions_villains WHERE villain_id=?";
+            PreparedStatement deletestm1 = connection.prepareStatement(query);
+            deletestm1.setInt(1, id);
+            deletestm1.execute();
+            query = "DELETE  FROM villains WHERE id=?";
+            PreparedStatement deletestm = connection.prepareStatement(query);
+            deletestm.setInt(1, id);
+            deletestm.execute();
+        }
+        System.out.println(villainName + " was deleted\n" +
+                result.getInt(1) + " minions released");
+    }
+
+    private String getEntityNameById(String table, int id) throws SQLException {
+        String query =String.format
+                ("SELECT t.`name` FROM %s AS t WHERE t.id=?",table);
+        PreparedStatement statement= connection.prepareStatement(query);
+              statement.setInt(1,id);
+        ResultSet result= statement.executeQuery();
+        return result.next()? result.getString("name"):null;
     }
 
     public void ex7() throws SQLException {
