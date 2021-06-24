@@ -1,4 +1,5 @@
 import java.sql.*;
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -238,11 +239,59 @@ public class Homework {
     }
 
     public void ex7() throws SQLException {
+        String query = "SELECT name FROM minions";
+        PreparedStatement stm = connection.prepareStatement(query);
+        ResultSet rs = stm.executeQuery();
+        ArrayDeque<String> minions = new ArrayDeque<>();
+        while (rs.next()) {
+            minions.offer(rs.getString(1));
+        }
+        while (!minions.isEmpty()) {
+            System.out.println(minions.pollFirst());
+            System.out.println(minions.pollLast());
+        }
     }
 
-    public void ex8() throws SQLException {
+    public void ex8(int[] idS) throws SQLException {
+        for (int id:idS) {
+            String query ="UPDATE minions SET name=LOWER(name), age=age+1 WHERE id=?";
+            PreparedStatement statement=connection.prepareStatement(query);
+            statement.setInt(1,id);
+            statement.execute();
+        }
+
+        String query= "SELECT name, age FROM minions";
+        PreparedStatement statement = connection.prepareStatement(query);
+        ResultSet result= statement.executeQuery();
+        while (result.next()){
+            String temp = result.getString(1) + " " + result.getInt(2);
+            System.out.println(temp);
+        }
     }
 
-    public void ex9() throws SQLException {
+    public void ex9(int minionId) throws SQLException {
+
+  // CREATE PROCEDURE IN minions_db with MYSQL CONSOLE
+        // DELIMITER $$
+        //CREATE PROCEDURE usp_get_older (minion_id INT(11))
+        //BEGIN
+        //    UPDATE minions
+        //        SET age= age+1
+        //    WHERE id=minion_id;
+        //END$$
+        //DELIMITER ;
+
+        PreparedStatement statement = connection.prepareStatement(
+                "CALL usp_get_older(?)");
+        statement.setInt(1,minionId);
+        statement.execute();
+
+        statement=connection.prepareStatement(
+                "SELECT name, age FROM minions WHERE id=?");
+        statement.setInt(1,minionId);
+        ResultSet result= statement.executeQuery();
+        if (result.next()){
+            System.out.println(result.getString(1)+" "+ result.getInt(2));
+        }
     }
 }
