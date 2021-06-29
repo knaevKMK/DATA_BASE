@@ -18,19 +18,30 @@ public class Engine implements Runnable {
             String input = reader.readLine();
             while (!input.equalsIgnoreCase("END")) {
 
-                switch (input){
-                    case "2": Homework.Ex2(entityManager); break;
+                switch (input) {
+                    case "2":
+                        Homework.Ex2(entityManager);
+                        break;
                     case "3":
                         System.out.println("Enter name: ");
                         String name = reader.readLine();
-                        Homework.Ex3(entityManager,name.replaceAll("\\s+", ""));
-                    case "4": break;
-                    case "5": break;
-                    case "6": break;
-                    case "7": break;
-                    case "8": break;
-                    case "9": break;
-                    case "10" : break;
+                        Homework.Ex3(entityManager, name.replaceAll("\\s+", ""));
+                    case "4":
+                        Homework.Ex4(entityManager);
+                        break;
+                    case "5":
+                        Homework.Ex5(entityManager);
+                        break;
+                    case "6":
+                        break;
+                    case "7":
+                        break;
+                    case "8":
+                        break;
+                    case "9":
+                        break;
+                    case "10":
+                        break;
 
                 }
 
