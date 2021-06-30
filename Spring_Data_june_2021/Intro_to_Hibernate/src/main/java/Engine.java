@@ -34,15 +34,15 @@ public class Engine implements Runnable {
                         break;
                     case "6":
                         System.out.println("Enter employee last name: ");
-                        String lastName= reader.readLine();
-                        Homework.Ex6(entityManager,lastName);
+                        String lastName = reader.readLine();
+                        Homework.Ex6(entityManager, lastName);
                         break;
                     case "7":
                         Homework.Ex7(entityManager);
                         break;
                     case "8":
                         System.out.println("Enter employee id: ");
-                        Integer employeeId= Integer.parseInt( reader.readLine());
+                        Integer employeeId = Integer.parseInt(reader.readLine());
                         Homework.Ex8(entityManager, employeeId);
                         break;
                     case "9":
@@ -50,6 +50,19 @@ public class Engine implements Runnable {
                         break;
                     case "10":
                         Homework.Ex10(entityManager);
+                        break;
+                    case "11":
+                        System.out.println("Enter employee first name's initials: ");
+                        String pattern = reader.readLine();
+                        Homework.Ex11(entityManager, pattern);
+                        break;
+                    case "12":
+                        Homework.Ex12(entityManager);
+                        break;
+                    case "13":
+                        System.out.println("Enter town name");
+                        String townName= reader.readLine();
+                        Homework.Ex13(entityManager, townName);
                         break;
 
                 }

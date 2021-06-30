@@ -1,7 +1,4 @@
-import entities.Address;
-import entities.Employee;
-import entities.Project;
-import entities.Town;
+import entities.*;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
@@ -137,7 +134,7 @@ public class Homework {
         entityManager.getTransaction().begin();
         entityManager.createQuery(
                 "UPDATE Employee AS e " +
-                        "SET e.salary= e.salary * 0.12 " +
+                        "SET e.salary= e.salary * 1.12 " +
                         "WHERE e.department.id IN :ids")
                 .setParameter("ids", Set.of(1, 2, 4, 11))
                 .executeUpdate();
@@ -150,5 +147,69 @@ public class Homework {
                 .getResultStream().forEach(e -> System.out.printf(
                 "%s %s ($%.2f)%n"
                 , e.getFirstName(), e.getLastName(), e.getSalary()));
+    }
+
+    public static void Ex11(EntityManager entityManager, String pattern) {
+        entityManager.createQuery(
+                "SELECT e FROM Employee  e " +
+                        "where e.firstName LIKE CONCAT(:pattern, '%')"
+                , Employee.class)
+                .setParameter("pattern", pattern)
+                .getResultStream()
+                .forEach(e -> System.out.printf(
+                        "%s %s - %s - ($%.2f)%n"
+                        , e.getFirstName(), e.getLastName(), e.getJobTitle(), e.getSalary()));
+    }
+
+    @SuppressWarnings("unchecked")
+    public static void Ex12(EntityManager entityManager) {
+         entityManager.createQuery(
+                "SELECT department.name, MAX(salary) FROM Employee  " +
+                        "GROUP BY department.name " +
+                        "HAVING MAX(salary) NOT BETWEEN 30000 AND 70000", Object[].class)
+                .getResultStream()
+                .forEach(r -> System.out.printf("%s %s%n"
+                        , r[0]
+                        , r[1]));
+
+    }
+
+    public static void Ex13(EntityManager entityManager, String townName) {
+        Town town = entityManager.createQuery(
+                "select t from Town t WHERE t.name= :name", Town.class)
+                .setParameter("name", townName)
+                .getResultStream().findFirst().orElse(null);
+        if (town == null) {
+            System.out.println("Town with name " + townName + " does not exist");
+            return;
+        }
+
+
+        int affectedRows = removedCountByTownId(entityManager, town.getId());
+
+        entityManager.getTransaction().begin();
+        entityManager.remove(town);
+        entityManager.getTransaction().commit();
+
+        System.out.printf("%d address%s in %s deleted%n"
+                , affectedRows
+                , affectedRows > 1 ? "s" : ""
+                , townName);
+
+    }
+
+    private static int removedCountByTownId(EntityManager entityManager, Integer id) {
+
+        List<Address> addresses = entityManager.createQuery(
+                "SELECT a  FROM Address a " +
+                        "WHERE a.town.id= : t_id", Address.class)
+                .setParameter("t_id", id)
+                .getResultList();
+        addresses.forEach(t -> t.getEmployees().forEach(e -> e.setAddress(null)));
+
+        entityManager.getTransaction().begin();
+        addresses.forEach(entityManager::remove);
+        entityManager.getTransaction().commit();
+        return addresses.size();
     }
 }
