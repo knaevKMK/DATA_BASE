@@ -40,7 +40,7 @@ public class Engine implements Runnable {
                         HomeWork.EX_6(entityManager, "Vitoshka 15", lastName);
                         break;
                     case "7":
-                        HomeWork.EX_7()
+                     //   HomeWork.EX_7()
                         break;
                 }
                 System.out.println("\nEnter Exercise Number OR END to Stop: ");

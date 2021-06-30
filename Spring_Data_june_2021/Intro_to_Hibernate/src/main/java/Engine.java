@@ -33,19 +33,28 @@ public class Engine implements Runnable {
                         Homework.Ex5(entityManager);
                         break;
                     case "6":
+                        System.out.println("Enter employee last name: ");
+                        String lastName= reader.readLine();
+                        Homework.Ex6(entityManager,lastName);
                         break;
                     case "7":
+                        Homework.Ex7(entityManager);
                         break;
                     case "8":
+                        System.out.println("Enter employee id: ");
+                        Integer employeeId= Integer.parseInt( reader.readLine());
+                        Homework.Ex8(entityManager, employeeId);
                         break;
                     case "9":
+                        Homework.EX9(entityManager);
                         break;
                     case "10":
+                        Homework.Ex10(entityManager);
                         break;
 
                 }
 
-                System.out.println("Enter Exercise Number (between 2 to 13) OR END to Stop: ");
+                System.out.println("\nEnter Exercise Number (between 2 to 13) OR END to Stop: ");
                 input = reader.readLine();
             }
 
