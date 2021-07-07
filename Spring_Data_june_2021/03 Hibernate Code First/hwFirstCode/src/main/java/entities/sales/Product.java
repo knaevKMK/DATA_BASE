@@ -35,7 +35,7 @@ public class Product extends BaseEntity {
     }
 
 
-    @OneToMany(mappedBy = "product", targetEntity = Sale.class)
+    @OneToMany(mappedBy = "product",cascade = CascadeType.PERSIST)
     public Set<Sale> getSales() {
         return sales;
     }

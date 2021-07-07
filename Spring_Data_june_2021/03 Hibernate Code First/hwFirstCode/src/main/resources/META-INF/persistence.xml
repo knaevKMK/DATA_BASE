@@ -8,11 +8,11 @@
     <persistence-unit name="test">
         <properties>
             <property name="hibernate.connection.url"
-                      value="jdbc:mysql://localhost:3306/sales_db?createDatabaseIfNotExist=true&amp;useSSL=false"/>
+                      value="jdbc:mysql://localhost:3306/home_ork_sales_db?createDatabaseIfNotExist=true&amp;useSSL=false"/>
             <property name="hibernate.connection.driver_class" value="com.mysql.cj.jdbc.Driver"/>
             <property name="hibernate.hbm2ddl.auto" value="update"      />
-            <property name="hibernate.connection.username" value="root"/>
-            <property name="hibernate.connection.password" value="c!!2211paKev"/>
+            <property name="hibernate.connection.username" value="USER"/>
+            <property name="hibernate.connection.password" value="PASSWORD"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>

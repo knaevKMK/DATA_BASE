@@ -24,8 +24,8 @@ public class AppControler implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        this.categoryService.seedCategories();
-        this.authorService.seedAuthors();
-        this.bookSrveice.seedBooks();
+//        this.categoryService.seedCategories();
+//        this.authorService.seedAuthors();
+//        this.bookSrveice.seedBooks();
     }
 }

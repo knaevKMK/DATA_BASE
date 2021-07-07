@@ -11,17 +11,17 @@ public class Customer extends BaseEntity {
     private String name;
     private String email;
     private String creditCardNumber;
-   private Set<Sale> sales;
+    private Set<Sale> sales;
 
     public Customer() {
     }
 
-    @Column (name = "name")
+    @Column(name = "name")
     public String getName() {
         return name;
     }
 
-    @Column(name = "email")
+    @Column(name = "email", unique = true, nullable = false)
     public String getEmail() {
         return email;
     }
@@ -31,7 +31,7 @@ public class Customer extends BaseEntity {
         return creditCardNumber;
     }
 
-    @OneToMany(mappedBy = "customer", targetEntity = Sale.class)
+    @OneToMany(mappedBy = "customer",cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public Set<Sale> getSales() {
         return sales;
     }

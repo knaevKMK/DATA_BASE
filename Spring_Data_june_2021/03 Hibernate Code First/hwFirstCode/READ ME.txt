@@ -1,3 +1,14 @@
+NOTE:  ALL table will create in one home_ork_sales_db
+
+ENTER in:
+
+-\hwFirstCode\src\main\resources\META-INF\persistence.xml
+
+<property name="hibernate.connection.username" value="USER"/>
+<property name="hibernate.connection.password" value="PASSWORD"/>
+
+-\hwFirstCode\pom.xml
+
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"

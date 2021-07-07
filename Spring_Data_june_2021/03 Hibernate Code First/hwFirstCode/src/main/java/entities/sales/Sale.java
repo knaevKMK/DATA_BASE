@@ -19,19 +19,19 @@ public class Sale extends BaseEntity {
     }
 
     @ManyToOne
-//    @JoinColumn(name = "product_id", referencedColumnName = "id")
+    @JoinColumn(name = "product_id", referencedColumnName = "id")
     public Product getProduct() {
         return product;
     }
 
     @ManyToOne
-//    @JoinColumn(name = "customer_id", referencedColumnName = "id")
+    @JoinColumn(name = "customer_id", referencedColumnName = "id")
     public Customer getCustomer() {
         return customer;
     }
 
     @ManyToOne
-//    @JoinColumn(name = "store_location_id", referencedColumnName = "id")
+    @JoinColumn(name = "store_location_id", referencedColumnName = "id")
     public StoreLocation getStoreLocation() {
         return storeLocation;
     }
