@@ -11,6 +11,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.math.BigDecimal;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +20,7 @@ import java.util.Locale;
 public class Homework {
     private static final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-    public static void Run(CategoryService categoryService, AuthorService authorService, BookService bookService) throws IOException {
+    public static void Run(CategoryService categoryService, AuthorService authorService, BookService bookService) throws IOException, SQLException {
         System.out.println("Welcome to 'Exercises: Spring Data Advanced Quering' ");
         System.out.println("Enter 'END' to terminate application or insert EX number (between 1 and 14): ");
         String input = reader.readLine();
@@ -62,14 +63,28 @@ public class Homework {
                     result = authorService.findAllAuthorsByFirstnameEndWith(reader.readLine());
                     break;
                 case "7":
+                    printExName(7);
+                    printSOUT("Enter char sequence:");
+                    result = bookService.findAllBooksByTitleContain(reader.readLine());
                     break;
                 case "8":
+                    printExName(8);
+                    printSOUT("Enter char sequence:");
+                    result = bookService.findAllBooksByAuthorLastNameContain(reader.readLine());
                     break;
                 case "9":
+                    printExName(9);
+                    printSOUT("Enter size");
+                    result= bookService.countBooksWithTitleLenghtOver(Integer.parseInt(reader.readLine()));
                     break;
                 case "10":
+                    printExName(10);
+                  result=bookService.countBooksByCopiesGropuByAuthor();
                     break;
                 case "11":
+                    printExName(11);
+                    printSOUT("Enter book title:");
+                    result = bookService.findBookTitleAndEditionTypeAndAgerestricitonAndPriceByTitle(reader.readLine());
                     break;
                 case "12":
                     break;
@@ -78,13 +93,13 @@ public class Homework {
                 case "14":
                     break;
             }
-            if (result.size() == 1) {
+            if (result.size() == 0) {
                 printSOUT("No matches");
             } else {
                 result.forEach(System.out::println);
             }
 
-            printSOUT("Enter 'END' to terminate application or insert EX number (between 1 and 14): ");
+            printSOUT("\nEnter 'END' to terminate application or insert EX number (between 1 and 14): ");
             input = reader.readLine();
 
         }
@@ -143,6 +158,6 @@ public class Homework {
         }
         printSOUT("\n ++++++++++++++++++++++++++++++++++++++++++ \n" +
                 exercise +
-                "\n +++++++++++++++++++++++++++++++++++++++++\\n\");\n");
+                "\n +++++++++++++++++++++++++++++++++++++++++\n");
     }
 }
