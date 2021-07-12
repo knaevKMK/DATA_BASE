@@ -97,13 +97,16 @@ public class Homework {
                         break;
                     case "13":
                         printExName(13);
+                        printSOUT("Enter copies target:");
+                        int copiesTarget= Integer.parseInt(reader.readLine());
+                        result=bookService.deleteBooksByCopiesUnder(copiesTarget);
                         break;
                     case "14":
                         printExName(14);
                         break;
                 }
             } catch (Exception e) {
-                printSOUT("Error: "+e.getMessage() +"\nTrace: "+  e.getStackTrace());
+                printSOUT("Error: "+e.getMessage());
             }
             if (result.size() == 0) {
                 printSOUT("No matches");
