@@ -22,76 +22,88 @@ public class Homework {
 
     public static void Run(CategoryService categoryService, AuthorService authorService, BookService bookService) throws IOException, SQLException {
         System.out.println("Welcome to 'Exercises: Spring Data Advanced Quering' ");
-        System.out.println("Enter 'END' to terminate application or insert EX number (between 1 and 14): ");
+        System.out.println("Enter 'END' to terminate application or insert EX number (between 1 and 111): ");
         String input = reader.readLine();
 
 
         while (!input.equalsIgnoreCase("END")) {
             List<String> result = new ArrayList<>();
-            switch (input) {
-                case "1":
-                    printExName(1);
-                    printSOUT("Please enter restriction: \n for Example: miNor , teEn, AdulT ");
-                    String param = reader.readLine();
-                    result = bookService.getBooksTitlesByAgeRestriction(AgeRestriction.valueOf(param.toUpperCase()));
-                    break;
+            try {
+                switch (input) {
+                    case "1":
+                        printExName(1);
+                        printSOUT("Please enter restriction: \n for Example: miNor , teEn, AdulT ");
+                        String param = reader.readLine();
+                        result = bookService.getBooksTitlesByAgeRestriction(AgeRestriction.valueOf(param.toUpperCase()));
+                        break;
 
-                case "2":
-                    printExName(2);
-                    result = bookService.getBooksByEditionTypeAndCopiesLowerThan(EditionType.GOLD, 5000);
-                    break;
+                    case "2":
+                        printExName(2);
+                        result = bookService.getBooksByEditionTypeAndCopiesLowerThan(EditionType.GOLD, 5000);
+                        break;
 
-                case "3":
-                    printExName(3);
-                    result = bookService.getBooksNotInPriceRange(new BigDecimal("5.00"), new BigDecimal("40.00"));
-                    break;
-                case "4":
-                    printExName(4);
-                    printSOUT("Enter released year:");
-                    int year = Integer.parseInt(reader.readLine());
-                    result = bookService.findAllBooksNotReleasedInYear(year);
-                    break;
-                case "5":
-                    printExName(5);
-                    printSOUT("Enter date in format dd-MM-yyyy");
+                    case "3":
+                        printExName(3);
+                        result = bookService.getBooksNotInPriceRange(new BigDecimal("5.00"), new BigDecimal("40.00"));
+                        break;
+                    case "4":
+                        printExName(4);
+                        printSOUT("Enter released year:");
+                        int year = Integer.parseInt(reader.readLine());
+                        result = bookService.findAllBooksNotReleasedInYear(year);
+                        break;
+                    case "5":
+                        printExName(5);
+                        printSOUT("Enter date in format dd-MM-yyyy");
 
-                    result = bookService.findAllBooksReleasedBefore(reader.readLine());
-                    break;
-                case "6":
-                    printExName(6);
-                    printSOUT("Enter char sequence:");
-                    result = authorService.findAllAuthorsByFirstnameEndWith(reader.readLine());
-                    break;
-                case "7":
-                    printExName(7);
-                    printSOUT("Enter char sequence:");
-                    result = bookService.findAllBooksByTitleContain(reader.readLine());
-                    break;
-                case "8":
-                    printExName(8);
-                    printSOUT("Enter char sequence:");
-                    result = bookService.findAllBooksByAuthorLastNameContain(reader.readLine());
-                    break;
-                case "9":
-                    printExName(9);
-                    printSOUT("Enter size");
-                    result= bookService.countBooksWithTitleLenghtOver(Integer.parseInt(reader.readLine()));
-                    break;
-                case "10":
-                    printExName(10);
-                  result=bookService.countBooksByCopiesGropuByAuthor();
-                    break;
-                case "11":
-                    printExName(11);
-                    printSOUT("Enter book title:");
-                    result = bookService.findBookTitleAndEditionTypeAndAgerestricitonAndPriceByTitle(reader.readLine());
-                    break;
-                case "12":
-                    break;
-                case "13":
-                    break;
-                case "14":
-                    break;
+                        result = bookService.findAllBooksReleasedBefore(reader.readLine());
+                        break;
+                    case "6":
+                        printExName(6);
+                        printSOUT("Enter char sequence:");
+                        result = authorService.findAllAuthorsByFirstnameEndWith(reader.readLine());
+                        break;
+                    case "7":
+                        printExName(7);
+                        printSOUT("Enter char sequence:");
+                        result = bookService.findAllBooksByTitleContain(reader.readLine());
+                        break;
+                    case "8":
+                        printExName(8);
+                        printSOUT("Enter char sequence:");
+                        result = bookService.findAllBooksByAuthorLastNameContain(reader.readLine());
+                        break;
+                    case "9":
+                        printExName(9);
+                        printSOUT("Enter size");
+                        result = bookService.countBooksWithTitleLenghtOver(Integer.parseInt(reader.readLine()));
+                        break;
+                    case "10":
+                        printExName(10);
+                        result = bookService.countBooksByCopiesGropuByAuthor();
+                        break;
+                    case "11":
+                        printExName(11);
+                        printSOUT("Enter book title:");
+                        result = bookService.findBookTitleAndEditionTypeAndAgerestricitonAndPriceByTitle(reader.readLine());
+                        break;
+                    case "12":
+                        printExName(12);
+                        printSOUT("Enter date in format dd MMM yyyy: ");
+                        String date = reader.readLine();
+                        printSOUT("Enter book copies: ");
+                        int copies = Integer.parseInt(reader.readLine());
+                        result= bookService.increaseBookCopiesReleasedAfter(date, copies);
+                        break;
+                    case "13":
+                        printExName(13);
+                        break;
+                    case "14":
+                        printExName(14);
+                        break;
+                }
+            } catch (Exception e) {
+                printSOUT("Error: "+e.getMessage() +"\nTrace: "+  e.getStackTrace());
             }
             if (result.size() == 0) {
                 printSOUT("No matches");
@@ -99,7 +111,7 @@ public class Homework {
                 result.forEach(System.out::println);
             }
 
-            printSOUT("\nEnter 'END' to terminate application or insert EX number (between 1 and 14): ");
+            printSOUT("\nEnter 'END' to terminate application or insert EX number (between 1 and 11): ");
             input = reader.readLine();
 
         }
