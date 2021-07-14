@@ -93,20 +93,23 @@ public class Homework {
                         String date = reader.readLine();
                         printSOUT("Enter book copies: ");
                         int copies = Integer.parseInt(reader.readLine());
-                        result= bookService.increaseBookCopiesReleasedAfter(date, copies);
+                        result = bookService.increaseBookCopiesReleasedAfter(date, copies);
                         break;
                     case "13":
                         printExName(13);
                         printSOUT("Enter copies target:");
-                        int copiesTarget= Integer.parseInt(reader.readLine());
-                        result=bookService.deleteBooksByCopiesUnder(copiesTarget);
+                        int copiesTarget = Integer.parseInt(reader.readLine());
+                        result = bookService.deleteBooksByCopiesUnder(copiesTarget);
                         break;
                     case "14":
                         printExName(14);
+                        printSOUT("Enter author first and last name: ");
+                        String fullName = reader.readLine();
+                        result = bookService.getBooksCountByAuthorName(fullName);
                         break;
                 }
             } catch (Exception e) {
-                printSOUT("Error: "+e.getMessage());
+                printSOUT("Error: " + e.getMessage());
             }
             if (result.size() == 0) {
                 printSOUT("No matches");
