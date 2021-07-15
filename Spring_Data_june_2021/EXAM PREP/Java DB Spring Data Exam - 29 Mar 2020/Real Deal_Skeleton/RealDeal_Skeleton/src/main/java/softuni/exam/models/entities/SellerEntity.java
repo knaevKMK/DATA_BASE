@@ -4,6 +4,7 @@ import softuni.exam.models.enums.RatingEnum;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
+import java.util.Set;
 
 @Entity
 @Table(name = "sellers")
@@ -14,11 +15,22 @@ public class SellerEntity extends BaseEntity {
     private String email;
     private RatingEnum rating;
     private String town;
+    private Set<Offer> offers;
 
     public SellerEntity() {
     }
 
-    @Column(name = "first_name", columnDefinition = "VARCHAR (20)")
+    @OneToMany(mappedBy = "seller",fetch = FetchType.EAGER)
+    public Set<Offer> getOffers() {
+        return offers;
+    }
+
+    public SellerEntity setOffers(Set<Offer> offers) {
+        this.offers = offers;
+        return this;
+    }
+
+
     public String getFirstName() {
         return firstName;
     }
@@ -28,7 +40,6 @@ public class SellerEntity extends BaseEntity {
         return this;
     }
 
-    @Column(name = "last_name", columnDefinition = "VARCHAR (20)")
     public String getLastName() {
         return lastName;
     }
@@ -58,7 +69,7 @@ public class SellerEntity extends BaseEntity {
         return this;
     }
 
-    @Column(nullable = false)
+
     public String getTown() {
         return town;
     }

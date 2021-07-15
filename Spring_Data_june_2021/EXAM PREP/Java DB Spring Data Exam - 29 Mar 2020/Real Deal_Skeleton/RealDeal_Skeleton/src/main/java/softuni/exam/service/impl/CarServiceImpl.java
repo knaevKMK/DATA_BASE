@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import static softuni.exam.constatnt.Static.CAR_FILEPATH;
 
@@ -57,7 +58,7 @@ public class CarServiceImpl implements CarService {
     @Override
     public String importCars() throws IOException {
         List<String> result = new ArrayList<>();
-        Arrays.stream(gson.fromJson(fileUtil.content(CAR_FILEPATH, System.lineSeparator()), CarSeedDto[].class))
+        Arrays.stream(gson.fromJson(readCarsFileContent(), CarSeedDto[].class))
                 .forEach(carSeedDto -> {
 
                     try {
@@ -65,7 +66,7 @@ public class CarServiceImpl implements CarService {
                             throw new Exception();
                         }
                         CarEntity carEntity = modelMapper.map(carSeedDto, CarEntity.class);
-                        carEntity.setRegisteredOn(dateFormatAdapter.toLocalDate(carSeedDto.getRegisteredOn(), ("dd/MM/yyyy")));
+//                        carEntity.setRegisteredOn(dateFormatAdapter.toLocalDate(carSeedDto.getRegisteredOn(), ("dd/MM/yyyy")));
                         carRepository.save(carEntity);
 
                         result.add(String.format("Successfully imported car - %s - %s"
@@ -80,8 +81,23 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
-    public String getCarsOrderByPicturesCountThenByMake() {
-        return null;
+    public String getCarsOrderByPicturesCountThenByMake()
+    {
+        List<CarEntity> collect = carRepository.getAllOrderByPictureCountDescThenByMake();
+//        collect.forEach(System.out::println);
+
+        return collect
+                .stream().map(car -> String.format("%nCar make - %s, model - %s%n" +
+                                "\tKilometers - %d%n" +
+                                "\tRegistered on - %s%n" +
+                                "\tNumber of pictures - %d%n"
+                        , car.getMake(), car.getModel()
+                        , car.getKilometers()
+                        , car.getRegisteredOn()
+                  ,car.getPictures().size()
+
+                ))
+                .collect(Collectors.joining());
     }
 
     @Override

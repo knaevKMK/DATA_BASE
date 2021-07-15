@@ -1,11 +1,9 @@
 package softuni.exam.models.entities;
 
-import javax.persistence.Column;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-import javax.persistence.Entity;
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Set;
 
 @Entity
 @Table(name = "pictures")
@@ -13,11 +11,23 @@ public class PictureEntity extends BaseEntity {
     private String name;
     private LocalDateTime dateAndTime;
     private CarEntity car;
+    private Set<Offer> offers;
 
     public PictureEntity() {
     }
 
-    @OneToOne
+    @ManyToMany(mappedBy = "pictures")
+    public Set<Offer> getOffers() {
+        return offers;
+    }
+
+    public PictureEntity setOffers(Set<Offer> offers) {
+        this.offers = offers;
+        return this;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "car_id")
     public CarEntity getCar() {
         return car;
     }

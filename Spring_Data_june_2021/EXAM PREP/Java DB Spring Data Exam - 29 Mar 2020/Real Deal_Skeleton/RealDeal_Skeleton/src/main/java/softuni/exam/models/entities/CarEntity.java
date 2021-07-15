@@ -1,9 +1,9 @@
 package softuni.exam.models.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "cars")
@@ -12,8 +12,31 @@ public class CarEntity extends BaseEntity {
     private String model;
     private int kilometers;
     private LocalDate registeredOn;
+    private Set<PictureEntity> pictures;
+    private Set<Offer> offers;
 
     public CarEntity() {
+    }
+
+    @OneToMany(mappedBy = "car",fetch = FetchType.EAGER)
+
+    public Set<Offer> getOffers() {
+        return offers;
+    }
+
+    public CarEntity setOffers(Set<Offer> offers) {
+        this.offers = offers;
+        return this;
+    }
+
+    @OneToMany(mappedBy = "car",fetch = FetchType.EAGER)
+    public Set<PictureEntity> getPictures() {
+        return pictures;
+    }
+
+    public CarEntity setPictures(Set<PictureEntity> pictures) {
+        this.pictures = pictures;
+        return this;
     }
 
     @Column
@@ -63,6 +86,7 @@ public class CarEntity extends BaseEntity {
                 ", model='" + model + '\'' +
                 ", kilometers=" + kilometers +
                 ", registeredOn=" + registeredOn +
+                "pics"+pictures.stream().map(PictureEntity::toString).collect(Collectors.joining())+
                 '}';
     }
 }

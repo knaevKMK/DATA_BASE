@@ -9,7 +9,7 @@ public class PictureDTO {
     @Expose
     private String name;
     @Expose
-    private String dateAndTime;
+    private LocalDateTime dateAndTime;
     @Expose
     private int car;
 
@@ -25,11 +25,11 @@ public class PictureDTO {
         return this;
     }
 
-    public String getDateAndTime() {
+    public LocalDateTime getDateAndTime() {
         return dateAndTime;
     }
 
-    public PictureDTO setDateAndTime(String dateAndTime) {
+    public PictureDTO setDateAndTime(LocalDateTime dateAndTime) {
         this.dateAndTime = dateAndTime;
         return this;
     }

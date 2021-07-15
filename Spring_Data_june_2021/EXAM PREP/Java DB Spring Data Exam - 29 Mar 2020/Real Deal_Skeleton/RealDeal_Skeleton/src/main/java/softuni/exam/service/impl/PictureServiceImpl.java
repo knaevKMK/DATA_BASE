@@ -55,20 +55,16 @@ public class PictureServiceImpl implements PictureService {
     @Override
     public String importPictures() throws IOException {
         List<String> result = new ArrayList<>();
-        Arrays.stream(gson.fromJson(fileUtil.content(Static.PICTURE_FILEPATH, System.lineSeparator()), PictureDTO[].class))
+        Arrays.stream(gson.fromJson(readPicturesFromFile(), PictureDTO[].class))
                 .forEach(pictureDTO -> {
                     try {
                         if (!this.validation.isValid(pictureDTO)
-                            //                 && this.pictureRepository.findByName(pictureDTO.getName()).isPresent()
+                                || this.pictureRepository.findByName(pictureDTO.getName()).isPresent()
                         ) {
                             throw new Exception();
                         }
                         PictureEntity pictureEntity = modelMapper.map(pictureDTO, PictureEntity.class);
-                        LocalDateTime date = this.dateFormatAdapter
-                                .toLocalDateTime(pictureDTO.getDateAndTime(), "yyyy-MM-dd HH:mm:ss");
 
-
-                        pictureEntity.setDateAndTime(date);
                         pictureEntity.setCar(this.carService.findCarById(pictureDTO.getCar()));
 
                         pictureRepository.save(pictureEntity);

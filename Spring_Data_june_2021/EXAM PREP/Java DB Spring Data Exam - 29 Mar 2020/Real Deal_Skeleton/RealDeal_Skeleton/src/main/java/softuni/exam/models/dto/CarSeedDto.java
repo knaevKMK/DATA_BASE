@@ -7,6 +7,8 @@ import org.hibernate.validator.constraints.Length;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class CarSeedDto implements Serializable {
     @Expose
@@ -16,7 +18,7 @@ public class CarSeedDto implements Serializable {
     @Expose
     private int kilometers;
     @Expose
-    private String registeredOn;
+    private LocalDate registeredOn;
 
     public CarSeedDto() {
     }
@@ -53,11 +55,11 @@ public class CarSeedDto implements Serializable {
         return this;
     }
 
-    public String getRegisteredOn() {
+    public LocalDate getRegisteredOn() {
         return registeredOn;
     }
 
-    public CarSeedDto setRegisteredOn(String registeredOn) {
+    public CarSeedDto setRegisteredOn(LocalDate registeredOn) {
         this.registeredOn = registeredOn;
         return this;
     }

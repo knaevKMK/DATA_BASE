@@ -20,7 +20,11 @@ public class Offer extends BaseEntity {
     public Offer() {
     }
 
-    @ManyToMany
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "offers_pictures",
+            joinColumns = @JoinColumn(name = "offer_id"),
+            inverseJoinColumns = @JoinColumn(name = "picture_id"))
     public Set<PictureEntity> getPictures() {
         return pictures;
     }
@@ -30,7 +34,8 @@ public class Offer extends BaseEntity {
         return this;
     }
 
-    @OneToOne
+    @ManyToOne
+    @JoinColumn(name = "car_id")
     public CarEntity getCar() {
         return car;
     }
@@ -41,6 +46,7 @@ public class Offer extends BaseEntity {
     }
 
     @ManyToOne
+    @JoinColumn(name = "seller_id")
     public SellerEntity getSeller() {
         return seller;
     }
@@ -60,7 +66,7 @@ public class Offer extends BaseEntity {
         return this;
     }
 
-    @Column(columnDefinition = "TEXT", nullable = false)
+    @Column(columnDefinition = "TEXT")
     public String getDescription() {
         return description;
     }
@@ -70,7 +76,7 @@ public class Offer extends BaseEntity {
         return this;
     }
 
-    @Column(columnDefinition = "BOOLEAN")
+
     public boolean isHasGoldStatus() {
         return hasGoldStatus;
     }
@@ -80,7 +86,7 @@ public class Offer extends BaseEntity {
         return this;
     }
 
-    @Column(name = "added_on", columnDefinition = "DATETIME")
+    @Column(name = "added_on")
     public LocalDateTime getAddedOn() {
         return addedOn;
     }
