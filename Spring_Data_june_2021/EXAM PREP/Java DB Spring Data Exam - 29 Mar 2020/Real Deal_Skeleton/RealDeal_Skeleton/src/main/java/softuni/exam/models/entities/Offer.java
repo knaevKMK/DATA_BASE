@@ -21,7 +21,7 @@ public class Offer extends BaseEntity {
     }
 
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany
     @JoinTable(name = "offers_pictures",
             joinColumns = @JoinColumn(name = "offer_id"),
             inverseJoinColumns = @JoinColumn(name = "picture_id"))

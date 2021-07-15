@@ -16,7 +16,7 @@ public class PictureEntity extends BaseEntity {
     public PictureEntity() {
     }
 
-    @ManyToMany(mappedBy = "pictures")
+    @ManyToMany(mappedBy = "pictures",fetch = FetchType.EAGER)
     public Set<Offer> getOffers() {
         return offers;
     }

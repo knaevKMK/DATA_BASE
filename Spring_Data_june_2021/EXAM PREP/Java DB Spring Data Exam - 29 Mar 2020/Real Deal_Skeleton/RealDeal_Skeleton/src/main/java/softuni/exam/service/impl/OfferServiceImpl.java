@@ -70,7 +70,7 @@ public class OfferServiceImpl implements OfferService {
                         CarEntity carEntity = carService.findCarById(offerDto.getCar().getId());
                         offer.setSeller(sellerEntity)
                                 .setCar(carEntity);
-//                        offer.setPictures(new HashSet<>(carEntity.getPictures()));
+                       offer.setPictures(new HashSet<>(carEntity.getPictures()));
                         offerRepository.saveAndFlush(offer);
                         report.add(String.format("Successfully import offer %s-%s", offer.getAddedOn(), offer.isHasGoldStatus()));
 

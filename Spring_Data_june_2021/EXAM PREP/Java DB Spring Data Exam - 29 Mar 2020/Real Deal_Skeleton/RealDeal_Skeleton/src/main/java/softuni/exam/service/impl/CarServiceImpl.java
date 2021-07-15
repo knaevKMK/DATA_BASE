@@ -66,7 +66,6 @@ public class CarServiceImpl implements CarService {
                             throw new Exception();
                         }
                         CarEntity carEntity = modelMapper.map(carSeedDto, CarEntity.class);
-//                        carEntity.setRegisteredOn(dateFormatAdapter.toLocalDate(carSeedDto.getRegisteredOn(), ("dd/MM/yyyy")));
                         carRepository.save(carEntity);
 
                         result.add(String.format("Successfully imported car - %s - %s"
@@ -81,8 +80,7 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
-    public String getCarsOrderByPicturesCountThenByMake()
-    {
+    public String getCarsOrderByPicturesCountThenByMake() {
         List<CarEntity> collect = carRepository.getAllOrderByPictureCountDescThenByMake();
 //        collect.forEach(System.out::println);
 
@@ -94,7 +92,7 @@ public class CarServiceImpl implements CarService {
                         , car.getMake(), car.getModel()
                         , car.getKilometers()
                         , car.getRegisteredOn()
-                  ,car.getPictures().size()
+                        , car.getPictures().size()
 
                 ))
                 .collect(Collectors.joining());
