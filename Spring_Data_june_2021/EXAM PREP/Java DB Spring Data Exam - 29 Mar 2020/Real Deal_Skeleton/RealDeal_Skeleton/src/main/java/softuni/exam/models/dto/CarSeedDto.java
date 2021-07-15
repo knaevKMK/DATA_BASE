@@ -1,13 +1,14 @@
-package softuni.exam.models.DTO;
+package softuni.exam.models.dto;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.gson.annotations.Expose;
+import net.bytebuddy.implementation.bind.annotation.Default;
+import org.hibernate.validator.constraints.Length;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
-import java.time.Instant;
-import java.time.LocalDate;
 
-public class CarDTO implements Serializable {
+public class CarSeedDto implements Serializable {
     @Expose
     private String make;
     @Expose
@@ -17,34 +18,37 @@ public class CarDTO implements Serializable {
     @Expose
     private String registeredOn;
 
-    public CarDTO() {
+    public CarSeedDto() {
     }
 
+    @Length(min = 2, max = 20)
     public String getMake() {
         return make;
     }
 
 
-    public CarDTO setMake(String make) {
+    public CarSeedDto setMake(String make) {
         this.make = make;
         return this;
     }
 
-  public String getModel() {
+    @Length(min = 2, max = 20)
+    public String getModel() {
         return model;
     }
 
-    public CarDTO setModel(String model) {
+    public CarSeedDto setModel(String model) {
         this.model = model;
         return this;
     }
 
+    @Min(0)
     public int getKilometers() {
         return kilometers;
     }
 
 
-    public CarDTO setKilometers(int kilometers) {
+    public CarSeedDto setKilometers(int kilometers) {
         this.kilometers = kilometers;
         return this;
     }
@@ -53,7 +57,7 @@ public class CarDTO implements Serializable {
         return registeredOn;
     }
 
-    public CarDTO setRegisteredOn(String registeredOn) {
+    public CarSeedDto setRegisteredOn(String registeredOn) {
         this.registeredOn = registeredOn;
         return this;
     }

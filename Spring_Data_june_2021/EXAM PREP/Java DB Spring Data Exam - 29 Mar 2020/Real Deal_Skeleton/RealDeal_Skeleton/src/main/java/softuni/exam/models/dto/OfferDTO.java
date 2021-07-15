@@ -1,4 +1,4 @@
-package softuni.exam.models.DTO;
+package softuni.exam.models.dto;
 
 import softuni.exam.models.entities.CarEntity;
 import softuni.exam.models.entities.PictureEntity;

@@ -1,4 +1,4 @@
-package softuni.exam.models.DTO;
+package softuni.exam.models.dto;
 
 import softuni.exam.models.enums.RatingEnum;
 

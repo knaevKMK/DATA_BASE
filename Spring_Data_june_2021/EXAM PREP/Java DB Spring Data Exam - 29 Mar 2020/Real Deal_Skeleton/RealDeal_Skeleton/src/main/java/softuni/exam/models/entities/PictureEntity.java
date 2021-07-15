@@ -27,7 +27,7 @@ public class PictureEntity extends BaseEntity {
         return this;
     }
 
-    @Column(columnDefinition = "VARCHAR(20)", unique = true)
+    @Column
     public String getName() {
         return name;
     }
@@ -45,5 +45,14 @@ public class PictureEntity extends BaseEntity {
     @Column(name = "date_and_time")
     public LocalDateTime getDateAndTime() {
         return dateAndTime;
+    }
+
+    @Override
+    public String toString() {
+        return "PictureEntity{" +
+                "name='" + name + '\'' +
+                ", dateAndTime=" + dateAndTime +
+                ", car=" + car +
+                '}';
     }
 }

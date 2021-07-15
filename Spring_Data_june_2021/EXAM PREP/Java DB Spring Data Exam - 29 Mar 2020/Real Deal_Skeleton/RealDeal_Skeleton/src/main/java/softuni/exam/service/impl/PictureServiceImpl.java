@@ -4,14 +4,17 @@ import com.google.gson.Gson;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import softuni.exam.constatnt.Static;
-import softuni.exam.models.DTO.PictureDTO;
+import softuni.exam.models.dto.PictureDTO;
 import softuni.exam.models.entities.PictureEntity;
 import softuni.exam.repository.PictureRepository;
+import softuni.exam.service.CarService;
 import softuni.exam.service.PictureService;
+import softuni.exam.util.DateFormatAdapter;
+import softuni.exam.util.FileUtil;
+import softuni.exam.util.ValidationUtil;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -21,13 +24,22 @@ public class PictureServiceImpl implements PictureService {
 
 
     private final PictureRepository pictureRepository;
-    private final Gson gson;
-    private final ModelMapper modelMapper;
+    private final CarService carService;
 
-    public PictureServiceImpl(PictureRepository pictureRepository, Gson gson, ModelMapper modelMapper) {
+    private final Gson gson;
+    private final FileUtil fileUtil;
+    private final ValidationUtil validation;
+    private final ModelMapper modelMapper;
+    private final DateFormatAdapter dateFormatAdapter;
+
+    public PictureServiceImpl(PictureRepository pictureRepository, CarService carService, Gson gson, FileUtil fileUtil, ValidationUtil validation, ModelMapper modelMapper, DateFormatAdapter dateFormatAdapter) {
         this.pictureRepository = pictureRepository;
+        this.carService = carService;
         this.gson = gson;
+        this.fileUtil = fileUtil;
+        this.validation = validation;
         this.modelMapper = modelMapper;
+        this.dateFormatAdapter = dateFormatAdapter;
     }
 
     @Override
@@ -37,20 +49,32 @@ public class PictureServiceImpl implements PictureService {
 
     @Override
     public String readPicturesFromFile() throws IOException {
-        return String.join(System.lineSeparator()
-                , Files.readAllLines(Path.of("src/main/resources/files/json/pictures.json")));
+        return fileUtil.content(Static.PICTURE_FILEPATH, System.lineSeparator());
     }
 
     @Override
     public String importPictures() throws IOException {
-        String content = String.join("", Files.readAllLines(Path.of(Static.PICTURE_FILEPATH)));
         List<String> result = new ArrayList<>();
-        Arrays.stream(gson.fromJson(content, PictureDTO[].class))
+        Arrays.stream(gson.fromJson(fileUtil.content(Static.PICTURE_FILEPATH, System.lineSeparator()), PictureDTO[].class))
                 .forEach(pictureDTO -> {
                     try {
+                        if (!this.validation.isValid(pictureDTO)
+                            //                 && this.pictureRepository.findByName(pictureDTO.getName()).isPresent()
+                        ) {
+                            throw new Exception();
+                        }
                         PictureEntity pictureEntity = modelMapper.map(pictureDTO, PictureEntity.class);
+                        LocalDateTime date = this.dateFormatAdapter
+                                .toLocalDateTime(pictureDTO.getDateAndTime(), "yyyy-MM-dd HH:mm:ss");
+
+
+                        pictureEntity.setDateAndTime(date);
+                        pictureEntity.setCar(this.carService.findCarById(pictureDTO.getCar()));
+
                         pictureRepository.save(pictureEntity);
-                        result.add("Successfully import picture - "+ pictureEntity.getName());
+
+                        result.add("Successfully import picture - " + pictureEntity.getName());
+
                     } catch (Exception e) {
                         result.add("Invalid picture");
                     }

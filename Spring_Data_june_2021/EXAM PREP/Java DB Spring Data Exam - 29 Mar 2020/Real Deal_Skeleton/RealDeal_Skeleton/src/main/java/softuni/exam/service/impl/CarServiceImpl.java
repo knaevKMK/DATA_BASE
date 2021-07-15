@@ -3,30 +3,43 @@ package softuni.exam.service.impl;
 import com.google.gson.Gson;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
-import softuni.exam.models.DTO.CarDTO;
+import softuni.exam.models.dto.CarSeedDto;
 import softuni.exam.models.entities.CarEntity;
 import softuni.exam.repository.CarRepository;
 import softuni.exam.service.CarService;
+import softuni.exam.util.DateFormatAdapter;
+import softuni.exam.util.FileUtil;
+import softuni.exam.util.ValidationUtil;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 import static softuni.exam.constatnt.Static.CAR_FILEPATH;
 
 @Service
 public class CarServiceImpl implements CarService {
     private final CarRepository carRepository;
+    private final FileUtil fileUtil;
     private final Gson gson;
     private final ModelMapper modelMapper;
+    private final ValidationUtil validator;
+    private final DateFormatAdapter dateFormatAdapter;
 
-    public CarServiceImpl(CarRepository carRepository, Gson gson, ModelMapper modelMapper) {
+    public CarServiceImpl(CarRepository carRepository,
+                          FileUtil fileUtil,
+                          Gson gson,
+                          ModelMapper modelMapper, ValidationUtil validator, DateFormatAdapter dateFormatAdapter) {
         this.carRepository = carRepository;
+        this.fileUtil = fileUtil;
         this.gson = gson;
         this.modelMapper = modelMapper;
+        this.validator = validator;
+        this.dateFormatAdapter = dateFormatAdapter;
     }
 
     @Override
@@ -37,33 +50,42 @@ public class CarServiceImpl implements CarService {
     @Override
     public String readCarsFileContent() throws IOException {
 
-        return String.join(System.lineSeparator()
-                , Files.readAllLines(Path.of(CAR_FILEPATH)));
+        return fileUtil.content(CAR_FILEPATH, System.lineSeparator());
 
     }
 
     @Override
     public String importCars() throws IOException {
-        String content = String.join("", Files.readAllLines(Path.of(CAR_FILEPATH)));
         List<String> result = new ArrayList<>();
-        Arrays.stream(gson.fromJson(content, CarDTO[].class))
-                .forEach(carDTO -> {
+        Arrays.stream(gson.fromJson(fileUtil.content(CAR_FILEPATH, System.lineSeparator()), CarSeedDto[].class))
+                .forEach(carSeedDto -> {
+
                     try {
-                        CarEntity carEntity = modelMapper.map(carDTO, CarEntity.class);
+                        if (!this.validator.isValid(carSeedDto)) {
+                            throw new Exception();
+                        }
+                        CarEntity carEntity = modelMapper.map(carSeedDto, CarEntity.class);
+                        carEntity.setRegisteredOn(dateFormatAdapter.toLocalDate(carSeedDto.getRegisteredOn(), ("dd/MM/yyyy")));
                         carRepository.save(carEntity);
+
                         result.add(String.format("Successfully imported car - %s - %s"
-                                ,carEntity.getMake(),carEntity.getModel()));
+                                , carEntity.getMake(), carEntity.getModel()));
                     } catch (Exception e) {
                         result.add("Invalid car");
                     }
                 });
         ;
 
-        return String.join(System.lineSeparator(),result);
+        return String.join(System.lineSeparator(), result);
     }
 
     @Override
     public String getCarsOrderByPicturesCountThenByMake() {
         return null;
+    }
+
+    @Override
+    public CarEntity findCarById(int id) {
+        return this.carRepository.findById(id).get();
     }
 }

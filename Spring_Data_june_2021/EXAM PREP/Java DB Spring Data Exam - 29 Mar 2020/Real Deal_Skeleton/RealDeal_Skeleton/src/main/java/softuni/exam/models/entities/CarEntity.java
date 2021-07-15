@@ -16,7 +16,7 @@ public class CarEntity extends BaseEntity {
     public CarEntity() {
     }
 
-    @Column(columnDefinition = "VARCHAR(20)", unique = true)
+    @Column
     public String getMake() {
         return make;
     }
@@ -26,7 +26,7 @@ public class CarEntity extends BaseEntity {
         return this;
     }
 
-    @Column(columnDefinition = "VARCHAR(20)", unique = true)
+    @Column
     public String getModel() {
         return model;
     }
@@ -36,7 +36,7 @@ public class CarEntity extends BaseEntity {
         return this;
     }
 
-    @Column(columnDefinition = "INT", unique = true)
+    @Column
     public int getKilometers() {
         return kilometers;
     }
@@ -54,5 +54,15 @@ public class CarEntity extends BaseEntity {
     public CarEntity setRegisteredOn(LocalDate registeredOn) {
         this.registeredOn = registeredOn;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return "CarEntity{" +
+                "make='" + make + '\'' +
+                ", model='" + model + '\'' +
+                ", kilometers=" + kilometers +
+                ", registeredOn=" + registeredOn +
+                '}';
     }
 }
