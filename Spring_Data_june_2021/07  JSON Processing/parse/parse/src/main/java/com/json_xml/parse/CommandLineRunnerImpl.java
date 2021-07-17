@@ -29,8 +29,8 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
 
     private void seedData() throws IOException {
         userService.seedData();
+        productService.seedData();
 //        categoryService.seedData();
-//        productService.seedData();
 
     }
 }
