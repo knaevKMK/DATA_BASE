@@ -31,7 +31,7 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
     public void run(String... args) throws Exception {
         try {
             while (true) {
-                ioUtil.output("Enter 'end' to Terminate app or command: ");
+                ioUtil.output("\n===================================\nEnter 'end' to Terminate app or command: ");
                 String[] rows = ioUtil.input();
                 String result = null;
                 boolean isLoged = false;
@@ -86,14 +86,14 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
                             break;
                     }
 
-                    ioUtil.output(result);
+                    ioUtil.output("\n+++++++++++++++++++++++++++++++++++\n"+result+"\n+++++++++++++++++++++++++++++++++++\n");
 
                 }
             }
 
 
         } catch (Exception e) {
-            ioUtil.output(e.getMessage());
+            ioUtil.output("\n---------------------------------\n"+e.getMessage() + "\n------------------------------\n");
         }
 
 
