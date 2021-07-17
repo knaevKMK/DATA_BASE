@@ -3,6 +3,8 @@ package com.json_xml.parse.services.impl;
 import com.google.gson.Gson;
 import com.json_xml.parse.constants.Paths;
 import com.json_xml.parse.models.dto.input.UserInFromFileJsonDto;
+import com.json_xml.parse.models.dto.outDto.*;
+import com.json_xml.parse.models.entities.ProductEntity;
 import com.json_xml.parse.models.entities.UserEntity;
 import com.json_xml.parse.repositories.UserRepository;
 import com.json_xml.parse.services.UserService;
@@ -15,9 +17,8 @@ import javax.validation.Validator;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
 
 @Service
@@ -37,6 +38,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public void seedData() throws IOException {
         if (userRepository.count() != 0) {
+            System.out.println("Your data is not empty");
             return;
         }
 
@@ -60,5 +62,49 @@ public class UserServiceImpl implements UserService {
                 });
         System.out.println(String.join(System.lineSeparator(), report));
 
+    }
+
+    @Override
+    public UserEntity getRandomUser() {
+
+        long id = ThreadLocalRandom.current().nextLong(1, userRepository.count() + 1);
+
+        return userRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public String findSellersAndSoldProduct() {
+        return gson.toJson(userRepository.findAllByProductsHasBuyer()
+                .stream()
+                .map(seller -> modelMapper.map(seller, SellerWithProductViewDto.class))
+                .collect(Collectors.toList()));
+
+    }
+
+    @Override
+    public String getStatisticUsersWithTheirSoldProducts() {
+        TotalUserCountWithSoldProductsDto totalUser = new TotalUserCountWithSoldProductsDto();
+
+        Set<UserEntity> sellers = userRepository.findAllByProductsHasBuyer();
+        totalUser.setUsersCount(sellers.size())
+                .setUsers(sellers
+                        .stream()
+                        .map(seller -> {
+                            UserFirstLastNameAgeSoldProductsDTO seller1 =
+                                    modelMapper.map(seller, UserFirstLastNameAgeSoldProductsDTO.class);
+                            seller1.setSoldProducts(new SoldProductCountAndListDto());
+
+                            SoldProductCountAndListDto soldProducts = seller1.getSoldProducts();
+                            soldProducts.setCount(seller.getProducts().size());
+                            soldProducts.setProducts(seller.getProducts()
+                                    .stream()
+                                    .map(product -> modelMapper.map(product, ProductNameAgeDto.class))
+                                    .collect(Collectors.toSet()));
+                            return seller1;
+                        })
+                        .sorted((a, s) -> Integer.compare(s.getSoldProducts().getCount(), a.getSoldProducts().getCount()))
+                        .collect(Collectors.toList()));
+
+        return gson.toJson(totalUser);
     }
 }

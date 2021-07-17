@@ -1,6 +1,7 @@
 package com.json_xml.parse.models.entities;
 
 import javax.persistence.*;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity
@@ -10,13 +11,22 @@ public class UserEntity extends BaseEntity {
     private String firstName;
     private String lastName;
     private Set<UserEntity> friends;
-
+    private Set<ProductEntity> soldProducts;
 
     public UserEntity() {
     }
 
+    @OneToMany(mappedBy = "seller",fetch = FetchType.EAGER)
+    public Set<ProductEntity> getProducts() {
+        return soldProducts;
+    }
 
-    @ManyToMany
+    public UserEntity setProducts(Set<ProductEntity> products) {
+        this.soldProducts = products;
+        return this;
+    }
+
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "users_friends",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "friend_id"))
@@ -54,5 +64,18 @@ public class UserEntity extends BaseEntity {
     public UserEntity setLastName(String lastName) {
         this.lastName = lastName;
         return this;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        UserEntity that = (UserEntity) o;
+        return age == that.age && Objects.equals(firstName, that.firstName) && Objects.equals(lastName, that.lastName) ;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(age, firstName, lastName);
     }
 }

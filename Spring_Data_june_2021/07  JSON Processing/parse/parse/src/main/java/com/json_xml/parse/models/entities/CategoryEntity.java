@@ -13,7 +13,9 @@ public class CategoryEntity extends BaseEntity {
     public CategoryEntity() {
     }
 
-    @ManyToMany(mappedBy = "categories", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "categories"
+            , fetch = FetchType.EAGER)
+
 
     public Set<ProductEntity> getProducts() {
         return products;

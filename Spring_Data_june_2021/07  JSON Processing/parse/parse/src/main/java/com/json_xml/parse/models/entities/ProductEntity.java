@@ -2,6 +2,7 @@ package com.json_xml.parse.models.entities;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity
@@ -65,5 +66,18 @@ public class ProductEntity extends BaseEntity {
     public ProductEntity setCategories(Set<CategoryEntity> categories) {
         this.categories = categories;
         return this;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ProductEntity that = (ProductEntity) o;
+        return Objects.equals(name, that.name) && Objects.equals(price, that.price) && Objects.equals(buyer, that.buyer) && Objects.equals(seller, that.seller) && Objects.equals(categories, that.categories);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, price, buyer, seller, categories);
     }
 }
