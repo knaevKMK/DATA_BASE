@@ -3,6 +3,9 @@ package com.json_xml.parse.services.impl;
 import com.google.gson.Gson;
 import com.json_xml.parse.models.dto.partCarSale.input.CarInputJsonDto;
 import com.json_xml.parse.models.dto.partCarSale.out.CarByMakeSortByModelAndTravelDistDto;
+import com.json_xml.parse.models.dto.partCarSale.out.CarViewCarPartsDto;
+import com.json_xml.parse.models.dto.partCarSale.out.CarViewMakeModelTravelDistDto;
+import com.json_xml.parse.models.dto.partCarSale.out.PartViewNamePriceDTO;
 import com.json_xml.parse.models.entities.partCarSale.CarEntity;
 import com.json_xml.parse.models.entities.partCarSale.PartEntity;
 import com.json_xml.parse.repositories.CarRepository;
@@ -99,5 +102,23 @@ public class CarServiceImpl implements CarService {
                         .collect(Collectors.toList())
         );
 
+    }
+
+    @Override
+    public String getAllByCar() {
+
+        return gson.toJson(carRepository.findAll().stream()
+
+                .map(car -> {
+                    CarViewCarPartsDto carDto = new CarViewCarPartsDto();
+                    carDto.setCar(modelMapper.map(car, CarViewMakeModelTravelDistDto.class));
+                    Set<PartViewNamePriceDTO> parts = car.getParts()
+                            .stream()
+                            .map(p -> modelMapper.map(p, PartViewNamePriceDTO.class))
+                            .collect(Collectors.toSet());
+                    carDto.setParts(parts);
+                    return carDto;
+                }).collect(Collectors.toList())
+        );
     }
 }

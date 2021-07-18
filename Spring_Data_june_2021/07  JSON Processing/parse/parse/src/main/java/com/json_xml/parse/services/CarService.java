@@ -10,4 +10,6 @@ public interface CarService {
     CarEntity getRandomById();
 
     String getALLByAndOrderByMake(String make);
+
+    String getAllByCar();
 }

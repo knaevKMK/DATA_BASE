@@ -8,4 +8,6 @@ public interface SupplierService {
     void seedData() throws IOException;
 
     SupplierEntity getRandomById();
+
+    String getLocal();
 }

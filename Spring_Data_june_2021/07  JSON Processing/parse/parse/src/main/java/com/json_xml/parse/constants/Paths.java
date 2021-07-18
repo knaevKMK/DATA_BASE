@@ -3,7 +3,7 @@ package com.json_xml.parse.constants;
 public class Paths {
 
 
-    public static final String REPORT_EX_CHOOSE = "\nEnter 'END'  or EX number between 1 and 7: \n";
+    public static final String REPORT_EX_CHOOSE = "\nEnter 'END'  or EX number between 1 and 10: \n";
 
     //Exercises
     public static final String EX_1 = "\n\t1.\tProducts in Range";
@@ -13,6 +13,9 @@ public class Paths {
     public static final String EX_5 = "\n\t5.\tOrdered Customers";
     public static final String EX_6 = "\n\t6.\tCars from Make Toyota";
     public static final String EX_7 = "\n\t7.\tLocal Suppliers";
+    public static final String EX_8 = "\n\t8.\tCars with Their List of Parts";
+    public static final String EX_9 = "\n\t9.\tTotal Sales by Customer";
+    public static final String EX_10 = "\n\t10.\tSales with Applied Discount";
     public static final String END = "\n\tEND\tto terminate program\n";
 
     //input files path
@@ -38,5 +41,10 @@ public class Paths {
     //part2
     public static final String OUT_ORDERED_CUSTOMER_FILE = "ordered-customers.json";
     public static final String OUT_CAR_TOYOTA_FILE = "toyota-cars.json";
+    public static final String OUT_SUPPLIER_LOCAL_FILE = "local-suppliers.json";
+    public static final String OUT_CAR_PARTS_FILE = "cars-and-parts.json";
+    public static final String OUT_CUSTOMER_SALES_FILE = "customers-total-sales.json";
+    public static final String OUT_SALES_DISCOUNT_FILE = "sales-discounts.json";
+
 
 }

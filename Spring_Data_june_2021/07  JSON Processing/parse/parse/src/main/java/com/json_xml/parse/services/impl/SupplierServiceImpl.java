@@ -2,6 +2,7 @@ package com.json_xml.parse.services.impl;
 
 import com.google.gson.Gson;
 import com.json_xml.parse.models.dto.partCarSale.input.SupplierInJsonDto;
+import com.json_xml.parse.models.dto.partCarSale.out.SuppliersIdNamePartCount;
 import com.json_xml.parse.models.entities.partCarSale.SupplierEntity;
 import com.json_xml.parse.repositories.SupplierRepository;
 import com.json_xml.parse.services.SupplierService;
@@ -70,5 +71,18 @@ public class SupplierServiceImpl implements SupplierService {
     public SupplierEntity getRandomById() {
         return supplierRepository.getById(ThreadLocalRandom.current().nextLong(1, supplierRepository.count() + 1));
 
+    }
+
+    @Override
+    public String getLocal() {
+
+        return gson.toJson(supplierRepository.findAllByImporterIsFalse()
+                .stream().map(supplier -> {
+                    SuppliersIdNamePartCount supplierView =
+                            modelMapper.map(supplier, SuppliersIdNamePartCount.class);
+                    supplierView.setPartsCount(supplier.getParts().size());
+                    return supplierView;
+                })
+                .collect(Collectors.toList()));
     }
 }

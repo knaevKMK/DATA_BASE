@@ -42,7 +42,7 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
         ioUtil.print("\n!!!\nIF YOUR DB(spring_json_xml_parse) IS NOT EMPTY DATA WILL NOT UPLOAD FROM JSON FILES\n!!!\n");
         seedData();
 
-        ioUtil.print(EX_1, EX_2, EX_3, EX_4, EX_5, EX_6, EX_7, END, REPORT_EX_CHOOSE);
+        ioUtil.print(EX_1, EX_2, EX_3, EX_4, EX_5, EX_6, EX_7, EX_8, EX_9, EX_10, END, REPORT_EX_CHOOSE);
 
         String read = ioUtil.read();
 
@@ -75,12 +75,29 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
                     break;
                 case "6":
                     ioUtil.print(EX_6);
-                    ioUtil.writeFile(carService.getALLByAndOrderByMake("Toyota"),OUT_DIR_JSON_FILEPATH+OUT_CAR_TOYOTA_FILE);
+                    ioUtil.writeFile(carService.getALLByAndOrderByMake("Toyota"), OUT_DIR_JSON_FILEPATH + OUT_CAR_TOYOTA_FILE);
                     ioUtil.print("\nFile: " + OUT_CAR_TOYOTA_FILE + " was created in: " + OUT_DIR_JSON_FILEPATH);
 
                     break;
                 case "7":
                     ioUtil.print(EX_7);
+                    ioUtil.writeFile(supplierService.getLocal(), OUT_DIR_JSON_FILEPATH + OUT_SUPPLIER_LOCAL_FILE);
+                    ioUtil.print("\nFile: " + OUT_SUPPLIER_LOCAL_FILE + " was created in: " + OUT_DIR_JSON_FILEPATH);
+                    break;
+                case "8":
+                    ioUtil.print(EX_8);
+                    ioUtil.writeFile(carService.getAllByCar(), OUT_DIR_JSON_FILEPATH + OUT_CAR_PARTS_FILE);
+                    ioUtil.print("\nFile: " + OUT_CAR_PARTS_FILE + " was created in: " + OUT_DIR_JSON_FILEPATH);
+                    break;
+                case "9":
+                    ioUtil.print(EX_9);
+//                    ioUtil.writeFile(saleService.getCustomers(), OUT_DIR_JSON_FILEPATH + OUT_CUSTOMER_SALES_FILE);
+                    ioUtil.print("\nFile: " +OUT_CUSTOMER_SALES_FILE  + " was created in: " + OUT_DIR_JSON_FILEPATH);
+                    break;
+                case "10":
+                    ioUtil.print(EX_10);
+//                    ioUtil.writeFile(saleService.getWithDiscounts(), OUT_DIR_JSON_FILEPATH + OUT_SALES_DISCOUNT_FILE);
+                    ioUtil.print("\nFile: " + OUT_SALES_DISCOUNT_FILE + " was created in: " + OUT_DIR_JSON_FILEPATH);
                     break;
             }
             ioUtil.print(EX_1, EX_2, EX_3, EX_4, END, REPORT_EX_CHOOSE);

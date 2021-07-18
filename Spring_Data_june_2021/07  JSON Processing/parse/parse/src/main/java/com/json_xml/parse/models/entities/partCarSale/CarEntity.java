@@ -17,7 +17,7 @@ public class CarEntity extends BaseEntity {
     public CarEntity() {
     }
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "parts_cars",
             joinColumns = @JoinColumn(name = "car_id"),
             inverseJoinColumns = @JoinColumn(name = "part_id"))

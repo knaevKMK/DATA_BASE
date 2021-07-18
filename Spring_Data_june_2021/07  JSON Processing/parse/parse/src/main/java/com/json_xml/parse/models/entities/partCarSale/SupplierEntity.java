@@ -2,17 +2,27 @@ package com.json_xml.parse.models.entities.partCarSale;
 
 import com.json_xml.parse.models.entities.BaseEntity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "suppliers")
 public class SupplierEntity extends BaseEntity {
     private String name;
     private boolean isImporter;
+    private Set<PartEntity> parts;
 
     public SupplierEntity() {
+    }
+
+    @OneToMany(mappedBy = "supplier", fetch = FetchType.EAGER)
+    public Set<PartEntity> getParts() {
+        return parts;
+    }
+
+    public SupplierEntity setParts(Set<PartEntity> parts) {
+        this.parts = parts;
+        return this;
     }
 
     public String getName() {
