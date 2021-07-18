@@ -12,9 +12,19 @@ public class CarEntity extends BaseEntity {
     private String model;
     private Long travelledDistance;
     private Set<PartEntity> parts;
+    private Set<SaleEntity> sales;
 
 
     public CarEntity() {
+    }
+@OneToMany(mappedBy = "car")
+    public Set<SaleEntity> getSales() {
+        return sales;
+    }
+
+    public CarEntity setSales(Set<SaleEntity> sales) {
+        this.sales = sales;
+        return this;
     }
 
     @ManyToMany(fetch = FetchType.EAGER)

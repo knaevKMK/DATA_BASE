@@ -2,11 +2,10 @@ package com.json_xml.parse.models.entities.partCarSale;
 
 import com.json_xml.parse.models.entities.BaseEntity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Set;
 
 @Entity
 @Table(name = "customers")
@@ -15,8 +14,20 @@ public class CustomerEntity extends BaseEntity {
     private String name;
     private LocalDateTime birthDate;
     private boolean isYoungDriver;
+    private Set<SaleEntity> sales;
 
     public CustomerEntity() {
+    }
+
+    @OneToMany(mappedBy = "customer",fetch = FetchType.EAGER)
+
+    public Set<SaleEntity> getSales() {
+        return sales;
+    }
+
+    public CustomerEntity setSales(Set<SaleEntity> sales) {
+        this.sales = sales;
+        return this;
     }
 
     public String getName() {

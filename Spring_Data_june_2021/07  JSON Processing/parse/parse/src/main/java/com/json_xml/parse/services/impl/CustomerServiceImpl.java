@@ -3,8 +3,10 @@ package com.json_xml.parse.services.impl;
 import com.google.gson.Gson;
 import com.json_xml.parse.constants.Paths;
 import com.json_xml.parse.models.dto.partCarSale.input.CustomerInJsonDto;
+import com.json_xml.parse.models.dto.partCarSale.out.CustomerSalesCountAmountDTO;
 import com.json_xml.parse.models.dto.partCarSale.out.CustomersOrderByBirthDateDescDTO;
 import com.json_xml.parse.models.entities.partCarSale.CustomerEntity;
+import com.json_xml.parse.models.entities.partCarSale.PartEntity;
 import com.json_xml.parse.models.entities.partCarSale.SaleEntity;
 import com.json_xml.parse.repositories.CustomerRepository;
 import com.json_xml.parse.services.CustomerService;
@@ -16,10 +18,8 @@ import org.springframework.stereotype.Service;
 
 import javax.validation.ConstraintViolation;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
+import java.math.BigDecimal;
+import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
 
@@ -91,6 +91,35 @@ public class CustomerServiceImpl implements CustomerService {
                     customerView.setBirthDate(customer.getBirthDate().toString());
                     customerView.setSales(new HashSet<SaleEntity>());
                     return customerView;
+                })
+                .collect(Collectors.toList()));
+    }
+
+    @Override
+    public String getCustomers() {
+
+        return gson.toJson(customerRepository.findAllBySalesIsNotNull()
+                .stream().map(customer -> {
+                    CustomerSalesCountAmountDTO customerDto = new CustomerSalesCountAmountDTO();
+                    Set<SaleEntity> sales = customer.getSales();
+                    customerDto.setFullName(customer.getName())
+                            .setBoughtCars(sales.size());
+
+                    customerDto.setSpentMoney(BigDecimal.valueOf(sales.stream().mapToDouble(sale -> {
+                        BigDecimal discount = sale.getDiscount();
+                        Set<PartEntity> parts = sale.getCar().getParts();
+                        double sum = parts.stream().mapToDouble(part -> part.getPrice().doubleValue()).sum();
+                        return sum * (1.00 - discount.doubleValue());
+                    }).sum()));
+
+                    return customerDto;
+                })
+                .sorted((a, b) -> {
+                    int result = Double.compare(b.getSpentMoney().doubleValue(), a.getSpentMoney().doubleValue());
+                    if (result == 0) {
+                        return Integer.compare(b.getBoughtCars(), a.getBoughtCars());
+                    }
+                    return result;
                 })
                 .collect(Collectors.toList()));
     }

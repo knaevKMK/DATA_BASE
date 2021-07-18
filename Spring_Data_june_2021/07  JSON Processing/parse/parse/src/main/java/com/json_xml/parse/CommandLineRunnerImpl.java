@@ -91,7 +91,7 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
                     break;
                 case "9":
                     ioUtil.print(EX_9);
-//                    ioUtil.writeFile(saleService.getCustomers(), OUT_DIR_JSON_FILEPATH + OUT_CUSTOMER_SALES_FILE);
+                  ioUtil.writeFile(customerService.getCustomers(), OUT_DIR_JSON_FILEPATH + OUT_CUSTOMER_SALES_FILE);
                     ioUtil.print("\nFile: " +OUT_CUSTOMER_SALES_FILE  + " was created in: " + OUT_DIR_JSON_FILEPATH);
                     break;
                 case "10":

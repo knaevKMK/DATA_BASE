@@ -74,6 +74,8 @@ public class SaleServiceImpl implements SaleService {
 
     }
 
+
+
     private BigDecimal getRandomDiscount() {
         int[] discountArr = {0, 5, 10, 15, 20, 20, 40, 50};
         int i = ThreadLocalRandom.current().nextInt(8);

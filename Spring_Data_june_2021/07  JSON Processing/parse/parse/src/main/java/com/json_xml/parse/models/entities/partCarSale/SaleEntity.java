@@ -2,17 +2,15 @@ package com.json_xml.parse.models.entities.partCarSale;
 
 import com.json_xml.parse.models.entities.BaseEntity;
 
-import javax.persistence.Entity;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
 @Table(name = "sales")
 public class SaleEntity extends BaseEntity {
     private BigDecimal discount;
-    private CarEntity carEntity;
-    private CustomerEntity customerEntity;
+    private CarEntity car;
+    private CustomerEntity customer;
 
     public SaleEntity() {
     }
@@ -26,23 +24,25 @@ public class SaleEntity extends BaseEntity {
         return this;
     }
 
-    @OneToOne
+    @ManyToOne
+    @JoinColumn(name = "car_id")
     public CarEntity getCar() {
-        return carEntity;
+        return car;
     }
 
     public SaleEntity setCar(CarEntity carEntity) {
-        this.carEntity = carEntity;
+        this.car = carEntity;
         return this;
     }
 
-    @OneToOne
+    @ManyToOne
+    @JoinColumn(name = "customer_id")
     public CustomerEntity getCustomer() {
-        return customerEntity;
+        return customer;
     }
 
     public SaleEntity setCustomer(CustomerEntity customerEntity) {
-        this.customerEntity = customerEntity;
+        this.customer = customerEntity;
         return this;
     }
 }

@@ -10,4 +10,6 @@ public interface CustomerService {
     CustomerEntity getRandomById();
 
     String getALLOrderByBirthDateAsc();
+
+    String getCustomers();
 }

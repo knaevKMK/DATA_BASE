@@ -4,4 +4,6 @@ import java.io.IOException;
 
 public interface SaleService {
     void seedData() throws IOException;
+
+
 }
