@@ -1,85 +1,105 @@
 package com.json_xml.parse;
 
-import com.json_xml.parse.constants.Paths;
-import com.json_xml.parse.services.CategoryService;
-import com.json_xml.parse.services.ProductService;
-import com.json_xml.parse.services.UserService;
+import com.json_xml.parse.services.*;
+import com.json_xml.parse.util.IOUtil;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.math.BigDecimal;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.Collections;
+
+
+import static com.json_xml.parse.constants.Paths.*;
 
 @Component
 public class CommandLineRunnerImpl implements CommandLineRunner {
+    private final CustomerService customerService;
+    private final SupplierService supplierService;
+    private final SaleService saleService;
+    private final PartService partService;
     private final UserService userService;
     private final ProductService productService;
     private final CategoryService categoryService;
-    private final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    private final CarService carService;
+    private final IOUtil ioUtil;
 
-    public CommandLineRunnerImpl(UserService userService,
+    public CommandLineRunnerImpl(CustomerService customerService, SupplierService supplierService, SaleService saleService, PartService partService, UserService userService,
                                  ProductService productService,
-                                 CategoryService categoryService) {
+                                 CategoryService categoryService, CarService carService, IOUtil ioUtil) {
+        this.customerService = customerService;
+        this.supplierService = supplierService;
+        this.saleService = saleService;
+        this.partService = partService;
         this.userService = userService;
         this.productService = productService;
         this.categoryService = categoryService;
+        this.carService = carService;
+        this.ioUtil = ioUtil;
     }
 
     @Override
     public void run(String... args) throws Exception {
+        ioUtil.print("\n!!!\nIF YOUR DB(spring_json_xml_parse) IS NOT EMPTY DATA WILL NOT UPLOAD FROM JSON FILES\n!!!\n");
         seedData();
-        System.out.println("\nEnter 'END' to terminate program or EX number: \n");
-        String read = reader.readLine();
+
+        ioUtil.print(EX_1, EX_2, EX_3, EX_4, EX_5, EX_6, EX_7, END, REPORT_EX_CHOOSE);
+
+        String read = ioUtil.read();
 
         while (!read.equalsIgnoreCase("end")) {
             switch (read) {
                 case "1":
-                    write(productService.
-                                    productInRangeOrderByPriceWithoutBuyer(BigDecimal.valueOf(500), BigDecimal.valueOf(100)),
-                            Paths.OUT_DIR_JSON_FILEPATH + "product-in-range.json");
+                    ioUtil.print(EX_1);
+                    ioUtil.writeFile(productService.productInRangeOrderByPriceWithoutBuyer(BigDecimal.valueOf(500), BigDecimal.valueOf(100)), OUT_DIR_JSON_FILEPATH + OUT_PRODUCT_IN_RANGE);
+                    ioUtil.print("\nFile: " + OUT_PRODUCT_IN_RANGE + " was created in: " + OUT_DIR_JSON_FILEPATH);
                     break;
                 case "2":
-                    write(
-                            userService.findSellersAndSoldProduct()
-                            , Paths.OUT_DIR_JSON_FILEPATH + "seller-success-sold-product.json"
-                    );
+                    ioUtil.print(EX_2);
+                    ioUtil.writeFile(userService.findSellersAndSoldProduct(), OUT_DIR_JSON_FILEPATH + OUT_SELLER_SOLD_PRODUCT);
+                    ioUtil.print("\nFile: " + OUT_SELLER_SOLD_PRODUCT + " was created in: " + OUT_DIR_JSON_FILEPATH);
                     break;
                 case "3":
-                    write( categoryService.categoriesOrderByProductCount()
-                            , Paths.OUT_DIR_JSON_FILEPATH + "category-product-count-total-price.json"
-                    );
+                    ioUtil.print(EX_3);
+                    ioUtil.writeFile(categoryService.categoriesOrderByProductCount(), OUT_DIR_JSON_FILEPATH + OUT_CATEGORY_PRODUCT_COUNT_TOTAL_PRICE);
+                    ioUtil.print("\nFile: " + OUT_CATEGORY_PRODUCT_COUNT_TOTAL_PRICE + " was created in: " + OUT_DIR_JSON_FILEPATH);
                     break;
-                case "4":write(userService.getStatisticUsersWithTheirSoldProducts()
-                        ,Paths.OUT_DIR_JSON_FILEPATH+"users-and_products.json"
-                );
+                case "4":
+                    ioUtil.print(EX_4);
+                    ioUtil.writeFile(userService.getStatisticUsersWithTheirSoldProducts(), OUT_DIR_JSON_FILEPATH + OUT_USER_PRODUCT);
+                    ioUtil.print("\nFile: " + OUT_USER_PRODUCT + " was created in: " + OUT_DIR_JSON_FILEPATH);
                     break;
                 case "5":
+                    ioUtil.print(EX_5);
+                    ioUtil.writeFile(customerService.getALLOrderByBirthDateAsc(), OUT_DIR_JSON_FILEPATH + OUT_ORDERED_CUSTOMER_FILE);
+                    ioUtil.print("\nFile: " + OUT_ORDERED_CUSTOMER_FILE + " was created in: " + OUT_DIR_JSON_FILEPATH);
+                    break;
+                case "6":
+                    ioUtil.print(EX_6);
+                    ioUtil.writeFile(carService.getALLByAndOrderByMake("Toyota"),OUT_DIR_JSON_FILEPATH+OUT_CAR_TOYOTA_FILE);
+                    ioUtil.print("\nFile: " + OUT_CAR_TOYOTA_FILE + " was created in: " + OUT_DIR_JSON_FILEPATH);
+
+                    break;
+                case "7":
+                    ioUtil.print(EX_7);
                     break;
             }
-            System.out.println("\nEnter 'END' to terminate program or EX number: \n");
+            ioUtil.print(EX_1, EX_2, EX_3, EX_4, END, REPORT_EX_CHOOSE);
 
-            read = reader.readLine();
+            read = ioUtil.read();
         }
     }
 
 
-    private void write(String content, String path) throws IOException {
-//        System.out.println(content);
-//        System.out.println(path);
-        Files.write(Path.of(path), Collections.singleton(content));
-    }
-
     private void seedData() throws IOException {
-
+//part1
         userService.seedData();
         categoryService.seedData();
         productService.seedData();
-
-
+        //part2
+        supplierService.seedData();
+        partService.seedData();
+        carService.seedData();
+        customerService.seedData();
+        saleService.seedData();
     }
 }

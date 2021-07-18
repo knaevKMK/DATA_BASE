@@ -1,12 +1,12 @@
 package com.json_xml.parse.services.impl;
 
 import com.google.gson.Gson;
-import com.json_xml.parse.constants.Paths;
-import com.json_xml.parse.models.dto.input.CategoryInFromJsonDto;
-import com.json_xml.parse.models.dto.outDto.CategoryViewWithProductCountDto;
-import com.json_xml.parse.models.entities.CategoryEntity;
+import com.json_xml.parse.models.dto.partUserProductCategoriy.input.CategoryInFromJsonDto;
+import com.json_xml.parse.models.dto.partUserProductCategoriy.outDto.CategoryViewWithProductCountDto;
+import com.json_xml.parse.models.entities.partUserProductCategoriy.CategoryEntity;
 import com.json_xml.parse.repositories.CategoryRepository;
 import com.json_xml.parse.services.CategoryService;
+import com.json_xml.parse.util.IOUtil;
 import com.json_xml.parse.util.ValidationUtil;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
@@ -14,35 +14,40 @@ import org.springframework.stereotype.Service;
 import javax.validation.ConstraintViolation;
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
 
+import static com.json_xml.parse.constants.Paths.*;
+
 @Service
 public class CategoryServiceImpl implements CategoryService {
     private final CategoryRepository categoryRepository;
-    private ModelMapper modelMapper;
+    private final ModelMapper modelMapper;
     private final Gson gson;
     private final ValidationUtil validationUtil;
+    private final IOUtil ioUtil;
 
-    public CategoryServiceImpl(CategoryRepository categoryRepository, ModelMapper modelMapper, Gson gson, ValidationUtil validationUtil) {
+    public CategoryServiceImpl(CategoryRepository categoryRepository, ModelMapper modelMapper, Gson gson, ValidationUtil validationUtil, IOUtil ioUtil) {
         this.categoryRepository = categoryRepository;
         this.modelMapper = modelMapper;
         this.gson = gson;
         this.validationUtil = validationUtil;
+        this.ioUtil = ioUtil;
     }
 
     @Override
     public void seedData() throws IOException {
         if (categoryRepository.count() != 0) {
-            System.out.println("Your data is not empty");
+            ioUtil.print("category_table data is not empty");
             return;
         }
-        String content = String.join("", Files.readAllLines(Path.of(Paths.CATEGORY_JSON_FILEPATH)));
+        ioUtil.print("Data will seed from " + CATEGORY_JSON_FILEPATH+"\nPLEASE WAIT...");
+
+        String content = String.join("", ioUtil.readFile(CATEGORY_JSON_FILEPATH));
 
         List<String> report = new ArrayList<>();
+
         Arrays.stream(gson.fromJson(content, CategoryInFromJsonDto[].class))
                 .forEach(categoryDto -> {
 
@@ -56,11 +61,12 @@ public class CategoryServiceImpl implements CategoryService {
                     report.add("Category: " + categoryEntity.getName() + " was added");
 
                 });
-        System.out.println(String.join(System.lineSeparator(), report));
+        ioUtil.print("\nReport:\n" + String.join(System.lineSeparator(), report) + "\nCompleted\n");
     }
 
     @Override
     public Set<CategoryEntity> getRandomCategory() {
+        // more than 1 category will duplicate and app fault
 //        int size = ThreadLocalRandom.current().nextInt(3);
         Set<CategoryEntity> categories = new LinkedHashSet<>();
 //        for (int i = 0; i <= size; i++) {

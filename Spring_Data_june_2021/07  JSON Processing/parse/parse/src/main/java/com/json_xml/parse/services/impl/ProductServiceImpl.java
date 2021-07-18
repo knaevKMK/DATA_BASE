@@ -1,25 +1,24 @@
 package com.json_xml.parse.services.impl;
 
 import com.google.gson.Gson;
-import com.json_xml.parse.constants.Paths;
-import com.json_xml.parse.models.dto.input.ProductInFromJsonDto;
-import com.json_xml.parse.models.dto.outDto.ProductViewJsonDto;
-import com.json_xml.parse.models.dto.outDto.SellerWithProductViewDto;
-import com.json_xml.parse.models.entities.ProductEntity;
+import com.json_xml.parse.models.dto.partUserProductCategoriy.input.ProductInFromJsonDto;
+import com.json_xml.parse.models.dto.partUserProductCategoriy.outDto.ProductViewJsonDto;
+import com.json_xml.parse.models.entities.partUserProductCategoriy.ProductEntity;
 import com.json_xml.parse.repositories.ProductRepository;
 import com.json_xml.parse.services.CategoryService;
 import com.json_xml.parse.services.ProductService;
 import com.json_xml.parse.services.UserService;
+import com.json_xml.parse.util.IOUtil;
 import com.json_xml.parse.util.ValidationUtil;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.*;
 import java.util.stream.Collectors;
+
+import static com.json_xml.parse.constants.Paths.*;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -29,30 +28,33 @@ public class ProductServiceImpl implements ProductService {
     private final ModelMapper modelMapper;
     private final Gson gson;
     private ValidationUtil validationUtil;
+    private final IOUtil ioUtil;
 
     public ProductServiceImpl(ProductRepository productRepository,
                               UserService userService, CategoryService categoryService, ModelMapper modelMapper,
                               Gson gson,
-                              ValidationUtil validationUtil) {
+                              ValidationUtil validationUtil, IOUtil ioUtil) {
         this.productRepository = productRepository;
         this.userService = userService;
         this.categoryService = categoryService;
         this.modelMapper = modelMapper;
         this.gson = gson;
         this.validationUtil = validationUtil;
+        this.ioUtil = ioUtil;
     }
 
     @Override
     public void seedData() throws IOException {
         if (productRepository.count() != 0) {
-            System.out.println("Your data is not empty");
+            ioUtil.print("product_table data is not empty");
             return;
         }
-        String content =
-                String.join("",
-                        Files.readAllLines(Path.of(Paths.PRODUCT_JSON_FILEPATH)));
+        ioUtil.print("Data will seed from " + PRODUCT_JSON_FILEPATH+"\nPLEASE WAIT...");
+
+        String content = String.join("", ioUtil.readFile(PRODUCT_JSON_FILEPATH));
 
         List<String> report = new ArrayList<>();
+
         Arrays.stream(gson.fromJson(content, ProductInFromJsonDto[].class))
                 .forEach(productDto -> {
                     if (!validationUtil.isValid(productDto)) {
@@ -78,7 +80,7 @@ public class ProductServiceImpl implements ProductService {
                     report.add("Product: " + productEntity.getName() + " was added");
                 });
 
-        System.out.println(String.join(System.lineSeparator(), report));
+        ioUtil.print("\nReport:\n" + String.join(System.lineSeparator(), report) + "\nCompleted\n");
     }
 
     @Override
@@ -98,8 +100,6 @@ public class ProductServiceImpl implements ProductService {
                 ;
 
     }
-
-
 
 
 }

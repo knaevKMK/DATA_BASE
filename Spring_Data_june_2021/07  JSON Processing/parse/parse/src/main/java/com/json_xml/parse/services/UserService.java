@@ -1,6 +1,6 @@
 package com.json_xml.parse.services;
 
-import com.json_xml.parse.models.entities.UserEntity;
+import com.json_xml.parse.models.entities.partUserProductCategoriy.UserEntity;
 
 import java.io.IOException;
 

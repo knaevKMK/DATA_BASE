@@ -1,7 +1,10 @@
 package com.json_xml.parse.config;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+
+
+import com.google.gson.*;
+import com.json_xml.parse.util.IOUtil;
+import com.json_xml.parse.util.IOUtilImpl;
 import com.json_xml.parse.util.ValidationUtil;
 import com.json_xml.parse.util.ValidationUtilImpl;
 import org.modelmapper.ModelMapper;
@@ -10,6 +13,10 @@ import org.springframework.context.annotation.Configuration;
 
 import javax.validation.Validation;
 import javax.validation.Validator;
+import java.lang.reflect.Type;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 @Configuration
 public class ApplicationBeanConfiguration {
@@ -26,6 +33,21 @@ public class ApplicationBeanConfiguration {
         return new GsonBuilder()
                 .excludeFieldsWithoutExposeAnnotation()
                 .setPrettyPrinting()
+                .registerTypeAdapter(LocalDateTime.class, new JsonDeserializer<LocalDateTime>() {
+                    @Override
+                    public LocalDateTime deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {
+                        return LocalDateTime.parse(jsonElement.getAsString(),
+                                DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss"));
+
+                    }
+                })
+                .registerTypeAdapter(LocalDate.class, new JsonDeserializer<LocalDate>() {
+                    @Override
+                    public LocalDate deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {
+                        return LocalDate.parse(jsonElement.getAsString(), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+
+                    }
+                })
                 .create();
     }
 
@@ -37,5 +59,10 @@ public class ApplicationBeanConfiguration {
     @Bean
     public ValidationUtil validationUtil() {
         return new ValidationUtilImpl(validator());
+    }
+
+    @Bean
+    public IOUtil ioUtil() {
+        return new IOUtilImpl();
     }
 }

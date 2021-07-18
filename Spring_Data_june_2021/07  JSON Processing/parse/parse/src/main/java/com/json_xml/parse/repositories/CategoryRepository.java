@@ -1,6 +1,6 @@
 package com.json_xml.parse.repositories;
 
-import com.json_xml.parse.models.entities.CategoryEntity;
+import com.json_xml.parse.models.entities.partUserProductCategoriy.CategoryEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
