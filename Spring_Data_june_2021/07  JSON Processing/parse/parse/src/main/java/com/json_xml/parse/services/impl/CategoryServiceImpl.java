@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import javax.validation.ConstraintViolation;
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
@@ -42,7 +43,7 @@ public class CategoryServiceImpl implements CategoryService {
             ioUtil.print("category_table data is not empty");
             return;
         }
-        ioUtil.print("Data will seed from " + CATEGORY_JSON_FILEPATH+"\nPLEASE WAIT...");
+        ioUtil.print("Data will seed from " + CATEGORY_JSON_FILEPATH + "\nPLEASE WAIT...");
 
         String content = String.join("", ioUtil.readFile(CATEGORY_JSON_FILEPATH));
 
@@ -87,10 +88,10 @@ public class CategoryServiceImpl implements CategoryService {
                             .setAveragePrice(BigDecimal.valueOf(categoryEntity.getProducts()
                                     .stream()
                                     .mapToDouble(p -> Double.parseDouble(p.getPrice().toPlainString()))
-                                    .average().orElse(0)))
+                                    .average().orElse(0)).setScale(2, RoundingMode.HALF_UP))
                             .setTotalRevenue(BigDecimal.valueOf(categoryEntity.getProducts()
                                     .stream()
-                                    .mapToDouble(p -> Double.parseDouble(p.getPrice().toPlainString())).sum()));
+                                    .mapToDouble(p -> Double.parseDouble(p.getPrice().toPlainString())).sum()).setScale(2, RoundingMode.HALF_UP));
                     return category;
                 })
                 .collect(Collectors.toList())

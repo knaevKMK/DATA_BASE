@@ -45,4 +45,5 @@ public class SaleEntity extends BaseEntity {
         this.customer = customerEntity;
         return this;
     }
+
 }

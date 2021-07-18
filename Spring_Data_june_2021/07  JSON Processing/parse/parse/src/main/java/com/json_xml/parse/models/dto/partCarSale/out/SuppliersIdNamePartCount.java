@@ -4,7 +4,7 @@ import com.google.gson.annotations.Expose;
 
 public class SuppliersIdNamePartCount {
     @Expose
-    private long id;
+    private long Id;
     @Expose
     private String Name;
     @Expose
@@ -14,11 +14,11 @@ public class SuppliersIdNamePartCount {
     }
 
     public long getId() {
-        return id;
+        return Id;
     }
 
     public SuppliersIdNamePartCount setId(long id) {
-        this.id = id;
+        this.Id = id;
         return this;
     }
 

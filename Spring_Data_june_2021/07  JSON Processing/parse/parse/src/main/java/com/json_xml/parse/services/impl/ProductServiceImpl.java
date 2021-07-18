@@ -91,8 +91,8 @@ public class ProductServiceImpl implements ProductService {
                 .map(productEntity ->
                 {
                     ProductViewJsonDto productViewJsonDto = modelMapper.map(productEntity, ProductViewJsonDto.class);
-                    productViewJsonDto.set_seller(String.format("%s %s"
-                            , productEntity.getSeller().getFirstName()
+                    productViewJsonDto.set_seller(String.format("%s%s"
+                            , productEntity.getSeller().getFirstName()==null? "":productEntity.getSeller().getFirstName()+" "
                             , productEntity.getSeller().getLastName()));
                     return productViewJsonDto;
                 })

@@ -10,7 +10,7 @@ public class ProductViewJsonDto {
     @Expose
     private BigDecimal price;
     @Expose
-    private String _seller;
+    private String seller;
 
     public ProductViewJsonDto() {
     }
@@ -34,11 +34,11 @@ public class ProductViewJsonDto {
     }
 
     public String get_seller() {
-        return _seller;
+        return seller;
     }
 
     public ProductViewJsonDto set_seller(String _seller) {
-        this._seller = _seller;
+        this.seller = _seller;
         return this;
     }
 }

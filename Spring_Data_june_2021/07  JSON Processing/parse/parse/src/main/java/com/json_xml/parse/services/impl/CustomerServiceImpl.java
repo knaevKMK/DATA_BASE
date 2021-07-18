@@ -19,6 +19,7 @@ import org.springframework.stereotype.Service;
 import javax.validation.ConstraintViolation;
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
@@ -110,7 +111,7 @@ public class CustomerServiceImpl implements CustomerService {
                         Set<PartEntity> parts = sale.getCar().getParts();
                         double sum = parts.stream().mapToDouble(part -> part.getPrice().doubleValue()).sum();
                         return sum * (1.00 - discount.doubleValue());
-                    }).sum()));
+                    }).sum()).setScale(2, RoundingMode.HALF_UP));
 
                     return customerDto;
                 })

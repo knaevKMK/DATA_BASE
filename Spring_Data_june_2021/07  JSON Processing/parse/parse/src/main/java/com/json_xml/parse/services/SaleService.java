@@ -6,4 +6,5 @@ public interface SaleService {
     void seedData() throws IOException;
 
 
+    String getWithDiscounts();
 }

@@ -6,16 +6,16 @@ public class Paths {
     public static final String REPORT_EX_CHOOSE = "\nEnter 'END'  or EX number between 1 and 10: \n";
 
     //Exercises
-    public static final String EX_1 = "\n\t1.\tProducts in Range";
-    public static final String EX_2 = "\n\t2.\tSuccessfully Sold Products";
-    public static final String EX_3 = "\n\t3.\tCategories by Products Count";
-    public static final String EX_4 = "\n\t4.\tUsers and Products";
-    public static final String EX_5 = "\n\t5.\tOrdered Customers";
-    public static final String EX_6 = "\n\t6.\tCars from Make Toyota";
-    public static final String EX_7 = "\n\t7.\tLocal Suppliers";
-    public static final String EX_8 = "\n\t8.\tCars with Their List of Parts";
-    public static final String EX_9 = "\n\t9.\tTotal Sales by Customer";
-    public static final String EX_10 = "\n\t10.\tSales with Applied Discount";
+    public static final String EX_1 = "\t1.\tProducts in Range";
+    public static final String EX_2 = "\t2.\tSuccessfully Sold Products";
+    public static final String EX_3 = "\t3.\tCategories by Products Count";
+    public static final String EX_4 = "\t4.\tUsers and Products";
+    public static final String EX_5 = "\t5.\tOrdered Customers";
+    public static final String EX_6 = "\t6.\tCars from Make Toyota";
+    public static final String EX_7 = "\t7.\tLocal Suppliers";
+    public static final String EX_8 = "\t8.\tCars with Their List of Parts";
+    public static final String EX_9 = "\t9.\tTotal Sales by Customer";
+    public static final String EX_10 = "\t10.\tSales with Applied Discount";
     public static final String END = "\n\tEND\tto terminate program\n";
 
     //input files path

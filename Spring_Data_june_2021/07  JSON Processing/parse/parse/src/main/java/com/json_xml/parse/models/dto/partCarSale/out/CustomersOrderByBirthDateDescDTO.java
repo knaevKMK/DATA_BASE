@@ -8,9 +8,9 @@ import java.util.Set;
 
 public class CustomersOrderByBirthDateDescDTO {
     @Expose
-    private long id;
+    private long Id;
     @Expose
-    private String name;
+    private String Name;
     @Expose
     private String BirthDate;
     @Expose
@@ -22,20 +22,20 @@ public class CustomersOrderByBirthDateDescDTO {
     }
 
     public long getId() {
-        return id;
+        return Id;
     }
 
     public CustomersOrderByBirthDateDescDTO setId(long id) {
-        this.id = id;
+        this.Id = id;
         return this;
     }
 
     public String getName() {
-        return name;
+        return Name;
     }
 
     public CustomersOrderByBirthDateDescDTO setName(String name) {
-        this.name = name;
+        this.Name = name;
         return this;
     }
 

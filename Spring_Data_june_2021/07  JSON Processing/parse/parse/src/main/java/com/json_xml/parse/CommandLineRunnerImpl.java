@@ -91,17 +91,16 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
                     break;
                 case "9":
                     ioUtil.print(EX_9);
-                  ioUtil.writeFile(customerService.getCustomers(), OUT_DIR_JSON_FILEPATH + OUT_CUSTOMER_SALES_FILE);
-                    ioUtil.print("\nFile: " +OUT_CUSTOMER_SALES_FILE  + " was created in: " + OUT_DIR_JSON_FILEPATH);
+                    ioUtil.writeFile(customerService.getCustomers(), OUT_DIR_JSON_FILEPATH + OUT_CUSTOMER_SALES_FILE);
+                    ioUtil.print("\nFile: " + OUT_CUSTOMER_SALES_FILE + " was created in: " + OUT_DIR_JSON_FILEPATH);
                     break;
                 case "10":
                     ioUtil.print(EX_10);
-//                    ioUtil.writeFile(saleService.getWithDiscounts(), OUT_DIR_JSON_FILEPATH + OUT_SALES_DISCOUNT_FILE);
+                   ioUtil.writeFile(saleService.getWithDiscounts(), OUT_DIR_JSON_FILEPATH + OUT_SALES_DISCOUNT_FILE);
                     ioUtil.print("\nFile: " + OUT_SALES_DISCOUNT_FILE + " was created in: " + OUT_DIR_JSON_FILEPATH);
                     break;
             }
-            ioUtil.print(EX_1, EX_2, EX_3, EX_4, END, REPORT_EX_CHOOSE);
-
+            ioUtil.print(EX_1, EX_2, EX_3, EX_4, EX_5, EX_6, EX_7, EX_8, EX_9, EX_10, END, REPORT_EX_CHOOSE);
             read = ioUtil.read();
         }
     }
