@@ -2,7 +2,7 @@ package com.json_xml.parse.services.impl;
 
 import com.google.gson.Gson;
 import com.json_xml.parse.models.dto.partCarSale.input.SupplierInJsonDto;
-import com.json_xml.parse.models.dto.partCarSale.out.SuppliersIdNamePartCount;
+import com.json_xml.parse.models.dto.partCarSale.out.SuppliersIdNamePartCountDTO;
 import com.json_xml.parse.models.entities.partCarSale.SupplierEntity;
 import com.json_xml.parse.repositories.SupplierRepository;
 import com.json_xml.parse.services.SupplierService;
@@ -19,7 +19,6 @@ import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
 
-import static com.json_xml.parse.constants.Paths.CATEGORY_JSON_FILEPATH;
 import static com.json_xml.parse.constants.Paths.SUPPLIER_JSON_FILEPATH;
 
 @Service
@@ -78,8 +77,8 @@ public class SupplierServiceImpl implements SupplierService {
 
         return gson.toJson(supplierRepository.findAllByImporterIsFalse()
                 .stream().map(supplier -> {
-                    SuppliersIdNamePartCount supplierView =
-                            modelMapper.map(supplier, SuppliersIdNamePartCount.class);
+                    SuppliersIdNamePartCountDTO supplierView =
+                            modelMapper.map(supplier, SuppliersIdNamePartCountDTO.class);
                     supplierView.setPartsCount(supplier.getParts().size());
                     return supplierView;
                 })
