@@ -1,0 +1,50 @@
+1st user will be ADMIN
+Only admin can add,remove,delete games in db
+Only loged user can order- add,remove, buy it;
+
+Good Luck
+
+=======================================================
+RegisterUser|ivan@ivan.com|Ivan12|Ivan12|Ivan
+RegisterUser|ivanata@gmail.com|Ivanata12|Ivanata12|IvaNata
+RegisterUser|ivailon@ivan.com|Ivailon12|Ivailon12|Ivailon
+
+LoginUser|ivan@ivan.com|Ivan12
+LoginUser|ivanata@gmail.com|Ivanata12
+LoginUser|ivailon@ivan.com|Ivailon12
+
+Logout
+
+
+=========================================================
+
+AddGame|Overwatch|100.00|15.5|FqnKB22pOC0|https://us.battle.net/forums/static/images/social-thumbs/overwatch.png|Overwatch is a team-based multiplayer online first-person shooter video game developed and published by Blizzard Entertainment.|24-05-2016
+
+AddGame|Assassin's Creed|70.00|15.5|FqnKB22pOC0|https://us.battle.net/forums/static/images/social-thumbs/overwatch.png|Assassin's Creed is a team-based multiplayer online first-person shooter video game developed and published by Blizzard Entertainment.|24-05-2015
+
+AddGame|Tomb Raider|80.00|15.5|FqnKB22pOC0|https://us.battle.net/forums/static/images/social-thumbs/overwatch.png|Tomb Rider is a team-based multiplayer online first-person shooter video game developed and published by Blizzard Entertainment.|24-05-2014
+
++++++++++++++++++++++++++++++++++++++++++
+
+EditGame|1|price=80.00|size=12.0
+
+++++++++++++++++++++++++++++++
+
+DeleteGame|1
+==============================================================
+AllGames
+
+DetailGame|Overwatch
+
+OwnedGames
+===================================
+AddItem|Overwatch
+
+AddItem|Assassin's Creed
+
+AddItem|Tomb Raider
+
+RemoveItem|Overwatch
+
+BuyItem
+
