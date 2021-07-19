@@ -48,10 +48,11 @@ public class PlaneServiceImpl implements PlaneService {
     }
 
     @Override
-    public String importPlanes() throws JAXBException {
+    public String importPlanes() throws Exception {
         List<String> report = new ArrayList<>();
 
-        PlaneRootXmlDto planeRootXmlDto = xmlParser.importXMl(PlaneRootXmlDto.class, DIR_XML_PATH + PLANE_XML_FILE_PATH);
+        PlaneRootXmlDto planeRootXmlDto =
+                xmlParser.importXMl(PlaneRootXmlDto.class, DIR_XML_PATH + PLANE_XML_FILE_PATH);
 
         planeRootXmlDto.getPlaneXmlDtos()
                 .forEach(planeXmlDto -> {
@@ -61,7 +62,7 @@ public class PlaneServiceImpl implements PlaneService {
                     }
                     PlaneEntity plane = modelMapper.map(planeXmlDto, PlaneEntity.class);
                    planeRepository.save(plane);
-                    report.add("Successfully imported " + plane.getRegisterNumber());
+                    report.add("Successfully imported Plane " + plane.getRegisterNumber());
                 });
 
         return String.join(System.lineSeparator(), report);

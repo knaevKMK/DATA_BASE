@@ -9,11 +9,14 @@ import java.time.format.DateTimeFormatter;
 public class LocalDateTimeAdapter extends XmlAdapter<String, LocalDateTime> {
     @Override
     public LocalDateTime unmarshal(String s) throws Exception {
+
         if (s == null) {
             return LocalDateTime.now();
         }
         return LocalDateTime.parse(s,DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+
     }
+
 
 
     @Override

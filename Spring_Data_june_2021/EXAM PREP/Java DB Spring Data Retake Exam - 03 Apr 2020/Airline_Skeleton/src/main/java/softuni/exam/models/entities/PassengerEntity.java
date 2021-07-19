@@ -1,6 +1,7 @@
 package softuni.exam.models.entities;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -13,12 +14,23 @@ public class PassengerEntity extends BaseEntity {
     private String email;
     //TODO to town
     private TownEntity town;
-    private Set<TicketEntity>tickets;
+    private Set<TicketEntity> tickets;
 
 
     public PassengerEntity() {
     }
-@OneToMany(mappedBy = "passenger", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+//
+//    public PassengerEntity(String firstName, String lastName, int age, String phoneNumber, String email, TownEntity town) {
+//        this.firstName = firstName;
+//        this.lastName = lastName;
+//        this.age = age;
+//        this.phoneNumber = phoneNumber;
+//        this.email = email;
+//        this.town = town;
+//        this.tickets = new HashSet<>();
+//    }
+
+    @OneToMany(mappedBy = "passenger", fetch = FetchType.EAGER)
     public Set<TicketEntity> getTickets() {
         return tickets;
     }
@@ -28,7 +40,7 @@ public class PassengerEntity extends BaseEntity {
         return this;
     }
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "town_id")
     public TownEntity getTown() {
         return town;

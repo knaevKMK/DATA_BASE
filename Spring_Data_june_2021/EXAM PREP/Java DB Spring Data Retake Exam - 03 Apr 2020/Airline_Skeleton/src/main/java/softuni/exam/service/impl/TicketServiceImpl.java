@@ -47,7 +47,6 @@ public class TicketServiceImpl implements TicketService {
         this.validationUtil = validationUtil;
         this.ioUtil = ioUtil;
         this.xmlParser = xmlParser;
-
         this.modelMapper = modelMapper;
     }
 
@@ -84,8 +83,8 @@ public class TicketServiceImpl implements TicketService {
             ticket.setPassenger(passengerEntity);
             PlaneEntity plane = planeService.findByRegisterNumber(ticketDto.getPlane().getRegisterNumber());
             ticket.setPlane(plane);
-//            ticketRepository.save(ticket);
-            report.add("Successfully imported Ticket " + ticket.getFromTown() + " - " + ticket.getToTown());
+            ticketRepository.save(ticket);
+            report.add("Successfully imported Ticket " + ticket.getFromTown().getName() + " - " + ticket.getToTown().getName());
 
         });
 

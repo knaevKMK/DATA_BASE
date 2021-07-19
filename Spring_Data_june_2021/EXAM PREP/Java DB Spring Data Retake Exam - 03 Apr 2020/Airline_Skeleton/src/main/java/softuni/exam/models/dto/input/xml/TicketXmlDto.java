@@ -1,10 +1,10 @@
 package softuni.exam.models.dto.input.xml;
 
-//import softuni.exam.config.LocalDateTimeAdapter;
+import softuni.exam.config.LocalDateTimeAdapter;
 import softuni.exam.models.entities.PassengerEntity;
-import softuni.exam.models.entities.PlaneEntity;
-import softuni.exam.models.entities.TownEntity;
 
+import javax.validation.constraints.Positive;
+import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.math.BigDecimal;
@@ -21,8 +21,9 @@ public class TicketXmlDto {
     private BigDecimal price;
 
     @XmlElement(name = "take-off")
-//    @XmlJavaTypeAdapter(LocalDateTimeAdapter.class)
-    private String takeoff;
+  @XmlJavaTypeAdapter(LocalDateTimeAdapter.class)
+//    @XmlSchemaType(name="dateTime")
+    private LocalDateTime takeoff;
 
     @XmlElement(name = "from-town")
     private TownNameXmlDto fromTown;
@@ -39,6 +40,16 @@ public class TicketXmlDto {
     public TicketXmlDto() {
     }
 
+//    public TicketXmlDto(String serialNumber, BigDecimal price, LocalDateTime takeoff, TownNameXmlDto fromTown, PassengerEntity passenger, PlaneXmlDto plane, TownNameXmlDto toTown) {
+//        this.serialNumber = serialNumber;
+//        this.price = price;
+//        this.takeoff = takeoff;
+//        this.fromTown = fromTown;
+//        this.passenger = passenger;
+//        this.plane = plane;
+//        this.toTown = toTown;
+//    }
+@Size(min = 2)
     public String getSerialNumber() {
         return serialNumber;
     }
@@ -47,7 +58,7 @@ public class TicketXmlDto {
         this.serialNumber = serialNumber;
         return this;
     }
-
+@Positive
     public BigDecimal getPrice() {
         return price;
     }
@@ -57,11 +68,12 @@ public class TicketXmlDto {
         return this;
     }
 
-    public String getTakeoff() {
+
+    public LocalDateTime getTakeoff() {
         return takeoff;
     }
 
-    public TicketXmlDto setTakeoff(String takeoff) {
+    public TicketXmlDto setTakeoff(LocalDateTime takeoff) {
         this.takeoff = takeoff;
         return this;
     }
