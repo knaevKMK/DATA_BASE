@@ -1,7 +1,5 @@
-package com.json_xml.parse.models.dto.partCarSale;
+package com.json_xml.parse.models.dto.partCarSale.input;
 
-
-import com.json_xml.parse.models.dto.partCarSale.input.SupplierXmlDto;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
