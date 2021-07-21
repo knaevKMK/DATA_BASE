@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<products>
+    <product name="Ranitidine" price="926.64" seller="Bennett"/>
+    <product name="ENBREL" price="673.97" seller="Anna Clark"/>
+    <product name="Isosorbide Mononitrate" price="789.91" seller="Baker"/>
+    <product name="Spironolactone" price="933.69" seller="Thompson"/>
+    <product name="pain relief" price="938.23" seller="Fox"/>
+    <product name="AMARANTHUS PALMERI POLLEN" price="623.16" seller="Billy Parker"/>
+    <product name="TRAMADOL HYDROCHLORIDE" price="516.48" seller="Bennett"/>
+    <product name="Myristica Argentum Sinus Relief" price="904.52" seller="Bennett"/>
+    <product name="AVANDAMET" price="632.08" seller="Fox"/>
+    <product name="Naproxen" price="807.22" seller="Fox"/>
+    <product name="Meloxicam" price="809.18" seller="Fox"/>
+    <product name="Diastat" price="614.14" seller="Billy Parker"/>
+</products>

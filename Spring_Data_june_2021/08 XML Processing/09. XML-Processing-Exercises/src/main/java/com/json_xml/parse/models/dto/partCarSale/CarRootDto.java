@@ -1,4 +1,6 @@
-package com.json_xml.parse.models.dto.partCarSale.input;
+package com.json_xml.parse.models.dto.partCarSale;
+
+import com.json_xml.parse.models.dto.partCarSale.input.CarXmlMakeModelDistanceDto;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -8,20 +10,20 @@ import java.util.Set;
 
 @XmlRootElement(name = "cars")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class CarRootXmlDto {
+public class CarRootDto {
 
     @XmlElement(name = "car")
     private Set<CarXmlMakeModelDistanceDto> carXmlMakeModelDistanceDtos;
 
 
-    public CarRootXmlDto() {
+    public CarRootDto() {
     }
 
     public Set<CarXmlMakeModelDistanceDto> getCarXmlMakeModelDistanceDtos() {
         return carXmlMakeModelDistanceDtos;
     }
 
-    public CarRootXmlDto setCarXmlMakeModelDistanceDtos(Set<CarXmlMakeModelDistanceDto> carXmlMakeModelDistanceDtos) {
+    public CarRootDto setCarXmlMakeModelDistanceDtos(Set<CarXmlMakeModelDistanceDto> carXmlMakeModelDistanceDtos) {
         this.carXmlMakeModelDistanceDtos = carXmlMakeModelDistanceDtos;
         return this;
     }
