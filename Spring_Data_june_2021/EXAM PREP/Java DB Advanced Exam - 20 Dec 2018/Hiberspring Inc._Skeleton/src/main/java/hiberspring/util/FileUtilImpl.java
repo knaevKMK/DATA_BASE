@@ -3,14 +3,11 @@ package hiberspring.util;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.List;
 
 public class FileUtilImpl implements FileUtil {
-
     @Override
-    public String readFile(String filePath) throws IOException {
-
-        return String.join("", Files.readAllBytes(Path.of(filePath)));
-
+    public List<String> readFile(String filePath) throws IOException {
+        return Files.readAllLines(Path.of(filePath));
     }
-
 }

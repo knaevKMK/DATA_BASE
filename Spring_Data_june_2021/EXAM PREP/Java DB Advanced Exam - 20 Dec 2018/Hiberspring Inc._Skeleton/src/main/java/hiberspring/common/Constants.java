@@ -3,6 +3,7 @@ package hiberspring.common;
 public final class Constants {
 
     public final static String PATH_TO_FILES = System.getProperty("user.dir") + "/src/main/resources/files/";
+    public final static String DIR_PATH_TO_FILES = "src/main/resources/files/";
 
     public final static String INCORRECT_DATA_MESSAGE = "Error: Invalid Data!";
 

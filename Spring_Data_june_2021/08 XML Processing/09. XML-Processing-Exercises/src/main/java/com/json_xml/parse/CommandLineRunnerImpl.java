@@ -2,6 +2,7 @@ package com.json_xml.parse;
 
 import com.json_xml.parse.services.*;
 import com.json_xml.parse.util.IOUtil;
+import org.apache.tomcat.util.threads.ThreadPoolExecutor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -53,7 +54,7 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
 
         String input = ioUtil.read();
 
-        while (!input.toLowerCase().equals("stop")) {
+        while (!input.toLowerCase().equals("end")) {
             switch (input) {
                 case "1":
                     ioUtil.print(EX_1);
@@ -109,10 +110,12 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
 
                 default:
                     ioUtil.print("Bad input");
+
             }
             ioUtil.print(EX_1, EX_2, EX_3, EX_4, EX_5, EX_6, EX_7, EX_8, EX_9, EX_10, END, REPORT_EX_CHOOSE);
-            input = ioUtil.read();
-            System.out.println(input);
+
+                input = ioUtil.read();
+
         }
     }
 

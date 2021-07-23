@@ -7,6 +7,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+
 import javax.validation.Validation;
 import javax.validation.Validator;
 import java.lang.reflect.Type;
@@ -19,9 +20,8 @@ public class ApplicationBeanConfiguration {
 
     @Bean
     public ModelMapper modelMapper() {
-        ModelMapper modelMapper = new ModelMapper();
 
-        return modelMapper;
+        return new ModelMapper();
     }
 
     @Bean

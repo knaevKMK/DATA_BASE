@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <sales>
     <sale>
+        <car id="221" make="Dacia" model="Duster" travelled-distance="21447"/>
+        <customer-name>Daniele Zarate</customer-name>
+        <distance>0.20</distance>
+        <price>479.87</price>
+        <price-with-discount>383.90</price-with-discount>
+    </sale>
+    <sale>
+        <car id="59" make="BMW" model="E88" travelled-distance="200000"/>
+        <customer-name>Hipolito Lamoreaux</customer-name>
+        <distance>0.15</distance>
+        <price>1788.97</price>
+        <price-with-discount>1520.62</price-with-discount>
+    </sale>
+    <sale>
         <car id="41" make="Toyota" model="Tacoma" travelled-distance="96854775807"/>
         <customer-name>Donnetta Soliz</customer-name>
         <distance>0.05</distance>
@@ -8,18 +22,18 @@
         <price-with-discount>259.32</price-with-discount>
     </sale>
     <sale>
-        <car id="88" make="Citroen" model="C1" travelled-distance="922337854775807"/>
-        <customer-name>Johnette Derryberry</customer-name>
-        <distance>0.05</distance>
-        <price>317.97</price>
-        <price-with-discount>302.07</price-with-discount>
+        <car id="311" make="Ford" model="Pinto" travelled-distance="922337203"/>
+        <customer-name>Garret Capron</customer-name>
+        <distance>0.10</distance>
+        <price>371.57</price>
+        <price-with-discount>334.41</price-with-discount>
     </sale>
     <sale>
-        <car id="281" make="Ford" model="Fiesta" travelled-distance="214647"/>
-        <customer-name>Nisha Markwell</customer-name>
+        <car id="89" make="Ford" model="Torino" travelled-distance="217"/>
+        <customer-name>Faustina Burgher</customer-name>
         <distance>0.05</distance>
-        <price>1363.26</price>
-        <price-with-discount>1295.10</price-with-discount>
+        <price>372.96</price>
+        <price-with-discount>354.31</price-with-discount>
     </sale>
     <sale>
         <car id="73" make="Mercedes" model="W212" travelled-distance="54775807"/>
@@ -29,10 +43,24 @@
         <price-with-discount>1955.98</price-with-discount>
     </sale>
     <sale>
-        <car id="59" make="BMW" model="E88" travelled-distance="200000"/>
-        <customer-name>Hipolito Lamoreaux</customer-name>
-        <distance>0.15</distance>
-        <price>1788.97</price>
-        <price-with-discount>1520.62</price-with-discount>
+        <car id="88" make="Citroen" model="C1" travelled-distance="922337854775807"/>
+        <customer-name>Johnette Derryberry</customer-name>
+        <distance>0.05</distance>
+        <price>317.97</price>
+        <price-with-discount>302.07</price-with-discount>
+    </sale>
+    <sale>
+        <car id="24" make="Peugeot" model="206" travelled-distance="214748347"/>
+        <customer-name>Rema Revelle</customer-name>
+        <distance>0.05</distance>
+        <price>295.86</price>
+        <price-with-discount>281.07</price-with-discount>
+    </sale>
+    <sale>
+        <car id="281" make="Ford" model="Fiesta" travelled-distance="214647"/>
+        <customer-name>Nisha Markwell</customer-name>
+        <distance>0.05</distance>
+        <price>1363.26</price>
+        <price-with-discount>1295.10</price-with-discount>
     </sale>
 </sales>

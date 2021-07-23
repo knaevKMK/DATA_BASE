@@ -1,8 +1,7 @@
 package com.json_xml.parse.models.dto.partUserProductCategoriy.input;
 
-import com.google.gson.annotations.Expose;
-import org.hibernate.validator.constraints.Length;
 
+import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -20,7 +19,7 @@ public class ProductXmlNamePriceDto {
     public ProductXmlNamePriceDto() {
     }
 
-    @Length(min = 3, message = "name must be min 3 symbols")
+    @Size(min = 3, message = "name must be min 3 symbols")
     public String getName() {
         return name;
     }

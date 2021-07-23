@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a18f320f-7471-4489-bad1-406afbf850f6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/.idea/libraries/Maven__com_sun_xml_bind_jaxb_core_3_0_0_M2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/.idea/libraries/Maven__jakarta_validation_jakarta_validation_api_2_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/.idea/libraries/Maven__org_glassfish_jakarta_el_3_0_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_validation_2_4_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_4_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_9_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_9_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_9_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_8_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_activation_jakarta_activation_2_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_istack_istack_commons_runtime_3_0_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_xml_bind_jaxb_core_3_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_xml_fastinfoset_FastInfoset_1_2_16.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_3_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_xml_bind_jakarta_xml_bind_api_2_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_javax_activation_api_1_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_annotation_javax_annotation_api_1_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_transaction_javax_transaction_api_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_2_0_1_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_xml_bind_jaxb_api_2_3_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_11_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_to_slf4j_2_11_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_9_0_13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_9_0_13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_9_0_13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_9_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_attoparser_attoparser_2_0_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_dom4j_dom4j_2_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_jaxb_runtime_2_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_txw2_2_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_0_4_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_5_3_7_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_0_13_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_23_1_GA.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_jandex_2_0_5_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_2_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jvnet_staxex_stax_ex_1_8_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_modelmapper_modelmapper_2_4_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_25.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_1_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_devtools_2_1_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_aop_2_1_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_jpa_2_1_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_1_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_1_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_1_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_thymeleaf_2_1_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_1_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_1_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_1_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_jpa_2_1_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_1_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aspects_5_1_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_1_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_1_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_1_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_1_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_1_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_1_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_orm_5_1_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_1_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_1_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_extras_thymeleaf_extras_java8time_3_0_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_3_0_11_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_spring5_3_0_11_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_unbescape_unbescape_1_1_6_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_23.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hiber_spring.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hiberspring.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hiberspring/domain/dtos/BranchNameTownNameDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hiberspring/domain/dtos/CardDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hiberspring/domain/dtos/EmployeeDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hiberspring/domain/dtos/EmployeeRootDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hiberspring/domain/dtos/ProductNameClientsBranchNameDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hiberspring/domain/dtos/ProductRootDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hiberspring/domain/dtos/TownNamePopulationDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hiberspring/domain/entities/BaseEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hiberspring/domain/entities/BranchEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hiberspring/domain/entities/EmployeeCard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hiberspring/domain/entities/EmployeeEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hiberspring/domain/entities/ProductEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hiberspring/domain/entities/Town.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hiberspring/service/impl/BranchServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hiberspring/service/impl/EmployeeCardServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hiberspring/service/impl/EmployeeServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hiberspring/service/impl/ProductServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hiberspring/service/impl/TownServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hiberspring/util/ValidationUtilImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hiberspring/util/XmlParserImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/.idea/libraries/Maven__com_jayway_jsonpath_json_path_2_5_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/.idea/libraries/Maven__com_sun_xml_bind_jaxb_impl_2_1_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/.idea/libraries/Maven__com_sun_xml_bind_jaxb_impl_3_0_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/.idea/libraries/Maven__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/.idea/libraries/Maven__jakarta_activation_jakarta_activation_api_1_2_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_activation_jakarta_activation_api_1_2_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/.idea/libraries/Maven__javax_el_javax_el_api_3_0_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/.idea/libraries/Maven__javax_persistence_javax_persistence_api_2_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_persistence_javax_persistence_api_2_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/.idea/libraries/Maven__javax_validation_validation_api_2_0_0_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/.idea/libraries/Maven__javax_validation_validation_api_2_0_1_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_10_22.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_9_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/.idea/libraries/Maven__net_minidev_accessors_smart_2_4_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/.idea/libraries/Maven__net_minidev_json_smart_2_4_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/.idea/libraries/Maven__org_assertj_assertj_core_3_19_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/.idea/libraries/Maven__org_glassfish_web_javax_el_2_2_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/.idea/libraries/Maven__org_hamcrest_hamcrest_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/.idea/libraries/Maven__org_hibernate_hibernate_core_5_4_31_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/.idea/libraries/Maven__org_hibernate_hibernate_core_5_4_32_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_0_2_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_2_0_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_annotation_processor_6_0_2_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/.idea/libraries/Maven__org_jboss_spec_javax_transaction_jboss_transaction_api_1_2_spec_1_1_1_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_7_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_7_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_7_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_7_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_7_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_7_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/.idea/libraries/Maven__org_mockito_mockito_core_3_9_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/.idea/libraries/Maven__org_mockito_mockito_junit_jupiter_3_9_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/.idea/libraries/Maven__org_objenesis_objenesis_3_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/.idea/libraries/Maven__org_ow2_asm_asm_9_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/.idea/libraries/Maven__org_skyscreamer_jsonassert_1_5_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_5_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_1_1_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_2_5_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_1_1_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_2_5_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/.idea/libraries/Maven__org_springframework_spring_test_5_3_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_1_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/.idea/libraries/Maven__org_xmlunit_xmlunit_core_2_8_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/parse.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/parse.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/src/main/java/com/json_xml/parse/CommandLineRunnerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/src/main/java/com/json_xml/parse/CommandLineRunnerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/src/main/java/com/json_xml/parse/config/ApplicationBeanConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/src/main/java/com/json_xml/parse/config/ApplicationBeanConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/src/main/java/com/json_xml/parse/models/dto/partUserProductCategoriy/input/ProductXmlNamePriceDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/src/main/java/com/json_xml/parse/models/dto/partUserProductCategoriy/input/ProductXmlNamePriceDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/src/main/resources/files/out/xml/cars-and-parts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/src/main/resources/files/out/xml/cars-and-parts.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/src/main/resources/files/out/xml/category-product-count-total-price.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/src/main/resources/files/out/xml/category-product-count-total-price.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/src/main/resources/files/out/xml/customers-total-sales.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/src/main/resources/files/out/xml/customers-total-sales.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/src/main/resources/files/out/xml/local-suppliers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/src/main/resources/files/out/xml/local-suppliers.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/src/main/resources/files/out/xml/ordered-customers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/src/main/resources/files/out/xml/ordered-customers.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/src/main/resources/files/out/xml/product-in-range.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/src/main/resources/files/out/xml/product-in-range.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/src/main/resources/files/out/xml/sales-discounts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/src/main/resources/files/out/xml/sales-discounts.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/src/main/resources/files/out/xml/seller-success-sold-product.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/src/main/resources/files/out/xml/seller-success-sold-product.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/src/main/resources/files/out/xml/toyota-cars.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/src/main/resources/files/out/xml/toyota-cars.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/src/main/resources/files/out/xml/users-and_products.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/src/main/resources/files/out/xml/users-and_products.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/CommandLineRunnerImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/CommandLineRunnerImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/ParseApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/ParseApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/config/ApplicationBeanConfiguration$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/config/ApplicationBeanConfiguration$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/config/ApplicationBeanConfiguration$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/config/ApplicationBeanConfiguration$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/config/ApplicationBeanConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/config/ApplicationBeanConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/config/LocalDateTimeAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/config/LocalDateTimeAdapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/constants/Paths.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/constants/Paths.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/input/CarRootDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/input/CarRootDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/input/CarXmlMakeModelDistanceDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/input/CarXmlMakeModelDistanceDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/input/CustomerRootDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/input/CustomerRootDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/input/CustomerXmlDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/input/CustomerXmlDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/input/PartInXmlDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/input/PartInXmlDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/input/PartRootDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/input/PartRootDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/input/SupplierRootDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/input/SupplierRootDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/input/SupplierXmlDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/input/SupplierXmlDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/out/CarByMakeSortByModelAndTravelDistDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/out/CarByMakeSortByModelAndTravelDistDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/out/CarRoot2Dto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/out/CarRoot2Dto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/out/CarRootDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/out/CarRootDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/out/CarViewCarPartsDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/out/CarViewCarPartsDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/out/CarViewMakeModelTravelDistDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/out/CarViewMakeModelTravelDistDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/out/CarViewMakeModelTravelDistPartsListDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/out/CarViewMakeModelTravelDistPartsListDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/out/CustomerFullNameBoughtCarsSpentMoneyDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/out/CustomerFullNameBoughtCarsSpentMoneyDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/out/CustomerIdNameBirhDateYongerDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/out/CustomerIdNameBirhDateYongerDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/out/CustomerRoot2Dto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/out/CustomerRoot2Dto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/out/CustomerRootDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/out/CustomerRootDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/out/CustomerSalesCountAmountDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/out/CustomerSalesCountAmountDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/out/CustomersOrderByBirthDateDescDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/out/CustomersOrderByBirthDateDescDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/out/PartRootOutDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/out/PartRootOutDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/out/PartViewNamePriceDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/out/PartViewNamePriceDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/out/SalesDsicountDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/out/SalesDsicountDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/out/SalesRootOutDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/out/SalesRootOutDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/out/SupplierRootOutDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/out/SupplierRootOutDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/out/SuppliersIdNamePartCountDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partCarSale/out/SuppliersIdNamePartCountDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partUserProductCategoriy/input/CategoryRootXmlDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partUserProductCategoriy/input/CategoryRootXmlDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partUserProductCategoriy/input/CategoryXmlNameDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partUserProductCategoriy/input/CategoryXmlNameDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partUserProductCategoriy/input/ProductRootXmlDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partUserProductCategoriy/input/ProductRootXmlDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partUserProductCategoriy/input/ProductXmlNamePriceDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partUserProductCategoriy/input/ProductXmlNamePriceDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partUserProductCategoriy/input/UserRootXmlDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partUserProductCategoriy/input/UserRootXmlDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partUserProductCategoriy/input/UserXmlDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partUserProductCategoriy/input/UserXmlDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partUserProductCategoriy/outDto/CategoryRootDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partUserProductCategoriy/outDto/CategoryRootDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partUserProductCategoriy/outDto/CategoryViewWithProductCountDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partUserProductCategoriy/outDto/CategoryViewWithProductCountDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partUserProductCategoriy/outDto/ProductOutRootDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partUserProductCategoriy/outDto/ProductOutRootDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partUserProductCategoriy/outDto/ProductRoot2Dto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partUserProductCategoriy/outDto/ProductRoot2Dto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partUserProductCategoriy/outDto/ProductRootDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partUserProductCategoriy/outDto/ProductRootDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partUserProductCategoriy/outDto/ProductVieNamePricewDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partUserProductCategoriy/outDto/ProductVieNamePricewDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partUserProductCategoriy/outDto/ProductViewJsonDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partUserProductCategoriy/outDto/ProductViewJsonDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partUserProductCategoriy/outDto/ProductViewWithBuyersDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partUserProductCategoriy/outDto/ProductViewWithBuyersDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partUserProductCategoriy/outDto/ProductXmlNameSellerDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partUserProductCategoriy/outDto/ProductXmlNameSellerDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partUserProductCategoriy/outDto/SellerWithProductViewDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partUserProductCategoriy/outDto/SellerWithProductViewDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partUserProductCategoriy/outDto/SoldProductCountAndListDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partUserProductCategoriy/outDto/SoldProductCountAndListDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partUserProductCategoriy/outDto/TotalUserCountWithSoldProductsDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partUserProductCategoriy/outDto/TotalUserCountWithSoldProductsDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partUserProductCategoriy/outDto/UserFirstLastNameSoldProducts2DTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partUserProductCategoriy/outDto/UserFirstLastNameSoldProducts2DTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partUserProductCategoriy/outDto/UserFirstLastNameSoldProductsDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partUserProductCategoriy/outDto/UserFirstLastNameSoldProductsDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partUserProductCategoriy/outDto/UserFullNameToJsonDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partUserProductCategoriy/outDto/UserFullNameToJsonDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partUserProductCategoriy/outDto/UserRoot2Dto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partUserProductCategoriy/outDto/UserRoot2Dto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partUserProductCategoriy/outDto/UserRootDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/dto/partUserProductCategoriy/outDto/UserRootDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/entities/BaseEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/entities/BaseEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/entities/partCarSale/CarEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/entities/partCarSale/CarEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/entities/partCarSale/CustomerEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/entities/partCarSale/CustomerEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/entities/partCarSale/PartEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/entities/partCarSale/PartEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/entities/partCarSale/SaleEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/entities/partCarSale/SaleEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/entities/partCarSale/SupplierEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/entities/partCarSale/SupplierEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/entities/partCarSale/package-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/entities/partCarSale/package-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/entities/partUserProductCategoriy/CategoryEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/entities/partUserProductCategoriy/CategoryEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/entities/partUserProductCategoriy/ProductEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/entities/partUserProductCategoriy/ProductEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/entities/partUserProductCategoriy/UserEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/models/entities/partUserProductCategoriy/UserEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/repositories/CarRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/repositories/CarRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/repositories/CategoryRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/repositories/CategoryRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/repositories/CustomerRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/repositories/CustomerRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/repositories/PartRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/repositories/PartRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/repositories/ProductRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/repositories/ProductRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/repositories/SaleRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/repositories/SaleRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/repositories/SupplierRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/repositories/SupplierRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/repositories/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/repositories/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/services/CarService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/services/CarService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/services/CategoryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/services/CategoryService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/services/CustomerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/services/CustomerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/services/PartService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/services/PartService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/services/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/services/ProductService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/services/SaleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/services/SaleService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/services/SupplierService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/services/SupplierService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/services/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/services/impl/CarServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/services/impl/CarServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/services/impl/CategoryServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/services/impl/CategoryServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/services/impl/CustomerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/services/impl/CustomerServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/services/impl/PartServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/services/impl/PartServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/services/impl/ProductServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/services/impl/ProductServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/services/impl/SaleServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/services/impl/SaleServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/services/impl/SupplierServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/services/impl/SupplierServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/services/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/services/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/util/IOUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/util/IOUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/util/IOUtilImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/util/IOUtilImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/util/ValidationUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/util/ValidationUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/util/ValidationUtilImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/util/ValidationUtilImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/util/XmlParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/util/XmlParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/util/XmlParserImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/com/json_xml/parse/util/XmlParserImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/files/out/xml/cars-and-parts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/files/out/xml/cars-and-parts.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/files/out/xml/category-product-count-total-price.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/files/out/xml/category-product-count-total-price.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/files/out/xml/customers-total-sales.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/files/out/xml/customers-total-sales.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/files/out/xml/local-suppliers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/files/out/xml/local-suppliers.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/files/out/xml/ordered-customers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/files/out/xml/ordered-customers.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/files/out/xml/product-in-range.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/files/out/xml/product-in-range.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/files/out/xml/sales-discounts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/files/out/xml/sales-discounts.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/files/out/xml/seller-success-sold-product.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/files/out/xml/seller-success-sold-product.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/files/out/xml/toyota-cars.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/files/out/xml/toyota-cars.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/files/out/xml/users-and_products.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/files/out/xml/users-and_products.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/main/resources/files/json/cars.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/main/resources/files/json/categories.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/main/resources/files/json/customers.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/main/resources/files/json/parts.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/main/resources/files/json/products.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/main/resources/files/json/suppliers.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/main/resources/files/json/users.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/main/resources/files/out/json/cars-and-parts.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/main/resources/files/out/json/category-product-count-total-price.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/main/resources/files/out/json/customers-total-sales.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/main/resources/files/out/json/local-suppliers.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/main/resources/files/out/json/ordered-customers.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/main/resources/files/out/json/product-in-range.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/main/resources/files/out/json/sales-discounts.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/main/resources/files/out/json/seller-success-sold-product.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/main/resources/files/out/json/toyota-cars.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/main/resources/files/out/json/users-and_products.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/main/resources/files/out/xml/cars-and-parts.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/main/resources/files/out/xml/category-product-count-total-price.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/main/resources/files/out/xml/customers-total-sales.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/main/resources/files/out/xml/local-suppliers.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/main/resources/files/out/xml/ordered-customers.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/main/resources/files/out/xml/product-in-range.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/main/resources/files/out/xml/sales-discounts.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/main/resources/files/out/xml/seller-success-sold-product.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/main/resources/files/out/xml/toyota-cars.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/main/resources/files/out/xml/users-and_products.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/main/resources/files/xml/cars.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/main/resources/files/xml/categories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/main/resources/files/xml/customers.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/main/resources/files/xml/parts.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/main/resources/files/xml/products.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/main/resources/files/xml/suppliers.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../08 XML Processing/09. XML-Processing-Exercises/target/classes/main/resources/files/xml/users.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.core.resources.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.jdt.apt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.m2e.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/launch.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hiberspring/common/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hiberspring/common/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hiberspring/config/ApplicationBeanConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hiberspring/config/ApplicationBeanConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hiberspring/repository/BranchRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hiberspring/repository/BranchRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hiberspring/repository/EmployeeCardRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hiberspring/repository/EmployeeCardRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hiberspring/repository/EmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hiberspring/repository/EmployeeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hiberspring/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hiberspring/repository/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hiberspring/repository/TownRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hiberspring/repository/TownRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hiberspring/service/BranchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hiberspring/service/BranchService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hiberspring/service/EmployeeCardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hiberspring/service/EmployeeCardService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hiberspring/service/TownService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hiberspring/service/TownService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hiberspring/util/FileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hiberspring/util/FileUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hiberspring/util/FileUtilImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hiberspring/util/FileUtilImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hiberspring/web/controllers/ImportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hiberspring/web/controllers/ImportController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hiberspring/HiberSpringApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hiberspring/HiberSpringApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hiberspring/common/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hiberspring/common/Constants.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hiberspring/config/ApplicationBeanConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hiberspring/config/ApplicationBeanConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hiberspring/repository/BranchRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hiberspring/repository/BranchRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hiberspring/repository/EmployeeCardRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hiberspring/repository/EmployeeCardRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hiberspring/repository/EmployeeRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hiberspring/repository/EmployeeRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hiberspring/repository/ProductRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hiberspring/repository/ProductRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hiberspring/repository/TownRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hiberspring/repository/TownRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hiberspring/service/BranchService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hiberspring/service/BranchService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hiberspring/service/EmployeeCardService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hiberspring/service/EmployeeCardService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hiberspring/service/TownService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hiberspring/service/TownService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hiberspring/util/FileUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hiberspring/util/FileUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hiberspring/util/FileUtilImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hiberspring/util/FileUtilImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hiberspring/util/ValidationUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hiberspring/util/ValidationUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hiberspring/util/XmlParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hiberspring/util/XmlParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hiberspring/web/controllers/BaseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hiberspring/web/controllers/BaseController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hiberspring/web/controllers/ExportController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hiberspring/web/controllers/ExportController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hiberspring/web/controllers/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hiberspring/web/controllers/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hiberspring/web/controllers/ImportController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hiberspring/web/controllers/ImportController.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="1viKtTReofI640sBRVImNqHvbGj" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="hiberspring.util" />
+      <recent name="hiberspring.service.impl" />
+      <recent name="hiberspring.domain.entities" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HiberSpringApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="hiberspring" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="hiberspring.HiberSpringApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a18f320f-7471-4489-bad1-406afbf850f6" name="Default Changelist" comment="" />
+      <created>1627039692793</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1627039692793</updated>
+      <workItem from="1627039695821" duration="3816000" />
+      <workItem from="1627048390711" duration="8709000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/hiberspring/service/impl/BranchServiceImpl.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/hiberspring/service/impl/ProductServiceImpl.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
